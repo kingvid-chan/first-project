@@ -1,0 +1,472 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<title>深资本 | 中国最专业的一站式机构业务平台</title>
+<link href="./css/bootstrap.css" rel='stylesheet' type='text/css' />
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
+<script type="text/javascript" src="./js/jquery.min.js"></script>
+<!--start slider -->
+    <link rel="stylesheet" href="./css/fwslider.css" media="all">
+    <script src="./js/jquery-ui.min.js"></script>
+    <script src="./js/fwslider.js"></script>
+<!--end slider -->
+<script type="text/javascript" src="./js/move-top.js"></script>
+<script type="text/javascript" src="./js/easing.js"></script>
+<script type="text/javascript">
+			jQuery(document).ready(function($) {
+				$(".scroll").click(function(event){		
+					event.preventDefault();
+					$('html,body').animate({scrollTop:$(this.hash).offset().top},1200);
+				});
+			});
+		</script>
+
+<!-- Owl Stylesheets -->
+<link rel="stylesheet" href="./css/flexslider.css" type="text/css" media="screen" />
+
+<!-- Custom Theme files -->
+<link href="./css/style.css" rel="stylesheet" type="text/css" media="all" />
+<!-- Custom Theme files -->
+<script src="./js/jquery.easydropdown.js"></script>
+<!-- javascript -->
+		  <!-- Script for gallery Here -->
+				<script type="text/javascript" src="./js/jquery.mixitup.min.js"></script>
+					<script type="text/javascript">
+					$(function () {
+						
+						var filterList = {
+						
+							init: function () {
+							
+								// MixItUp plugin
+								// http://mixitup.io
+								$('#umbrellalist').mixitup({
+									targetSelector: '.umbrella',
+									filterSelector: '.filter',
+									effects: ['fade'],
+									easing: 'snap',
+									// call the hover effect
+									onMixEnd: filterList.hoverEffect()
+								});				
+							
+							},
+							
+							hoverEffect: function () {
+							
+								// Simple parallax effect
+								$('#umbrellalist .umbrella').hover(
+									function () {
+										$(this).find('.label').stop().animate({bottom: 0}, 200, 'easeOutQuad');
+										$(this).find('img').stop().animate({top: -30}, 500, 'easeOutQuad');				
+									},
+									function () {
+										$(this).find('.label').stop().animate({bottom: -40}, 200, 'easeInQuad');
+										$(this).find('img').stop().animate({top: 0}, 300, 'easeOutQuad');								
+									}		
+								);				
+							
+							}
+				
+						};
+						
+						// Run the show!
+						filterList.init();
+						
+						
+					});	
+					</script>
+				<script type="text/javascript">
+									$(document).ready(function() {
+										/*
+										var defaults = {
+								  			containerID: 'toTop', // fading element id
+											containerHoverID: 'toTopHover', // fading element hover id
+											scrollSpeed: 1200,
+											easingType: 'linear' 
+								 		};
+										*/
+										
+										$().UItoTop({ easingType: 'easeOutQuart' });
+										
+									});
+								</script>
+</head>
+<body>
+	<!-- header-section-starts -->
+	<div class="header">
+		<div class="top-header">
+			<div class="container">
+				<div class="logo">
+					<a href="index.html"><img src="./images/u150.png" class="img-responsive" alt="" /></a>
+				</div>
+				<p style="float:left;margin-top:40px;font-size:12px;"> 中国最专业的一站式机构业务平台</p>
+				<div class="top-menu">
+				  <span class="menu"> </span>
+					<ul>
+						<li><a href="#" class="scroll">首页</a></li>
+						<li><a href="#umbrella0" class="scroll">伞型结构化信托</a></li>
+						<li><a href="#jiejin" class="scroll">大小非解禁</a></li>
+						<li><a href="#stock" class="scroll">股票质押</a></li>
+						<li><a href="#" class="scroll">资本问答</a></li>
+						<div class="clearfix"></div>
+					</ul>
+				</div>
+				 <!--script-nav-->
+		 <script>
+		 $("span.menu").click(function(){
+		 $(".top-menu ul").slideToggle("slow" , function(){
+		 });
+		 });
+		 </script>
+		 <!--script-nav-->
+		 <!-- start search-->
+				    <div class="search-box">
+					    <div id="sb-search" class="sb-search">
+							<form>
+								<input class="sb-search-input" placeholder="Enter your search term..." type="search" name="search" id="search">
+								<input class="sb-search-submit" type="submit" value="">
+								<span class="sb-icon-search"> </span>
+							</form>
+						</div>
+				    </div>
+					<!-- search-scripts -->
+					<script src="./js/classie.js"></script>
+					<script src="./js/uisearch.js"></script>
+						<script>
+							new UISearch( document.getElementById( 'sb-search' ) );
+						</script>
+					<!-- //search-scripts -->
+			</div>
+		</div>
+		  <!-- start slider -->
+    <div id="fwslider">
+        <div class="slider_container">
+            <div class="slide"> 
+                <!-- Slide image -->
+                    <img src="./images/banner.jpg" class="img-responsive" alt=""/>
+                <!-- /Slide image -->
+			</div>
+            <!-- /Duplicate to create more slides -->
+            <div class="slide"  id="Home">
+                <img src="./images/banner1.jpg" class="img-responsive" alt=""/>
+            </div>
+            <div class="slide">
+                <img src="./images/banner2.jpg" class="img-responsive" alt=""/>
+            </div>
+            <!--/slide -->
+        </div>
+        <div class="timers"></div>
+        <div class="slidePrev"><span></span></div>
+        <div class="slideNext"><span></span></div>
+        <div class="slideNext"><span></span></div>
+    </div>
+    <!--/slider -->
+
+   </div>
+    <!-- header-section-ends --> 
+   
+    <!-- content-section-starts -->
+ <div class="content">
+    <div class="umbrella0" id="umbrella0">
+		<img src="./images/umbrella-top.png" style="margin:0 200px;">
+   	<div role="tabpanel" style="padding-left:20px;">
+
+  	<!-- Nav tabs -->
+  		<ul class="nav nav-tabs" role="tablist">
+    		<li role="presentation" ><a href="#profile-umbrella" aria-controls="profile" role="tab" data-toggle="tab"  style="background-color:transparent;">简介</a></li>
+    		<li role="presentation" class="active"><a href="#steps-umbrella" aria-controls="steps" role="tab" data-toggle="tab"  style="background-color:transparent;">操作流程</a></li>
+  		</ul>
+
+  	<!-- Tab panes -->
+  	<div class="tab-content" style="min-height:150px;">
+    	<div role="tabpanel" class="tab-pane fade in " id="profile-umbrella">
+    	<p>伞型结构化信托属于创新型的信托产品。在一个主信托账号，通过分组交易系统设置若干个独立的子信托。信托公司通过其信息技术和风控平台，对每个子信托进行管理和监控，每个子信托都是一个完全独立的结构化信托产品，单独投资操作和清算。通过子信托的方式来分拆整个主信托的资金，来为多名投资者(劣后受益人)提供融资炒股的服务。</p>
+    	</div>
+    	<div role="tabpanel" class="tab-pane fade in active step" id="steps-umbrella">
+            		<ul>
+            			<li><span><img src="./images/step-1.png">申请伞型结构话信托</span></li>
+    					<li><span><img src="./images/step-contact.png">专业顾问联系</span></li>
+    					<li><span><img src="./images/step-3.png">签约操盘协议</span></li>
+    					<li><span><img src="./images/step-5.png">开始投资股票</span></li>
+    					<li><span><img src="./images/step-6.png">盈利全归您</span></li>
+            		</ul>	
+
+			<div class="clearfix"></div>
+        </div>
+  </div>
+
+</div>
+   <div class="umbrella-structured-trust" id="umbrella">
+   			<img src="./images/hot.png">
+   			<a href="#">更多产品 &raquo;</a>
+           	<ul id="filters" class="clearfix">
+						<li><span class="filter active" data-filter="app card icon">全部</span></li>
+						<li><span class="filter" data-filter="app">按资金门槛</span></li>
+						<li><span class="filter" data-filter="card">按杠杆比例</span></li>
+						<li><span class="filter" data-filter="icon">按年化率</span></li>
+						</ul>
+				<div id="umbrellalist">			
+					<div class="umbrella card mix_all  wow bounceIn" data-wow-delay="0.4s" data-cat="card" style="display: inline-block; opacity: 1;">
+						<div class="umbrella-text">
+                            <div class="umbrella-top-text" style="max-height:299px;">						
+								<h4>富盈信托1号</h4>
+								<h3><span style="font-size:25px;font-weight:600;" >9</span>.80%起</h3>
+								<p><span>门槛：500万起</span> &diams; <span>杠杆比例： 1:3</span></p>
+								<p class="divider"></p>
+								<span><a href="#">详情</a><a href="#">立即申请</a></span>
+
+							</div>
+		                </div>
+					</div>				
+					<div class="umbrella icon mix_all  wow bounceIn" data-wow-delay="0.4s" data-cat="icon" style="display: inline-block; opacity: 1;">
+						<div class="umbrella-text">
+                            <div class="umbrella-top-text">						
+								<h4>华润信托1号</h4>
+								<h3><span style="font-size:25px;font-weight:600;" >8</span>.80%起</h3>
+								<p><span>门槛：200万起</span> &diams; <span>杠杆比例： 1:3</span></p>
+								<p class="divider"></p>
+								<span><a href="#">详情</a><a href="#">立即申请</a></span>
+							</div>
+							
+		                </div>
+					</div>
+					
+					<div class="umbrella app mix_all  wow bounceIn" data-wow-delay="0.4s" data-cat="app" style="display: inline-block; opacity: 1;">
+						<div class="umbrella-text">
+                            <div class="umbrella-top-text">						
+								<h4>中融信托1号</h4>
+								<h3><span style="font-size:25px;font-weight:600;" >10</span>.80%起</h3>
+								<p><span>门槛：100万起</span> &diams; <span>杠杆比例： 1:2</span></p>
+								<p class="divider"></p>
+								<span><a href="#">详情</a><a href="#">立即申请</a></span>
+							</div>
+							
+		                </div>
+					</div>						
+					
+					<div class="umbrella card mix_all  wow bounceIn" data-wow-delay="0.4s" data-cat="card" style="display: inline-block; opacity: 1;">
+						<div class="umbrella-text">
+                            <div class="umbrella-top-text">						
+								<h4>富盈信托2号</h4>
+								<h3><span style="font-size:25px;font-weight:600;" >9</span>.80%起</h3>
+								<p><span>门槛：500万起</span> &diams; <span>杠杆比例： 1:3</span></p>
+								<p class="divider"></p>
+								<span><a href="#">详情</a><a href="#">立即申请</a></span>
+							</div>
+							
+		                </div>
+					</div>	
+					
+					<div class="umbrella icon mix_all wow bounceIn" data-wow-delay="0.4s" data-cat="icon" style="display: inline-block; opacity: 1;">
+						<div class="umbrella-text">
+                            <div class="umbrella-top-text">						
+								<h4>中融信托2号</h4>
+								<h3><span style="font-size:25px;font-weight:600;" >10</span>.80%起</h3>
+								<p><span>门槛：100万起</span> &diams; <span>杠杆比例： 1:2</span></p>
+								<p class="divider"></p>
+								<span><a href="#">详情</a><a href="#">立即申请</a></span>
+							</div>
+							
+		                </div>
+					</div>
+					
+					<div class="umbrella icon mix_all wow bounceIn" data-wow-delay="0.4s" data-cat="icon" style="display: inline-block; opacity: 1;">
+						<div class="umbrella-text">
+                            <div class="umbrella-top-text">						
+								<h4>华润信托2号</h4>
+								<h3><span style="font-size:25px;font-weight:600;" >8</span>.80%起</h3>
+								<p><span>门槛：200万起</span> &diams; <span>杠杆比例： 1:3</span></p>
+								<p class="divider"></p>
+								<span><a href="#">详情</a><a href="#">立即申请</a></span>
+							</div>
+							
+		                </div>
+					</div>					
+				</div>
+   							
+			</div>
+
+				<div class="clearfix"></div>
+		</div>
+    	<div class="jiejin" id="jiejin">
+    		<img src="./images/jiejin-top.png" style="margin:0 200px;">
+   				<div role="tabpanel" style="padding-left:20px;">
+
+  					<!-- Nav tabs -->
+  					<ul class="nav nav-tabs" role="tablist">
+    				<li role="presentation" ><a href="#profile-jiejin" aria-controls="profile" role="tab" data-toggle="tab"  style="background-color:transparent;">简介</a></li>
+    				<li role="presentation" class="active"><a href="#steps-jiejin" aria-controls="steps" role="tab" data-toggle="tab"  style="background-color:transparent;">操作流程</a></li>
+  					</ul>
+
+  					<!-- Tab panes -->
+  					<div class="tab-content" style="min-height:130px;">
+    				<div role="tabpanel" class="tab-pane fade in " id="profile-jiejin">
+    				<p>大小非，即持有上市公司未流通股票的大小股东。大小非解禁，即其所持有的股票可以上市流通，在二级市场（股票市场）里面出售套现。一般持有这些未流通股票的大小股东的持股数量较多，如果直接自己进行二级市场套现，很容易就会把股价打下去从而损失部分溢价，同时还需要向所在地政府交纳20%（25%）的个人（企业）所得税，假如按解禁市值一亿来算，就需要缴纳个人2000万（企业2500万）的税款。如果通过深资本，为你量身定制解禁方案（提供接盘资金以及合法税收返还），以上1个亿的解禁市值最少都可以帮你节省1000万左右。</p>
+    			</div>
+    		<div role="tabpanel" class="tab-pane fade in active step" id="steps-jiejin">
+            		<ul>
+            			<li><span><img src="./images/step-1.png">提交申请</span></li>
+    					<li><span><img src="./images/step-2.png">深资本审核</span></li>
+    					<li><span><img src="./images/step-3.png">签署合作协议</span></li>
+    					<li><span><img src="./images/step-4.png">转户到特定券商营业部</span></li>
+    					<li><span><img src="./images/step-5.png">接盘方操作接盘</span></li>
+    					<li><span><img src="./images/step-6.png">返还税点</span></li>
+            		</ul>	
+
+					<div class="clearfix"></div>
+        		</div>
+  			</div>
+
+  		</div>
+  		<div class="learnmore">
+  			<a href="#" class="btn btn-primary btn-lg" role="button">立即申请</a>
+  		</div>
+	</div>
+    		<div class="stock" id="stock">
+
+    			<img src="./images/stock-top.png" style="margin:0 200px;">
+   				<div role="tabpanel" style="padding-left:20px;">
+
+  					<!-- Nav tabs -->
+  					<ul class="nav nav-tabs" role="tablist">
+    				<li role="presentation"><a href="#profile-stock" aria-controls="profile" role="tab" data-toggle="tab"  style="background-color:transparent;">简介</a></li>
+    				<li role="presentation" class="active"><a href="#steps-stock" aria-controls="steps" role="tab" data-toggle="tab"  style="background-color:transparent;">操作流程</a></li>
+  					</ul>
+
+  					<!-- Tab panes -->
+  					<div class="tab-content" style="min-height:140px;">
+    				<div role="tabpanel" class="tab-pane fade in" id="profile-stock"  style="line-height: 1.6em;">
+    				<p>机构或个人股东以股票、证券投资基金份额和上市公司可转换债券作质押，从商业银行获得资金的一种贷款方式。股票质押率由贷款人依据被质押的股票质量及借款人的财务和资信状况与借款人商定，但股票质押率最高不能超过60%。通过股票质押所获得的资金用途不限，同时只要借款方在质押合同到期前，通过现金付息或者变卖质押股票付息等方式来还清贷款利息，那么，在股票质押期间所产生的收益将全部属于借款方。</p>
+    			</div>
+    		<div role="tabpanel" class="tab-pane fade in active step" id="steps-stock">
+            		<ul>
+            			<li><span><img src="./images/step-1.png">提交申请</span></li>
+    					<li><span><img src="./images/step-2.png">深资本审核</span></li>
+    					<li><span><img src="./images/step-3.png">签署合作协议</span></li>
+    					<li><span><img src="./images/step-4.png">转户到特定券商营业部</span></li>
+    					<li><span><img src="./images/step-5.png">办理质押登记手续</span></li>
+    					<li><span><img src="./images/step-6.png">银行放款</span></li>
+            		</ul>	
+
+					<div class="clearfix"></div>
+        		</div>
+  			</div>
+
+  		</div>
+  		<div class="learnmore">
+  			<a href="#" class="btn btn-primary btn-lg" role="button">立即申请</a>
+  		</div>
+    </div>
+    	<div class="partners">
+    			<section id="mainfooter">
+			<div class="container-fluid whitebg">
+				<div class="row">
+					<div class="col-lg-12 col-md-12 col-sm-12">
+						<img style="margin:0 auto;padding-top:40px" class="img-responsive" src="./images/partners.png" />
+					</div>
+				</div>
+				<div class="row" style="padding:30px 0">
+					<div class="images col-lg-10 col-sm-10 col-md-10 col-lg-offset-1 col-sm-offset-1 col-md-offset-1">
+						<div class="newslistwraper">
+
+							<div class="newslistwrapper" >
+								<div class="aline" style="height:2px;top:0px; background: rgba(240,240,240,.9);"></div>
+								<div class="aline" style="height:2px;top:2px; background: rgba(240,240,240,.8);"></div>
+								<div class="aline" style="height:2px;top:4px; background: rgba(240,240,240,.7);"></div>
+								<div class="aline" style="height:2px;top:6px; background: rgba(240,240,240,.6);"></div>
+								<div class="aline" style="height:2px;top:8px; background: rgba(240,240,240,.5);"></div>
+								<div class="aline" style="height:2px;top:10px; background: rgba(240,240,240,.4);"></div>
+								<div class="aline" style="height:2px;top:12px; background: rgba(240,240,240,.3);"></div>
+								<div class="aline" style="height:2px;top:14px; background: rgba(240,240,240,.2);"></div>
+								<div class="aline" style="height:2px;top:16px; background: rgba(240,240,240,.1);"></div>
+							 	<div class="newslist" id="newslist">
+							        <ul>
+							            <li><img  class="im" src="./images/newslist.png"  class="img-responsive" /><br><img  class="im" src="./images/newslist.png"  class="img-responsive" /></li> 
+							            <li><img  class="im" src="./images/newslist.png"  class="img-responsive" /><br><img  class="im" src="./images/newslist.png"  class="img-responsive" /></li> 
+							        </ul>
+							    </div>
+							    <div class="aline" style="height:2px;bottom:16px; background: rgba(240,240,240,.1);"></div>
+								<div class="aline" style="height:2px;bottom:14px; background: rgba(240,240,240,.2);"></div>
+								<div class="aline" style="height:2px;bottom:12px; background: rgba(240,240,240,.3);"></div>
+								<div class="aline" style="height:2px;bottom:10px; background: rgba(240,240,240,.4);"></div>
+								<div class="aline" style="height:2px;bottom:8px; background: rgba(240,240,240,.5);"></div>
+								<div class="aline" style="height:2px;bottom:6px; background: rgba(240,240,240,.6);"></div>
+								<div class="aline" style="height:2px;bottom:4px; background: rgba(240,240,240,.7);"></div>
+								<div class="aline" style="height:2px;bottom:2px; background: rgba(240,240,240,.8);"></div>
+								<div class="aline" style="height:2px;bottom:0px; background: rgba(240,240,240,.9);"></div>
+							</div>
+						 							    
+						</div>
+					</div>
+				</div>
+
+			</div>
+		</section><!-- LOGOS END -->
+
+    	</div>
+	</div>
+    <!-- content-section-ends-->
+	<!-- footer-section-starts -->
+	<div class="footer">
+	    <div class="container">
+		    	<div class="footer-list">
+		    	<ul>
+		    		<li><a href="#">关于我们</a></li>
+		    		<li><a href="#">联系我们</a></li>
+		    		<li><a href="#">商务合作</a></li>
+		    		<li class="help-center"><a href="#">帮助中心</a></li>
+		    	</ul>
+		    	</div>
+		    	<div class="clearfix"></div>
+
+		    <div class="copy-rights">
+			    <p>&copy; 2014  All rights  Reserved by &nbsp;<a href="#" target="target_blank">www.shenziben.com</a></p>
+			</div>
+			<div class="footer-social-icons">
+			    <a href="#"><i class="fb"></i></a>
+				<a href="#"><i class="tw"></i></a>
+				<a href="#"><i class="gp"></i></a>
+				<a href="#"><i class="prt"></i></a>
+				<a href="#"><i class="lin"></i></a>
+			</div>
+			<div class="clearfix"></div>
+		</div>
+	</div>
+	<!-- footer-section-ends -->
+	 <!--item-fixed-starts -->
+   <div style="display:none;" id="weixinQR">
+			<div style="width:258px; height:258px;"><img src="./images/qrcode.jpg"/></div>
+		</div>
+ <!--  <div id="item-fixed">
+   		<ul>
+   			<li><a href="#">业务咨询</a></li>
+   			<li><a href="#">业务预约</a></li>
+   			<li><a href="#"><img src="./images/wechat.png" id="weixin"></a></li>
+   		</ul>
+		</div>
+-->		
+   <script type="text/javascript">
+			$(document).ready(function(){
+				$('#weixin').popover({
+					'html':true,
+					'content':$('#weixinQR').html(),
+					'trigger':'hover',
+					'placement':'top'
+				});
+			});
+			</script>
+	<a href="#" id="toTop" style="display: block;"> <span id="toTopHover" style="opacity: 1;"> </span></a>
+	<script type="text/javascript"src="./js/bootstrap.min.js"></script>
+	<script type="text/javascript" src="./js/jquery.kxbdmarquee.js"></script>
+	<script>
+			$("#newslist").kxbdMarquee({
+			direction: "up",
+			isEqual: false,
+			scrollDelay:40
+			});
+			
+	</script>
+</body>
+</html>
