@@ -45,36 +45,79 @@ body{
 .article{
 	text-align: center;
 	color: black;
-	margin-top: 10px;
+	margin-top: 30px;
 	margin-bottom: 10px;
+}
+.article > h1{
+	margin-top: 45px;
+	margin-bottom: 57px;
 }
 .content{
 	margin-top: 20px;
 	font-family: "微软雅黑",georgia,sans-serif;
-	width: 40%;
 	text-align: left;
 	text-indent: 20px;
 }
 .article p,.article li{
 	padding-left: 10px;
 }
+#base-all,#base-ie9,#base-ie8,#base-ie6,#base-ie5,#base-ie,#base-others{
+	width: 60%;
+	float: right;
+}
+#base-ie9,#base-ie8,#base-ie6,#base-ie5,#base-ie,#base-others{
+	display: none;
+}
+.conclusion{
+	font-family: georgia;
+	list-style-type: none;
+	float: left;
+	display: inline-block;
+	color: black;
+	font-size: 15px;
+	border: solid 1px #F5F5DC;
+	border-radius: 6px;
+	box-shadow: 5px 5px 3px #888888;
+	text-align: left;
+	text-indent: 0;
+	padding: 0;
+	min-height: 250px;
+	opacity: 1;
+	margin-left: 10px;
+}
+.conclusion :first-child {
+	font-family: "微软雅黑";
+	text-align: center;
+	font-size: 18px;
+	background-color: #E6E6FA;
+	padding: 5px;
+}
+#base-others .conclusion{
+	min-height: 120px;
+	min-width: 170px;
+}
+.article a{
+	cursor: pointer;
+}
+.panel {
+	width: 40%;
+	text-indent: 0;
+	text-align: left;
+	float: left;
+}
 /*article ends*/
 /*footer starts*/
 .footer{
 	background-color: rgba(0,0,0,0.9);
-	min-height: 160px;
 }
-.footer img{
-	position: relative;
-	top: 20px;
-	left: 580px;
-	float: left;
-	padding: 20px;
+.footer > .content {
+	margin-left: 500px;
+}
+.footer > .content img{
+
+	padding: 10px;
 }
 .footer p{
-	position: relative;
-	right: 50px;
-	top: 120px;
 	text-align: center;
 	font-size: 20px;
 }
