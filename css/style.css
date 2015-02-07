@@ -105,6 +105,7 @@ body{
 	text-indent: 0;
 	text-align: left;
 	float: left;
+	word-wrap:break-word;
 }
 /*article ends*/
 /*footer starts*/
