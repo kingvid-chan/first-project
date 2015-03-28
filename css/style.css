@@ -124,3 +124,21 @@ body{
 	text-align: center;
 	font-size: 20px;
 }
+
+
+/*jquery-study.html*/
+.wrapper{
+	background: none;
+	color: black;
+}
+.wrapper > ul li,.wrapper + ul li a{
+	list-style: none;
+	text-decoration: none;
+	
+	min-height: 30px;
+}
+.explanation {
+	display: none;
+	min-height: 20px;
+	font-size: 18px;
+}
