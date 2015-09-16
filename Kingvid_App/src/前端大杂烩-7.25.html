@@ -1,0 +1,219 @@
+<html>
+<head>
+  <title>前端大杂烩-7.25</title>
+  <basefont face="微软雅黑" size="2" />
+  <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+  <meta name="exporter-version" content="Evernote Windows/276742; Windows/6.3.9600 (Win64);"/>
+  <style>
+    body, td {
+      font-family: 微软雅黑;
+      font-size: 10pt;
+    }
+  </style>
+</head>
+<body>
+<a name="327"/>
+<h1>前端大杂烩-7.25</h1>
+
+<div>
+<span><span style="word-wrap: break-word; -webkit-nbsp-mode: space; -webkit-line-break: after-white-space;">1、改善性能的注意点：<br/>
+①图片不能太大<br/>
+②用的选择器尽量不要太多，重复的选择器用变量<br/>
+③直接在jq改css属性性能会比addclass低<br/><br/>
+2、on事件<br/>
+     问题描述：向js创建的元素绑定事件</span><div>    </div><div><br/></div><div><span style="word-wrap: break-word; -webkit-nbsp-mode: space; -webkit-line-break: after-white-space;">3、判断元素是否具有某个属性<br/>
+     ①eg:$(this).css(‘display’) == ‘none’<br/><br/>
+4、获取元素的宽度（高度）与获取元素偏移量及获取元素长度的方法的区别：<br/>
+     ①前者：eg：$(window).width();<br/>
+     ②后者：eg：$(‘#container’).offset().left;<br/>
+                    $(‘li’).length;<br/><br/>
+5、移动端的动画卡顿问题</span></div><div>    <a href="http://blog.sina.com.cn/s/blog_3f1fc8950102v0un.html">http://blog.sina.com.cn/s/blog_3f1fc8950102v0un.html</a></div><div><span style="word-wrap: break-word; -webkit-nbsp-mode: space; -webkit-line-break: after-white-space;"><br/><br/>
+6、获取&lt;input type=”file” /&gt;中被选取文件的文件名<br/>
+原理：File对象上有三个属性提供了所包含文件的相关信息:<br/>
+name:文件名,只读字符串,不包含任何路径信息.<br/>
+size：文件大小,单位为字节,只读的64位整数.<br/>
+type：MIME类型,只读字符串,如果类型未知,则返回空字符串.<br/>
+          ①用JQuery: var fileName = $(‘#input_id’).get[0].file[0].name;<br/>
+          ②用JS: var selected_file =document.getElementById('input_id').files[0];<br/></span></div><blockquote style="margin: 0 0 0 40px; border: none; padding: 0px;"><div><span style="word-wrap: break-word; -webkit-nbsp-mode: space; -webkit-line-break: after-white-space;">③在&lt;input type=”file” /&gt;里面添加事件</span></div><div><span style="word-wrap: break-word; -webkit-nbsp-mode: space; -webkit-line-break: after-white-space;">&lt;input type=&quot;file&quot; id=&quot;input&quot; multiple onchange=&quot;getFiles(this.files)&quot;&gt;</span></div><div><span style="word-wrap: break-word; -webkit-nbsp-mode: space; -webkit-line-break: after-white-space;">④var inputElement = document.getElementById(&quot;inputField&quot;);</span></div><div><span style="word-wrap: break-word; -webkit-nbsp-mode: space; -webkit-line-break: after-white-space;">     inputElement.addEventListener(&quot;change&quot;, handleFiles, false);</span></div><div><span style="word-wrap: break-word; -webkit-nbsp-mode: space; -webkit-line-break: after-white-space;">function handleFiles() {</span></div><div><span style="word-wrap: break-word; -webkit-nbsp-mode: space; -webkit-line-break: after-white-space;">     var fileList = this.files;</span></div><div><span style="word-wrap: break-word; -webkit-nbsp-mode: space; -webkit-line-break: after-white-space;">}</span></div></blockquote><div><span style="word-wrap: break-word; -webkit-nbsp-mode: space; -webkit-line-break: after-white-space;"><br/>
+7、在6的基础上，获取或者修改&lt;input type=”text”/&gt;的value值<br/></span></div><blockquote style="margin: 0 0 0 40px; border: none; padding: 0px;"><div><span style="word-wrap: break-word; -webkit-nbsp-mode: space; -webkit-line-break: after-white-space;">获取：var input_value = $(‘#input_id’).val();</span></div><div><span style="word-wrap: break-word; -webkit-nbsp-mode: space; -webkit-line-break: after-white-space;">修改：$(‘#input_id’).val(new_value);</span></div></blockquote><div><span style="word-wrap: break-word; -webkit-nbsp-mode: space; -webkit-line-break: after-white-space;"><br/><br/><br/>
+8、自制幻灯片有感，如图：<b><u>广州瑜君商城</u></b></span></div><div><span style="word-wrap: break-word; -webkit-nbsp-mode: space; -webkit-line-break: after-white-space;"><img src="前端大杂烩-7.25_files/Image.png" type="image/png" style="cursor: default; height: auto;"/><br/>
+①结构：div.carousel &gt; div.wrapper &gt; div.carousel-inner&gt;div.item&gt;img<br/>
+             div.carousel &gt; a.left.carousel-control &amp; a.right.carousel-control //有bootstrap自带的类属性<br/></span></div><blockquote style="margin: 0 0 0 40px; border: none; padding: 0px;"><div><span style="word-wrap: break-word; -webkit-nbsp-mode: space; -webkit-line-break: after-white-space;">.wrapper设置固定width</span></div><div><span style="word-wrap: break-word; -webkit-nbsp-mode: space; -webkit-line-break: after-white-space;">自适应：获取屏幕分辨率的width，根据相应百分比给.item以宽度width，img设置width：100%；</span></div><div><span style="word-wrap: break-word; -webkit-nbsp-mode: space; -webkit-line-break: after-white-space;">产品标签要设置id，例如：p1,p2,p3,p4，注意要按顺序，并且要含数字，同时，要给.item加上对应的产品类别 .p1 , .p2 , .p3 , .p4</span></div><div><span style="word-wrap: break-word; -webkit-nbsp-mode: space; -webkit-line-break: after-white-space;">.carousel利用js来获取.item的数量num，给予适当的width：</span></div><div><span style="word-wrap: break-word; -webkit-nbsp-mode: space; -webkit-line-break: after-white-space;">$(“.item”).width() * num;</span></div></blockquote><div><span style="word-wrap: break-word; -webkit-nbsp-mode: space; -webkit-line-break: after-white-space;">②原理：通过点击左右按钮，使.item隐藏与显现<br/>
+③要达到的效果：<br/>
+1、     实现点击左右按钮时，图片产生左右移动的效果，<br/>
+2、     并且当被显示的三张图片都属于同一类产品时，幻灯片上方的产品标签能自动切换（即颜色变为绿色）；<br/>
+3、     另外，当单独点击产品标签时，该产品图片会出现。<br/>
+steps：<br/>
+1、     实现第一种效果：给按钮添加点击事件，在每次点击时，查询属性display为”none“的.item的个数i，点击左边按钮时，$(.item).eq(i-1).hide(1000);点击右边按钮时，$(.item).eq(i-1).show(1000);<br/>
+2、     实现第二种效果 : 分两种情况处理：左边按钮事件以及右边按钮事件<br/>
+在hide（）的回调函数中，查询属性display为”none“的.item的个数,<br/>
+同理，右边按钮事件，判断依据类似<br/>
+3、     判断是第几个产品“#p“+i<br/>
+所有产品的个数 pNum<br/>
+if (i&gt;1) {<br/>
+var j = i-1;<br/>
+for (;j&gt;0; j--) {<br/>
+$('.p'+j).fadeOut(100);<br/>
+}<br/>
+}    <br/>
+for (; i &lt;= pNum; i++) {<br/>
+$('.p'+i).fadeIn(500);<br/>
+}</span></div><div><span style="word-wrap: break-word; -webkit-nbsp-mode: space; -webkit-line-break: after-white-space;"><br/></span></div><div><span style="word-wrap: break-word; -webkit-nbsp-mode: space; -webkit-line-break: after-white-space;">--&gt;完整代码：</span></div><div><span style="word-wrap: break-word; -webkit-nbsp-mode: space; -webkit-line-break: after-white-space;">          //幻灯片的轮播事件<br/>
+          var i = 0;<br/>
+          var num = windowResize();<br/>
+          //查询幻灯片上方有几个产品标签<br/>
+          var pNum = $('.qw-products &gt; a').length;<br/>
+         <br/>
+          //左右按钮点击事件<br/>
+          var k = 1;<br/>
+          var k0;<br/>
+          $('#p1').addClass('active');<br/>
+          var allHide = false;<br/>
+          $('#carousel-inner-page a.carousel-control').click(function(){<br/>
+               $('#carousel-inner-page .item').each(function(){<br/>
+                    if ($(this).css('display') == 'none') {<br/>
+                         i++;<br/>
+                    }else{<br/>
+                         return;<br/>
+                    }<br/>
+               })<br/>
+               if ($(this).hasClass('left')) {<br/>
+                    if (i &lt;= num-5 &amp;&amp; winWidth &gt; 1700<br/>
+                         || i &lt;= num-4 &amp;&amp; winWidth &gt; 993 &amp;&amp; winWidth &lt;= 1700<br/>
+                         || i &lt;= num-3 &amp;&amp; winWidth &gt; 768 &amp;&amp; winWidth &lt;= 993<br/>
+                         || i &lt;= num-2 &amp;&amp; winWidth &lt;= 768) {<br/>
+                         $('#carousel-inner-page .carousel-inner .item').eq(i).hide(1000,function(){<br/>
+                              $('.p'+k).each(function(){<br/>
+                                        if ($(this).css('display') !== 'none') {<br/>
+                                             return allHide = false;<br/>
+                                        }else{<br/>
+                                             return allHide = true;<br/>
+                                        }<br/>
+                                   })<br/>
+                              if (allHide) {<br/>
+                                   $('.qw-products &gt; a').removeClass('active');<br/>
+                                   ++k;<br/>
+                                   $('#p'+k).addClass('active');<br/>
+                              }<br/>
+                         })<br/>
+                         i = 0;<br/>
+                    }<br/>
+               }else if (i != 0) {<br/>
+                    $('#carousel-inner-page .carousel-inner .item').eq(i-1).show(1000,function(){<br/>
+                         if (k &gt;= 2) {<br/>
+                              k0 = k-1;<br/>
+                              var k1 = 0;<br/>
+                              $('.p'+k0).each(function(){<br/>
+                                   if ($(this).css('display') !== 'none') {<br/>
+                                        ++k1;<br/>
+                                   }<br/>
+                                   if (k1&gt;=4 &amp;&amp; winWidth &gt; 1700<br/>
+                                        || k1&gt;=3 &amp;&amp; winWidth &gt; 993 &amp;&amp; winWidth &lt;= 1700<br/>
+                                        || k1&gt;=2 &amp;&amp; winWidth &gt; 768 &amp;&amp; winWidth &lt;= 993<br/>
+                                        || k1&gt;=1 &amp;&amp; winWidth &lt;= 768) {<br/>
+                                        $('.qw-products &gt; a').removeClass('active');<br/>
+                                        --k;<br/>
+                                        $('#p'+k).addClass('active');<br/>
+                                   }<br/>
+                              })<br/>
+                         }<br/>
+                    })<br/>
+                    i = 0;<br/>
+               }<br/>
+          })<br/>
+          //产品标签点击事件<br/>
+          $('.qw-products &gt; a').click(function(e){<br/>
+               e.preventDefault();<br/>
+               var target = e.target.id;<br/>
+               $('.qw-products &gt; a').removeClass('active');<br/>
+               $('#'+target).addClass('active');<br/>
+               var i = String(target);<br/>
+               i = i[1]<br/>
+               i = parseInt(i);<br/>
+               k = i;<br/>
+               if (i&gt;1) {<br/>
+                    var j = i-1;<br/>
+                    for (;j&gt;0; j--) {<br/>
+                         $('.p'+j).fadeOut(100);<br/>
+                    }<br/>
+               }    <br/>
+               for (; i &lt;= pNum; i++) {<br/>
+                    $('.p'+i).fadeIn(500);<br/>
+               }<br/>
+          })<br/><br/>
+9、css3新属性：<a href="http://blog.csdn.net/xcyuzhen/article/details/7586539" style="color: rgb(0, 0, 0); text-decoration: none; font-family: &apos;Microsoft YaHei&apos;; font-size: 20px; text-align: left; widows: 1; background-color: rgb(255, 255, 255);">box-flex</a></span></div><div><span style="word-wrap: break-word; -webkit-nbsp-mode: space; -webkit-line-break: after-white-space;">如图：<u><b>与你移动端</b></u></span></div><div><span style="word-wrap: break-word; -webkit-nbsp-mode: space; -webkit-line-break: after-white-space;"><img src="前端大杂烩-7.25_files/Image [1].png" type="image/png" style="cursor: default; height: auto;"/></span></div><div><span style="word-wrap: break-word; -webkit-nbsp-mode: space; -webkit-line-break: after-white-space;">有兼容性问题，ie9及以下不兼容，不过移动端浏览器兼容性好，可以考虑使用</span></div><div><span style="word-wrap: break-word; -webkit-nbsp-mode: space; -webkit-line-break: after-white-space;"><a href="http://blog.csdn.net/xcyuzhen/article/details/7586539">http://blog.csdn.net/xcyuzhen/article/details/7586539</a></span></div><div><span style="word-wrap: break-word; -webkit-nbsp-mode: space; -webkit-line-break: after-white-space;"><br/></span></div><div><span style="word-wrap: break-word; -webkit-nbsp-mode: space; -webkit-line-break: after-white-space;">10、css3新属性  3D旋转效果  有兼容性问题，IE9及以下不兼容</span></div><div><span style="word-wrap: break-word; -webkit-nbsp-mode: space; -webkit-line-break: after-white-space;">--》立体三菱转效果，如图：与你首页 http://scutbq11.gotoip2.com/yuni/</span></div><div><span style="word-wrap: break-word; -webkit-nbsp-mode: space; -webkit-line-break: after-white-space;">由于IE不支持<span style="color: rgb(34, 34, 34); font-family: Consolas, &apos;Lucida Console&apos;, monospace; font-size: 12px; text-align: left; widows: 1;">transform-style：</span><span style="color: rgb(34, 34, 34); font-family: Consolas, &apos;Lucida Console&apos;, monospace; font-size: 12px; text-align: left; widows: 1;">preserve-3d;属性，所以在立体转的效果处理上只能考虑分别转动两个div，并使其看起来有立体旋转的效果</span></span></div><div><span style="color: rgb(34, 34, 34); font-family: Consolas, &apos;Lucida Console&apos;, monospace; font-size: 12px; text-align: left; widows: 1;"><b><u>html代码：</u></b></span></div><div>&lt;div class=&quot;rotate-holder rotateY&quot;&gt;<br/>
+      &lt;div class=&quot;rotate-inner&quot;&gt;<br/>
+               &lt;div class=&quot;rotate-inner-first&quot;&gt;&lt;img src=&quot;images/hand.png&quot; /&gt;&lt;/div&gt;<br/>
+              &lt;div class=&quot;rotate-inner-container orange&quot;&gt;<br/>
+                      &lt;p&gt;我要出力&lt;/p&gt;<br/>
+             &lt;/div&gt;<br/>
+      &lt;/div&gt;<br/>
+ &lt;/div&gt;     <br/><u><b>css代码：</b></u></div><div>.rotate-holder:hover.rotateY .rotate-inner-first{<br/>
+     transform:rotateY(-90deg);<br/>
+     -webkit-transform:rotateY(-90deg);<br/>
+     -moz-transform:rotateY(-90deg);<br/>
+     -ms-transform:rotateY(-90deg);<br/>
+     transition: <b>transform 400ms cubic-bezier(0.19,1,.22,1),opacity 100ms 200ms cubic-bezier(0.19,1,.22,1);</b> <b>//加粗的代码作用是为了使两个div的旋转看起来更近似于3d旋转</b><br/>
+     -webkit-transition: -webkit-transform 400ms cubic-bezier(0.19,1,.22,1),opacity 100ms 200ms cubic-bezier(0.19,1,.22,1);<br/>
+     -moz-transition: -moz-transform 400ms cubic-bezier(0.19,1,.22,1),opacity 100ms 200ms cubic-bezier(0.19,1,.22,1);<br/>
+     -mstransition: -ms-transform 400ms cubic-bezier(0.19,1,.22,1),opacity 100ms 200ms cubic-bezier(0.19,1,.22,1);<br/>
+     opacity: 0;<br/>
+}<br/>
+.rotate-holder:hover.rotateY .rotate-inner-container{<br/>
+     transform:rotateY(0deg);<br/>
+     -webkit-transform:rotateY(0deg);<br/>
+     -moz-transform:rotateY(0deg);<br/>
+     -ms-transform:rotateY(0deg);<br/>
+     transition: <b>transform 400ms cubic-bezier(0.19,1,.22,1),opacity 100ms cubic-bezier(0.19,1,.22,1)</b>;<br/>
+     -webkit-transition: -webkit-transform 400ms cubic-bezier(0.19,1,.22,1),opacity 100ms cubic-bezier(0.19,1,.22,1);<br/>
+     -moz-transition: -moz-transform 400ms cubic-bezier(0.19,1,.22,1),opacity 100ms cubic-bezier(0.19,1,.22,1);<br/>
+     -mstransition: -ms-transform 400ms cubic-bezier(0.19,1,.22,1),opacity 100ms cubic-bezier(0.19,1,.22,1);<br/>
+     opacity: 1;<br/>
+}<br/>
+.rotateY .rotate-inner-container{<br/>
+     transform:rotateY(-90deg);<br/>
+     -webkit-transform:rotateY(-90deg);<br/>
+     -moz-transform:rotateY(-90deg);<br/>
+     -ms-transform:rotateY(-90deg);<br/>
+     transition: transform 400ms cubic-bezier(0.19,1,.22,1),opacity 100ms 200ms cubic-bezier(0.19,1,.22,1);<br/>
+     -webkit-transition: <b>-webkit-transform 400ms cubic-bezier(0.19,1,.22,1),opacity 100ms 200ms cubic-bezier(0.19,1,.22,1);</b><br/>
+     -moz-transition: -moz-transform 400ms cubic-bezier(0.19,1,.22,1),opacity 100ms 200ms cubic-bezier(0.19,1,.22,1);<br/>
+     -mstransition: -ms-transform 400ms cubic-bezier(0.19,1,.22,1),opacity 100ms 200ms cubic-bezier(0.19,1,.22,1);<br/>
+     opacity: 0;<br/>
+}<br/>
+.rotateY .rotate-inner-first{<br/>
+     transition: <b>transform 400ms cubic-bezier(0.19,1,.22,1),opacity 100ms cubic-bezier(0.19,1,.22,1)</b>;<br/>
+     -webkit-transition: -webkit-transform 400ms cubic-bezier(0.19,1,.22,1),opacity 100ms cubic-bezier(0.19,1,.22,1);<br/>
+     -moz-transition: -moz-transform 400ms cubic-bezier(0.19,1,.22,1),opacity 100ms cubic-bezier(0.19,1,.22,1);<br/>
+     -mstransition: -ms-transform 400ms cubic-bezier(0.19,1,.22,1),opacity 100ms cubic-bezier(0.19,1,.22,1);<br/>
+     opacity: 1;<br/>
+}</div><div><b><u>确定旋转基点的jquery设置：</u></b></div><div>function windowResize(){<br/>
+          //窗口分辨率变化时，自适应<br/>
+               var imgWidth = 0.5*$('.hidden-xs img').eq(0).width();<br/>
+               var bottomImgHeight = 0.5*$('#bottom-img').height();<br/>
+               $('.rotateY .rotate-inner-first').css({<br/>
+                    'transform-origin':imgWidth+'px 0px '+-imgWidth+'px',<br/>
+                    '-webkit-transform-origin':imgWidth+'px 0px '+-imgWidth+'px',<br/>
+                    '-moz-transform-origin':imgWidth+'px 0px '+-imgWidth+'px',<br/>
+                    '-ms-transform-origin':imgWidth+'px 0px '+-imgWidth+'px'<br/>
+               })<br/>
+               $('.rotateY .rotate-inner-container').css({<br/>
+                    'transform-origin':imgWidth+'px 0px '+imgWidth+'px',<br/>
+                    '-webkit-transform-origin':imgWidth+'px 0px '+imgWidth+'px',<br/>
+                    '-moz-transform-origin':imgWidth+'px 0px '+imgWidth+'px',<br/>
+                    '-ms-transform-origin':imgWidth+'px 0px '+imgWidth+'px'<br/>
+               })<br/>
+               $('.rotateX .rotate-inner-first').css({<br/>
+                    'transform-origin':'0px '+bottomImgHeight+'px '+-bottomImgHeight+'px',<br/>
+                    '-webkit-transform-origin':'0px '+bottomImgHeight+'px '+-bottomImgHeight+'px',<br/>
+                    '-moz-transform-origin':'0px '+bottomImgHeight+'px '+-bottomImgHeight+'px',<br/>
+                    '-ms-transform-origin':'0px '+bottomImgHeight+'px '+-bottomImgHeight+'px'<br/>
+               })<br/>
+               $('.rotateX .rotate-inner-container').css({<br/>
+                    'transform-origin':'0px '+bottomImgHeight+'px '+-bottomImgHeight+'px',<br/>
+                    '-webkit-transform-origin':'0px '+bottomImgHeight+'px '+-bottomImgHeight+'px',<br/>
+                    '-moz-transform-origin':'0px '+bottomImgHeight+'px '+-bottomImgHeight+'px',<br/>
+                    '-ms-transform-origin':'0px '+bottomImgHeight+'px '+-bottomImgHeight+'px'<br/>
+               })<br/><br/>
+     }</div><div><br/></div><div><br/></div><div>12、制作js日历，<b>与你</b>PC</div><div><img src="前端大杂烩-7.25_files/Image [2].png" type="image/png" style="cursor: default; height: auto;"/></div></span>
+</div></body></html> 

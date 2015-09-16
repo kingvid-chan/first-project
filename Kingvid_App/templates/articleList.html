@@ -1,0 +1,3 @@
+<ul ui-view="artList" class="artList_wrapper" ng-controller="artListCtrl" ng-repeat="item in articleList">
+	<li><a href="'../src/'+{{articleList.name}}+'.html'">{{articleList.name}}</a></li>
+</ul>

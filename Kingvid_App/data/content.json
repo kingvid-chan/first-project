@@ -1,0 +1,15 @@
+[{
+    "articleId":"1",
+    "index": "1",
+    "name": "...",
+    "author": "kingvid",
+    "pubTime": "2014-01-01",
+    "price":"35"
+}, {
+    "bookId":"2",
+    "index": "2",
+    "name": "...",
+    "author": "kingvid",
+    "pubTime": "2014-01-01",
+    "price":"35"
+}
