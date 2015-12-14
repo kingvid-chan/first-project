@@ -1,0 +1,670 @@
+<!DOCTYPE html>
+<html lang="zh-cn" class="no-js">
+	<head>
+		<meta http-equiv="Content-Type">
+		<meta content="text/html; charset=utf-8">
+		<meta charset="utf-8">
+		<title>淘淘金，每天闯十关</title>		
+		<meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no">
+		<meta name="format-detection" content="telephone=no">
+		<meta name="format-detection" content="email=no">        
+        <link rel="stylesheet" type="text/css" href="css/load.css" /> 
+		<link rel="stylesheet" type="text/css" href="css/index.css" />
+		<link rel="stylesheet" type="text/css" href="css/animations.css" />
+	</head>
+	<body>
+
+		<div id="content">
+			<div class="moment_share hidden">
+				<img src="./images/guide.png" />
+				<a id="share_back">返回</a>
+			</div>
+			<div class="page lead" id="lead">
+				<p><span id="process">0</span>%</p>
+				<img src="images/lead.jpg">
+			</div>
+			<div class="page index hide" id="index">
+				<div class="wrap">
+					<img class="title" src="./images/index_title.png" />
+					<img class="page-moveFromRight page-delay300 run_man" src="./images/index_run.png" />
+                    <img class="page-moveCircle page-delay600 index_btn" src="./images/index_btn.png" />
+				</div>
+			</div>
+			<div class="page page-1-1 page-current answer hide" id="qa">
+				<div class="wrap">
+                    <div class="level_title page-moveScale">
+                    	<p>第1关</p>
+                    	<img src="images/level.png" class="img_level page-delay300" />
+                    </div>
+                    <div class="q_content">
+                    	<img src="images/title01.png" class="img_question page-delay300" />
+                    	<p><span></span></p>
+                    	<img src="images/title03.png" class="img_question page-delay300" />
+                    </div>
+                    <ul class="box-wrapper page-moveScale">
+                    	<li class="key"></li>
+                    	<li class="key"></li>
+                    	<li class="key"></li>
+                    	<li class="key"></li>
+                    	<li class="key"></li>
+                    	<li class="key"></li>
+                    	<li class="key"></li>
+                    </ul>
+                    <div class="select_answer page-moveFromBottomFade">
+                    	<p>答案贴士：</p>
+                    	<ul>
+	                    	<li></li>
+	                    	<li></li>
+	                    	<li></li>
+	                    	<li></li>
+	                    	<li></li>
+	                    	<li></li>
+	                    	<li></li>
+	                    	<li></li>
+	                    	<li></li>
+	                    	<li></li>
+	                    	<li></li>
+	                    	<li></li>
+	                    </ul>
+                    </div>
+				</div>
+                <img src="images/submit.png" class="img_submit page-moveFromBottomFade" />
+			</div>
+			<div class="page page-2-1 hide right hidden">
+				<div class="wrap">
+					<img class="page-moveFromBottom man" src="./images/success02.png" />
+					<img class="page-moveFromBottom modal" src="./images/success_modal.png" />
+					<img class="page-moveScale page-delay1200 paper" src="./images/paperflower.png" />
+					<img class="page-moveScale next page-delay900" src="./images/next.png" />
+					<img class="page-moveScale page-delay900 share" src="./images/share.png" />
+ 				</div>
+			</div>
+			<div class="page page-2-1 hide wrong hidden">
+				<div class="wrap">
+					<div class="page-moveFromBottom true_answer">
+						<img class="modal" src="./images/wrong_modal01.png" />
+						<p><span>很遗憾，<br>你答错了！<br>正确答案是：瓦斯外泄</span></p>
+						<img src="./images/wrong_modal03.png" />
+					</div>
+					<img class="page-moveScale next page-delay300" src="./images/next.png" />
+					<img class="page-moveScale page-delay300 share" src="./images/share.png" />
+ 				</div>
+			</div>
+			<div class="page page-3-1 answer hide ">
+				<div class="wrap">
+                    <div class="level_title page-moveScale">
+                    	<p>第2关</p>
+                    	<img src="images/level.png" class="img_level page-delay300" />
+                    </div>
+                    <div class="q_content">
+                    	<img src="images/title01.png" class="img_question page-delay300" />
+                    	<p><span></span></p>
+                    	<img src="images/title03.png" class="img_question page-delay300" />
+                    </div>
+                    <ul class="box-wrapper page-moveScale">
+                    	<li class="key"></li>
+                    	<li class="key"></li>
+                    	<li class="key"></li>
+                    	<li class="key"></li>
+                    	<li class="key"></li>
+                    	<li class="key"></li>
+                    	<li class="key"></li>
+                    </ul>
+                    <div class="select_answer page-moveFromBottomFade">
+                    	<p>答案贴士：</p>
+                    	<ul>
+	                    	<li></li>
+	                    	<li></li>
+	                    	<li></li>
+	                    	<li></li>
+	                    	<li></li>
+	                    	<li></li>
+	                    	<li></li>
+	                    	<li></li>
+	                    	<li></li>
+	                    	<li></li>
+	                    	<li></li>
+	                    	<li></li>
+	                    </ul>
+                    </div>
+				</div>
+                <img src="images/submit.png" class="img_submit page-moveFromBottomFade" />
+			</div>
+			<div class="page page-4-1 hide right hidden">
+				<div class="wrap">
+					<img class="page-moveFromBottom man" src="./images/success02.png" />
+					<img class="page-moveFromBottom modal" src="./images/success_modal.png" />
+					<img class="page-moveScale page-delay1200 paper" src="./images/paperflower.png" />
+					<img class="page-moveScale next page-delay900" src="./images/next.png" />
+					<img class="page-moveScale page-delay900 share" src="./images/share.png" />
+ 				</div>
+			</div>
+			<div class="page page-4-1 hide wrong hidden">
+				<div class="wrap">
+					<div class="page-moveFromBottom true_answer">
+						<img class="modal" src="./images/wrong_modal01.png" />
+						<p><span>很遗憾，<br>你答错了！<br>正确答案是：瓦斯外泄</span></p>
+						<img src="./images/wrong_modal03.png" />
+					</div>
+					<img class="page-moveScale next page-delay300" src="./images/next.png" />
+					<img class="page-moveScale page-delay300 share" src="./images/share.png" />
+ 				</div>
+			</div>
+			<div class="page page-5-1 answer hide ">
+				<div class="wrap">
+                    <div class="level_title page-moveScale">
+                    	<p>第3关</p>
+                    	<img src="images/level.png" class="img_level page-delay300" />
+                    </div>
+                    <div class="q_content">
+                    	<img src="images/title01.png" class="img_question page-delay300" />
+                    	<p><span></span></p>
+                    	<img src="images/title03.png" class="img_question page-delay300" />
+                    </div>
+                    <ul class="box-wrapper page-moveScale">
+                    	<li class="key"></li>
+                    	<li class="key"></li>
+                    	<li class="key"></li>
+                    	<li class="key"></li>
+                    	<li class="key"></li>
+                    	<li class="key"></li>
+                    	<li class="key"></li>
+                    </ul>
+                    <div class="select_answer page-moveFromBottomFade">
+                    	<p>答案贴士：</p>
+                    	<ul>
+	                    	<li></li>
+	                    	<li></li>
+	                    	<li></li>
+	                    	<li></li>
+	                    	<li></li>
+	                    	<li></li>
+	                    	<li></li>
+	                    	<li></li>
+	                    	<li></li>
+	                    	<li></li>
+	                    	<li></li>
+	                    	<li></li>
+	                    </ul>
+                    </div>
+				</div>
+                <img src="images/submit.png" class="img_submit page-moveFromBottomFade" />
+			</div>
+			<div class="page page-6-1 hide right hidden">
+				<div class="wrap">
+					<img class="page-moveFromBottom man" src="./images/success02.png" />
+					<img class="page-moveFromBottom modal" src="./images/success_modal.png" />
+					<img class="page-moveScale page-delay1200 paper" src="./images/paperflower.png" />
+					<img class="page-moveScale next page-delay900" src="./images/next.png" />
+					<img class="page-moveScale page-delay900 share" src="./images/share.png" />
+ 				</div>
+			</div>
+			<div class="page page-6-1 hide wrong hidden">
+				<div class="wrap">
+					<div class="page-moveFromBottom true_answer">
+						<img class="modal" src="./images/wrong_modal01.png" />
+						<p><span>很遗憾，<br>你答错了！<br>正确答案是：瓦斯外泄</span></p>
+						<img src="./images/wrong_modal03.png" />
+					</div>
+					<img class="page-moveScale next page-delay300" src="./images/next.png" />
+					<img class="page-moveScale page-delay300 share" src="./images/share.png" />
+ 				</div>
+			</div>
+			<div class="page page-7-1 answer hide ">
+				<div class="wrap">
+                    <div class="level_title page-moveScale">
+                    	<p>第4关</p>
+                    	<img src="images/level.png" class="img_level page-delay300" />
+                    </div>
+                    <div class="q_content">
+                    	<img src="images/title01.png" class="img_question page-delay300" />
+                    	<p><span></span></p>
+                    	<img src="images/title03.png" class="img_question page-delay300" />
+                    </div>
+                    <ul class="box-wrapper page-moveScale">
+                    	<li class="key"></li>
+                    	<li class="key"></li>
+                    	<li class="key"></li>
+                    	<li class="key"></li>
+                    	<li class="key"></li>
+                    	<li class="key"></li>
+                    	<li class="key"></li>
+                    </ul>
+                    <div class="select_answer page-moveFromBottomFade">
+                    	<p>答案贴士：</p>
+                    	<ul>
+	                    	<li></li>
+	                    	<li></li>
+	                    	<li></li>
+	                    	<li></li>
+	                    	<li></li>
+	                    	<li></li>
+	                    	<li></li>
+	                    	<li></li>
+	                    	<li></li>
+	                    	<li></li>
+	                    	<li></li>
+	                    	<li></li>
+	                    </ul>
+                    </div>
+				</div>
+                <img src="images/submit.png" class="img_submit page-moveFromBottomFade" />
+			</div>
+			<div class="page page-8-1 hide right hidden">
+				<div class="wrap">
+					<img class="page-moveFromBottom man" src="./images/success02.png" />
+					<img class="page-moveFromBottom modal" src="./images/success_modal.png" />
+					<img class="page-moveScale page-delay1200 paper" src="./images/paperflower.png" />
+					<img class="page-moveScale next page-delay900" src="./images/next.png" />
+					<img class="page-moveScale page-delay900 share" src="./images/share.png" />
+ 				</div>
+			</div>
+			<div class="page page-8-1 hide wrong hidden">
+				<div class="wrap">
+					<div class="page-moveFromBottom true_answer">
+						<img class="modal" src="./images/wrong_modal01.png" />
+						<p><span>很遗憾，<br>你答错了！<br>正确答案是：瓦斯外泄</span></p>
+						<img src="./images/wrong_modal03.png" />
+					</div>
+					<img class="page-moveScale next page-delay300" src="./images/next.png" />
+					<img class="page-moveScale page-delay300 share" src="./images/share.png" />
+ 				</div>
+			</div>
+			<div class="page page-9-1 answer hide ">
+				<div class="wrap">
+                    <div class="level_title page-moveScale">
+                    	<p>第5关</p>
+                    	<img src="images/level.png" class="img_level page-delay300" />
+                    </div>
+                    <div class="q_content">
+                    	<img src="images/title01.png" class="img_question page-delay300" />
+                    	<p><span></span></p>
+                    	<img src="images/title03.png" class="img_question page-delay300" />
+                    </div>
+                    <ul class="box-wrapper page-moveScale">
+                    	<li class="key"></li>
+                    	<li class="key"></li>
+                    	<li class="key"></li>
+                    	<li class="key"></li>
+                    	<li class="key"></li>
+                    	<li class="key"></li>
+                    	<li class="key"></li>
+                    </ul>
+                    <div class="select_answer page-moveFromBottomFade">
+                    	<p>答案贴士：</p>
+                    	<ul>
+	                    	<li></li>
+	                    	<li></li>
+	                    	<li></li>
+	                    	<li></li>
+	                    	<li></li>
+	                    	<li></li>
+	                    	<li></li>
+	                    	<li></li>
+	                    	<li></li>
+	                    	<li></li>
+	                    	<li></li>
+	                    	<li></li>
+	                    </ul>
+                    </div>
+				</div>
+                <img src="images/submit.png" class="img_submit page-moveFromBottomFade" />
+			</div>
+			<div class="page page-10-1 hide right hidden">
+				<div class="wrap">
+					<img class="page-moveFromBottom man" src="./images/success02.png" />
+					<img class="page-moveFromBottom modal" src="./images/success_modal.png" />
+					<img class="page-moveScale page-delay1200 paper" src="./images/paperflower.png" />
+					<img class="page-moveScale next page-delay900" src="./images/next.png" />
+					<img class="page-moveScale page-delay900 share" src="./images/share.png" />
+ 				</div>
+			</div>
+			<div class="page page-10-1 hide wrong hidden">
+				<div class="wrap">
+					<div class="page-moveFromBottom true_answer">
+						<img class="modal" src="./images/wrong_modal01.png" />
+						<p><span>很遗憾，<br>你答错了！<br>正确答案是：瓦斯外泄</span></p>
+						<img src="./images/wrong_modal03.png" />
+					</div>
+					<img class="page-moveScale next page-delay300" src="./images/next.png" />
+					<img class="page-moveScale page-delay300 share" src="./images/share.png" />
+ 				</div>
+			</div>
+			<div class="page page-11-1 answer hide ">
+				<div class="wrap">
+                    <div class="level_title page-moveScale">
+                    	<p>第6关</p>
+                    	<img src="images/level.png" class="img_level page-delay300" />
+                    </div>
+                    <div class="q_content">
+                    	<img src="images/title01.png" class="img_question page-delay300" />
+                    	<p><span></span></p>
+                    	<img src="images/title03.png" class="img_question page-delay300" />
+                    </div>
+                    <ul class="box-wrapper page-moveScale">
+                    	<li class="key"></li>
+                    	<li class="key"></li>
+                    	<li class="key"></li>
+                    	<li class="key"></li>
+                    	<li class="key"></li>
+                    	<li class="key"></li>
+                    	<li class="key"></li>
+                    </ul>
+                    <div class="select_answer page-moveFromBottomFade">
+                    	<p>答案贴士：</p>
+                    	<ul>
+	                    	<li></li>
+	                    	<li></li>
+	                    	<li></li>
+	                    	<li></li>
+	                    	<li></li>
+	                    	<li></li>
+	                    	<li></li>
+	                    	<li></li>
+	                    	<li></li>
+	                    	<li></li>
+	                    	<li></li>
+	                    	<li></li>
+	                    </ul>
+                    </div>
+				</div>
+                <img src="images/submit.png" class="img_submit page-moveFromBottomFade" />
+			</div>
+			<div class="page page-12-1 hide right hidden">
+				<div class="wrap">
+					<img class="page-moveFromBottom man" src="./images/success02.png" />
+					<img class="page-moveFromBottom modal" src="./images/success_modal.png" />
+					<img class="page-moveScale page-delay1200 paper" src="./images/paperflower.png" />
+					<img class="page-moveScale next page-delay900" src="./images/next.png" />
+					<img class="page-moveScale page-delay900 share" src="./images/share.png" />
+ 				</div>
+			</div>
+			<div class="page page-12-1 hide wrong hidden">
+				<div class="wrap">
+					<div class="page-moveFromBottom true_answer">
+						<img class="modal" src="./images/wrong_modal01.png" />
+						<p><span>很遗憾，<br>你答错了！<br>正确答案是：瓦斯外泄</span></p>
+						<img src="./images/wrong_modal03.png" />
+					</div>
+					<img class="page-moveScale next page-delay300" src="./images/next.png" />
+					<img class="page-moveScale page-delay300 share" src="./images/share.png" />
+ 				</div>
+			</div>
+			<div class="page page-13-1 answer hide ">
+				<div class="wrap">
+                    <div class="level_title page-moveScale">
+                    	<p>第7关</p>
+                    	<img src="images/level.png" class="img_level page-delay300" />
+                    </div>
+                   	<div class="q_content">
+                    	<img src="images/title01.png" class="img_question page-delay300" />
+                    	<p><span></span></p>
+                    	<img src="images/title03.png" class="img_question page-delay300" />
+                    </div>
+                    <ul class="box-wrapper page-moveScale">
+                    	<li class="key"></li>
+                    	<li class="key"></li>
+                    	<li class="key"></li>
+                    	<li class="key"></li>
+                    	<li class="key"></li>
+                    	<li class="key"></li>
+                    	<li class="key"></li>
+                    </ul>
+                    <div class="select_answer page-moveFromBottomFade">
+                    	<p>答案贴士：</p>
+                    	<ul>
+	                    	<li></li>
+	                    	<li></li>
+	                    	<li></li>
+	                    	<li></li>
+	                    	<li></li>
+	                    	<li></li>
+	                    	<li></li>
+	                    	<li></li>
+	                    	<li></li>
+	                    	<li></li>
+	                    	<li></li>
+	                    	<li></li>
+	                    </ul>
+                    </div>
+				</div>
+                <img src="images/submit.png" class="img_submit page-moveFromBottomFade" />
+			</div>
+			<div class="page page-14-1 hide right hidden">
+				<div class="wrap">
+					<img class="page-moveFromBottom man" src="./images/success02.png" />
+					<img class="page-moveFromBottom modal" src="./images/success_modal.png" />
+					<img class="page-moveScale page-delay1200 paper" src="./images/paperflower.png" />
+					<img class="page-moveScale next page-delay900" src="./images/next.png" />
+					<img class="page-moveScale page-delay900 share" src="./images/share.png" />
+ 				</div>
+			</div>
+			<div class="page page-14-1 hide wrong hidden">
+				<div class="wrap">
+					<div class="page-moveFromBottom true_answer">
+						<img class="modal" src="./images/wrong_modal01.png" />
+						<p><span>很遗憾，<br>你答错了！<br>正确答案是：瓦斯外泄</span></p>
+						<img src="./images/wrong_modal03.png" />
+					</div>
+					<img class="page-moveScale next page-delay300" src="./images/next.png" />
+					<img class="page-moveScale page-delay300 share" src="./images/share.png" />
+ 				</div>
+			</div>
+			<div class="page page-15-1 answer hide ">
+				<div class="wrap">
+                    <div class="level_title page-moveScale">
+                    	<p>第8关</p>
+                    	<img src="images/level.png" class="img_level page-delay300" />
+                    </div>
+                    <div class="q_content">
+                    	<img src="images/title01.png" class="img_question page-delay300" />
+                    	<p><span></span></p>
+                    	<img src="images/title03.png" class="img_question page-delay300" />
+                    </div>
+                    <ul class="box-wrapper page-moveScale">
+                    	<li class="key"></li>
+                    	<li class="key"></li>
+                    	<li class="key"></li>
+                    	<li class="key"></li>
+                    	<li class="key"></li>
+                    	<li class="key"></li>
+                    	<li class="key"></li>
+                    </ul>
+                    <div class="select_answer page-moveFromBottomFade">
+                    	<p>答案贴士：</p>
+                    	<ul>
+	                    	<li></li>
+	                    	<li></li>
+	                    	<li></li>
+	                    	<li></li>
+	                    	<li></li>
+	                    	<li></li>
+	                    	<li></li>
+	                    	<li></li>
+	                    	<li></li>
+	                    	<li></li>
+	                    	<li></li>
+	                    	<li></li>
+	                    </ul>
+                    </div>
+				</div>
+               	<img src="images/submit.png" class="img_submit page-moveFromBottomFade" />
+			</div>
+			<div class="page page-16-1 hide right hidden">
+				<div class="wrap">
+					<img class="page-moveFromBottom man" src="./images/success02.png" />
+					<img class="page-moveFromBottom modal" src="./images/success_modal.png" />
+					<img class="page-moveScale page-delay1200 paper" src="./images/paperflower.png" />
+					<img class="page-moveScale next page-delay900" src="./images/next.png" />
+					<img class="page-moveScale page-delay900 share" src="./images/share.png" />
+ 				</div>
+			</div>
+			<div class="page page-16-1 hide wrong hidden">
+				<div class="wrap">
+					<div class="page-moveFromBottom true_answer">
+						<img class="modal" src="./images/wrong_modal01.png" />
+						<p><span>很遗憾，<br>你答错了！<br>正确答案是：瓦斯外泄</span></p>
+						<img src="./images/wrong_modal03.png" />
+					</div>
+					<img class="page-moveScale next page-delay300" src="./images/next.png" />
+					<img class="page-moveScale page-delay300 share" src="./images/share.png" />
+ 				</div>
+			</div>
+			<div class="page page-17-1 answer hide ">
+				<div class="wrap">
+                    <div class="level_title page-moveScale">
+                    	<p>第9关</p>
+                    	<img src="images/level.png" class="img_level page-delay300" />
+                    </div>
+                    <div class="q_content">
+                    	<img src="images/title01.png" class="img_question page-delay300" />
+                    	<p><span></span></p>
+                    	<img src="images/title03.png" class="img_question page-delay300" />
+                    </div>
+                    <ul class="box-wrapper page-moveScale">
+                    	<li class="key"></li>
+                    	<li class="key"></li>
+                    	<li class="key"></li>
+                    	<li class="key"></li>
+                    	<li class="key"></li>
+                    	<li class="key"></li>
+                    	<li class="key"></li>
+                    </ul>
+                    <div class="select_answer page-moveFromBottomFade">
+                    	<p>答案贴士：</p>
+                    	<ul>
+	                    	<li></li>
+	                    	<li></li>
+	                    	<li></li>
+	                    	<li></li>
+	                    	<li></li>
+	                    	<li></li>
+	                    	<li></li>
+	                    	<li></li>
+	                    	<li></li>
+	                    	<li></li>
+	                    	<li></li>
+	                    	<li></li>
+	                    </ul>
+                    </div>
+				</div>
+                <img src="images/submit.png" class="img_submit page-moveFromBottomFade" />
+			</div>
+			<div class="page page-18-1 hide right hidden">
+				<div class="wrap">
+					<img class="page-moveFromBottom man" src="./images/success02.png" />
+					<img class="page-moveFromBottom modal" src="./images/success_modal.png" />
+					<img class="page-moveScale page-delay1200 paper" src="./images/paperflower.png" />
+					<img class="page-moveScale next page-delay900" src="./images/next.png" />
+					<img class="page-moveScale page-delay900 share" src="./images/share.png" />
+ 				</div>
+			</div>
+			<div class="page page-18-1 hide wrong hidden">
+				<div class="wrap">
+					<div class="page-moveFromBottom true_answer">
+						<img class="modal" src="./images/wrong_modal01.png" />
+						<p><span>很遗憾，<br>你答错了！<br>正确答案是：瓦斯外泄</span></p>
+						<img src="./images/wrong_modal03.png" />
+					</div>
+					<img class="page-moveScale next page-delay300" src="./images/next.png" />
+					<img class="page-moveScale page-delay300 share" src="./images/share.png" />
+ 				</div>
+			</div>
+			<div class="page page-19-1 answer hide">
+				<div class="wrap">
+                    <div class="level_title page-moveScale">
+                    	<p>第10关</p>
+                    	<img src="images/level.png" class="img_level page-delay300" />
+                    </div>
+                    <div class="q_content">
+                    	<img src="images/title01.png" class="img_question page-delay300" />
+                    	<p><span></span></p>
+                    	<img src="images/title03.png" class="img_question page-delay300" />
+                    </div>
+                    <ul class="box-wrapper page-moveScale">
+                    	<li class="key"></li>
+                    	<li class="key"></li>
+                    	<li class="key"></li>
+                    	<li class="key"></li>
+                    	<li class="key"></li>
+                    	<li class="key"></li>
+                    	<li class="key"></li>
+                    </ul>
+                    <div class="select_answer page-moveFromBottomFade">
+                    	<p>答案贴士：</p>
+                    	<ul>
+	                    	<li></li>
+	                    	<li></li>
+	                    	<li></li>
+	                    	<li></li>
+	                    	<li></li>
+	                    	<li></li>
+	                    	<li></li>
+	                    	<li></li>
+	                    	<li></li>
+	                    	<li></li>
+	                    	<li></li>
+	                    	<li></li>
+	                    </ul>
+                    </div>
+				</div>
+                <img src="images/submit.png" class="img_submit page-moveFromBottomFade" />
+			</div>
+			<div class="page page-20-1 hide right hidden">
+				<div class="wrap">
+					<img class="page-moveFromBottom man" src="./images/success02.png" />
+					<img class="page-moveFromBottom modal" src="./images/success_modal.png" />
+					<img class="page-moveScale page-delay1200 paper" src="./images/paperflower.png" />
+					<img class="page-moveScale next page-delay900" src="./images/next.png" />
+					<img class="page-moveScale page-delay900 share" src="./images/share.png" />
+ 				</div>
+			</div>
+			<div class="page page-20-1 hide wrong hidden">
+				<div class="wrap">
+					<div class="page-moveFromBottom true_answer">
+						<img class="modal" src="./images/wrong_modal01.png" />
+						<p><span>很遗憾，<br>你答错了！<br>正确答案是：瓦斯外泄</span></p>
+						<img src="./images/wrong_modal03.png" />
+					</div>
+					<img class="page-moveScale next page-delay300" src="./images/next.png" />
+					<img class="page-moveScale page-delay300 share" src="./images/share.png" />
+ 				</div>
+			</div>
+			<div class="page page-21-1 hide last">
+				<div class="wrap">
+					<img class="title" src="./images/last_title.png" />
+					<div class="last_modal">
+						<img class="page-moveCircle page-delay300 index_btn" src="./images/last_modal.png" />
+						<p>您今天IQ大爆发<br/>答对了<span class="fblack">10</span>道题<br/><span class="big-font">赢得了<span class="fred">3</span>次抽奖机会</span><br><small>有机会获得100元现金或话费哦！</small></p>
+					</div>
+                    <img class="page-moveScale page-delay300 more" src="./images/more.png" />
+                    <img class="page-moveScale page-delay300 share" src="./images/share.png" />
+                    <p>更多好玩的，敬请期待！</p>
+ 				</div>
+			</div>
+    	</div>	
+        <script src="js/zepto.min.js"></script>
+		<script src="js/touch.js"></script>
+		<script src="js/index.js"></script>
+		<script type="text/javascript">
+			document.onreadystatechange = loading; 
+			function loading(){
+				var i = 0;
+				var interval = setInterval(function(){
+					if (i<=90) {
+						$('#process').text(i++);
+					}
+				},100);
+				if(document.readyState == "complete"){
+					clearInterval(interval);
+					setTimeout(function(){
+						$('#process').text(100);
+						$("#lead").hide();
+						$("#index").show();
+					},1000);
+				}
+			}
+
+		</script>
+	</body>
+</html>
