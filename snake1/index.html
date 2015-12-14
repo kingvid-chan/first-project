@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatable" content="IE=Edge,Chrome=1.0">
+	<meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no">
+	<meta name="format-detection" content="telephone=no">
+	<meta name="format-detection" content="email=no">
+	<title>Snake</title>
+	<link rel="stylesheet" href="css/normalize.css">
+	<link rel="stylesheet" href="css/main.css">
+</head>
+<body>
+	<div id="loading">
+     	<div class="spinner">
+  			<div class="double-bounce1"></div>
+  			<div class="double-bounce2"></div>
+		</div>
+	</div>
+    <div id="start" class="hide">
+        <button>开始</button>
+    </div>
+	<div class="wrapper" id="game">
+		<canvas id="cas"></canvas>
+	</div>
+    <div id="over" class="hide">
+        <button>返回开始页面</button>
+    </div>
+    <p id="title">分数：<span>0</span></p>
+    <p id="targetScore">挑战目标：50分</p>
+    <div id="win" class="hide">
+    	<p>恭喜您！挑战成功！</p>
+    	<button>再来一局</button>
+    </div>
+<script src="plugin/crafty.min.js"></script>
+<script src="plugin/zepto.min.js"></script>
+<script src="js/main.js"></script>
+</body>
+</html>
