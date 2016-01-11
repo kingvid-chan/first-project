@@ -1,0 +1,767 @@
+<html lang="zh-cn">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0,user-scalable=no">
+  <title>促销秒杀-3列-含：秒杀价</title>
+  <link rel="stylesheet" href="../normalize.css">
+<style>
+/* 促销模块 start*/
+.jSnappingup{width: 990px;margin: auto;}
+.jSnappingup ul{margin: 0;padding: 0;}
+.jSnappingup .mt{}
+.jSnappingup .mc{background:#fff;overflow:hidden;font-size: 16px;font-family: "Microsoft Yahei";}
+.jSnappingup .mb{display:none;}
+.jSnappingup .mc ul{width:100%;}
+.jSnappingup li{float:left;width:320px;margin:0 5px;overflow:hidden;display:inline;position:relative;}
+.jSnappingup .jItem{background:#fff;height:auto;}
+.jSnappingup .jPic{position:relative;zoom:1;text-align:center;background:#fff;_height:100%;}
+.jSnappingup .jPic img{vertical-align:top;}
+.jSnappingup .jPic a{padding:5px 0;width:240px;height:240px;display:block;margin:0 auto;}
+.jSnappingup .jPic .jShade{text-align:center;color:#ecedf1;font-size:22px;position:absolute;width:100%;height:100%;top:0;left:0;z-index:1;display:none;}
+.jSnappingup .jPic .jShadeBg{width:100%;height:100%;_height:220px;background-color:#6b6b6b;opacity: 0.8;filter:progid:DXImageTransform.Microsoft.alpha(opacity=80);position:absolute;top:0;left:0;}
+.jSnappingup .jPic .jShade span{position:absolute;left:60px;top:95px;line-height:1.2;}
+.jSnappingup .jGoodsInfo{overflow:hidden;position:relative;zoom:1;}
+.jSnappingup .jDesc{height:38px;line-height:1.3;overflow:hidden;font-size:14.6px;}
+.jSnappingup .jDesc a{color:#fff;text-decoration:none;}
+.jSnappingup .jDesc a:hover{text-decoration:underline;}
+.jSnappingup .jDesc .jSlogan{color:#5e5e5e!important;}
+.jSnappingup .jPrice{height:24px;overflow:hidden;}
+.jSnappingup .jPrice span{float:left;display:inline;}
+.jSnappingup .jPrice .jsNumNo{text-decoration:none;}
+.jSnappingup .jdPrice{height:24px;overflow:hidden;}
+.jSnappingup .jdPrice .jRmb{font-size:20px;color:#ea1717;margin-top:4px;}
+.jSnappingup .jdPrice .jText{font-size:16px;color:#666;margin-top:4px;}
+.jSnappingup .jdPrice .jdNum{font-size:20px;color:#ea1717;line-height:0.9;}
+.jSnappingup .jdPrice .jdNumNo{font-size:20px;color:#ea1717;}
+.jSnappingup .jSalePrice{color:#9ed1f9;text-decoration:line-through;overflow:hidden;clear:both;}
+.jSnappingup .jSalePrice .jText{text-decoration:line-through;}
+.jSnappingup .jSalePrice .jRmb{text-decoration:line-through;}
+.jSnappingup .jSalePrice .jsNum{text-decoration:line-through;}
+.jSnappingup .jBtnArea{width:79px;height:60px;overflow:hidden;position:absolute;right:7px;bottom:7px;background:url(http://img13.360buyimg.com/cms/g16/M00/0B/17/rBEbRVN_CnIIAAAAAAAOM_Cw4tkAACSEQB0YkgAAA5L500.gif) center center no-repeat;}
+.jSnappingup .jWait .jBtnArea{}
+.jSnappingup .jGo .jBtnArea{background-image:url(http://img13.360buyimg.com/cms/g16/M00/0B/17/rBEbRlN_CnYIAAAAAAAOnt8U2N0AACSEQCLl08AAA62681.gif);}
+.jSnappingup .jEnd .jBtnArea{background-image:url(http://img14.360buyimg.com/cms/g16/M00/0B/17/rBEbRlN_CnoIAAAAAAAOLq_ovtQAACSEQCkzEUAAA5G272.gif);}
+.jSnappingup .jBtnArea a{display:block;height:100%;text-indent:-9999px;}
+.jSnappingup .iconMember{height:24px;line-height:24px;padding-left:30px;font-size:16px;color:#df0314;background:url(http://img14.360buyimg.com/cms/g13/M04/0A/01/rBEhVFKhL9EIAAAAAAAJ5ca8LfoAAGbbwHiJgsAAAn9517.gif) 1px no-repeat;margin-top:8px;}
+.jSnappingup .iconMember.copper{background-image:url(http://img14.360buyimg.com/cms/g13/M04/0A/01/rBEhVFKhL9EIAAAAAAAJ5ca8LfoAAGbbwHiJgsAAAn9517.gif);}
+.jSnappingup .iconMember.silver{background-image:url(http://img11.360buyimg.com/cms/g15/M00/1A/13/rBEhWFKhMBQIAAAAAAAJ6nwr6sQAAGZ7gImjA8AAAoC503.gif);}
+.jSnappingup .iconMember.gold{background-image:url(http://img12.360buyimg.com/cms/g15/M09/1A/13/rBEhWlKhL9YIAAAAAAAJ-eqq3m4AAGZ7QKJZc0AAAoR855.gif);}
+.jSnappingup .jEnd .jShade{display:block;}
+.jSnappingup{border-style: none;}
+.jSnappingup .mc{background-color: transparent;}
+.qw_miao_inner.red{background-color:#fed130;}
+.qw_miao_inner.yellow{background-color: #fed130;}
+.qw_miao_inner.gray{background-color: #fed130;}
+.jSnappingup .mc ul:after{content: "";display: table;clear: both;}
+.qw_miao_inner > .j-module{padding-bottom: 35px;}
+.jSnappingup li{width: 295px;margin: 0 17px;}
+.jSnappingup .jItem{background: transparent;}
+.jSnappingup .jPic a{padding: 0;width: 295px;height: 295px;box-sizing:border-box;overflow:hidden;position:relative;}
+.red .jDesc a{color: #fff;padding: 0 5px;font-size: 13px;word-break:break-all;}
+.jSnappingup .jDesc{text-align: left;margin: 10px 0 20px;}
+.jSnappingup .jPrice,.jSnappingup .jdPrice{height: 38px;}
+.jSnappingup .jdPrice span,.jSnappingup .jdPrice >a{margin: 0 !important;display: inline-block;height: 38px;line-height: 38px !important;box-sizing : border-box;}
+.jSnappingup .jdPrice .jText{color: #fff;font-size: 13px;background-color: #f32b50;padding: 0 8px;}
+.qw_price{background-color: #fff;border: solid 2px #f32b50;width: 130px;padding-left: 12px;}
+.jSnappingup .jdPrice >a{font-size: 16px;color: #fff;background-color: #f32b50;font-weight: bold;padding: 0 14px;text-decoration: none;}
+.jSnappingup .jPic img{position: absolute;top: 0;left: 0;width: 295px;height: 295px;}
+.jSnappingup .jPic{width: 295px;height: 295px;}
+.qw_border{position:absolute;left:0;top:0;width:100%;height:100%;box-sizing:border-box;display:block;}
+.jSnappingup .jPic a:hover .qw_border{border: solid 7px #ff9829;transition: border .5s;}
+.preparing.qw_timeLess, .preparing{background-color: #fed130;color: #9c0028;}
+.preparing .jDesc > a{color: #9c0028;}
+/* 促销模块 end*/
+/* 自定义倒计时模块 start*/
+.qw_miaosha{text-align: center;}
+.qw_miaosha > img{margin: 30px 0 20px;}
+.qw_timePart:after{content: ""; display: table; clear: both;}
+.qw_timePart li{width: 326px; height: 110px; float: left; padding: 0; margin: 0;}
+.qw_timePart li+li{margin-left: 6px !important;}
+.qw_timeLess{font-size: 26px; color: #9c0028; padding: 30px; font-weight: bold; text-align:center; background-color: #fed130;}
+.userdefined-153704{margin-bottom:0 !important;}
+.hour{margin-left: 10px;}
+.qw_timePart > li{position: relative;}
+.qw_timePart > li > span{position: absolute; top: 0; left: 0; width: 100%; height: 100%;}
+.qw_timePart > li{background-color: #9c0028;}
+.qw_timePart > li.active{background-color: #fed130; transition: background-color .5s;}
+.morning.red{background-image: url(http://img11.360buyimg.com/cms/jfs/t2287/123/1215429036/3966/e314a415/568a1d83N3b75f0fb.png); background-position: center center; background-repeat: no-repeat;}
+.morning.red.ing{background-image: url(http://img12.360buyimg.com/cms/jfs/t2455/139/1928187768/3836/648c2e56/568a1d83N550ff189.png); background-position: center center; background-repeat: no-repeat;}
+.morning.gray{background-image: url(http://img10.360buyimg.com/cms/jfs/t2320/327/1841883511/3764/41b12532/568ce216N73471a78.png); background-position: center center; background-repeat: no-repeat;}
+.afternoon.yellow{background-image: url(http://img11.360buyimg.com/cms/jfs/t2047/237/1247351062/3871/7c3c19e7/568ce216N659e95a5.png); background-position: center center; background-repeat: no-repeat;}
+.afternoon.red{background-image: url(http://img10.360buyimg.com/cms/jfs/t2413/100/1861602115/3720/7726a6bf/568a1d82N1b823eea.png); background-position: center center; background-repeat: no-repeat;}
+.afternoon.gray{background-image: url(http://img11.360buyimg.com/cms/jfs/t2311/34/2047598050/3667/6f933d2d/568ce216N85805d0c.png); background-position: center center; background-repeat: no-repeat;}
+.night.yellow{background-image: url(http://img11.360buyimg.com/cms/jfs/t2044/327/1928726320/4119/612604f2/568ce216N1c052e02.png); background-position: center center; background-repeat: no-repeat;}
+.night.red{background-image: url(http://img12.360buyimg.com/cms/jfs/t2569/346/1056023240/4012/3677fce5/568a1d83N7a6b816d.png); background-position: center center; background-repeat: no-repeat;}
+.morning.red.active{background-image: url(http://img14.360buyimg.com/cms/jfs/t2488/348/1219967249/4309/3b1c0701/568ce215Ne560a3be.png); background-position: center center; background-repeat: no-repeat;}
+.afternoon.yellow.active{background-image: url(http://img12.360buyimg.com/cms/jfs/t2416/355/1806277013/4121/86db6f19/568a1d82N8a7e3938.png); background-position: center center; background-repeat: no-repeat;}
+.night.yellow.active{background-image: url(http://img11.360buyimg.com/cms/jfs/t2278/214/1856523384/4404/85128e3a/568a1d83N9dfd003b.png); background-position: center center; background-repeat: no-repeat;}
+.morning.red.ing.active{background-image: url(http://img11.360buyimg.com/cms/jfs/t1984/322/1856850538/4196/7afe294e/568ce216N574dda37.png); background-position: center center; background-repeat: no-repeat;}
+.morning.gray.active{background-image: url(http://img11.360buyimg.com/cms/jfs/t1933/102/1861105641/4068/1437e8e9/568a1d82N8cc76a71.png); background-position: center center; background-repeat: no-repeat;}
+.afternoon.red.active{background-image: url(http://img11.360buyimg.com/cms/jfs/t1876/88/1983730019/4019/f52f7b9d/568ce215N3d4333bd.png); background-position: center center; background-repeat: no-repeat;}
+.afternoon.gray.active{background-image: url(http://img14.360buyimg.com/cms/jfs/t2062/177/1225605658/3937/ab39cbff/568a1d82N100db445.png); background-position: center center; background-repeat: no-repeat;}
+.night.red.active{background-image: url(http://img11.360buyimg.com/cms/jfs/t2032/201/1857816240/4255/19a6c74/568ce216N70afcb50.png); background-position: center center; background-repeat: no-repeat;}
+.qw_miaosha{width: 990px; margin: auto; background-color: #EA3258;}
+.qw_timePart{margin: 0; padding: 0;}
+.qw_timeLess{margin: 0;}
+.hide{display: none;}
+/* 自定义倒计时模块 end*/
+</style>  
+</head>
+<body>
+<!-- 倒计时html start-->
+<div class="qw_miaosha">  
+  <img src="http://img10.360buyimg.com/cms/jfs/t2125/203/1793117505/4058/4e64fd31/5681ea6bNe9b17f82.png" alt="" />  
+  <ul class="qw_timePart">   
+    <li class="morning red">
+    </li>   
+    <li class="afternoon yellow">
+    </li>   
+    <li class="night yellow">
+    </li>  
+  </ul>  
+  <p class="qw_timeLess preparing">
+    <strong>距离结束还有</strong><span class="hour">1</span><span>:</span><span class="minute">23</span><span>:</span><span class="second">08</span>
+  </p>
+</div>
+<!-- 倒计时html end-->
+
+<!-- 促销模块html 有三个相同的促销模块  分时段使用 start-->
+<div class=" jSnappingup">
+    <div class="mc" style=";min-height:0px;">
+        <div class="qw_miao_inner preparing">
+            <div class="j-module">
+                <ul>
+                    <li class="jWait">
+                        <div class="jItem">
+                            <div class="jPic">
+                                <a href="http://item.jd.com/1133434.html?appId=442241&amp;pageInstanceId=10051604"
+                                target="_blank">
+                                    <img class="" src="http://img14.360buyimg.com/n6/jfs/t613/296/109513048/133338/dae4607/544f52b5N7b498a0f.jpg"
+                                    alt="美赞臣(MeadJohnson) 安儿宝A+幼儿配方奶粉 3段(1-3岁幼儿适用) 200克(进口奶源)" height="240"
+                                    width="240">
+                                    <span class="qw_border">
+                                    </span>
+                                </a>
+                            </div>
+                            <div class="jGoodsInfo">
+                                <div class="jDesc" title="美赞臣(MeadJohnson) 安儿宝A+幼儿配方奶粉 3段(1-3岁幼儿适用) 200克(进口奶源)">
+                                    <a href="http://item.jd.com/1133434.html?appId=442241&amp;pageInstanceId=10051604"
+                                    target="_blank">
+                                        美赞臣(MeadJohnson) 安儿宝A+幼儿配方奶粉 3段(1-3岁幼儿适用) 200克(进口奶源)
+                                    </a>
+                                </div>
+                                <div class="jPrice">
+                                    <div class="jdPrice">
+                                        <span class="jText">
+                                            秒杀价
+                                        </span>
+                                        <span class="qw_price">
+                                            <span class="jRmb">
+                                                ¥
+                                            </span>
+                                            <span class="jdNum">
+                                                1.00
+                                            </span>
+                                        </span>
+                                        <a target="_blank" href="" class="addCart">
+                                            立即抢购 &gt;
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="jWait">
+                        <div class="jItem">
+                            <div class="jPic">
+                                <a href="http://item.jd.com/10037401364.html?appId=442241&amp;pageInstanceId=10051604"
+                                target="_blank">
+                                    <img class="" src="http://img14.360buyimg.com/n6/jfs/t2224/116/1198479442/344039/d6e51e66/564d3358N3850f773.jpg"
+                                    alt="好吃嘴火爆鸡丁麻辣辣子串土鸡肉宫保超值鸡脆骨鸡爪65g*4" height="240" width="240">
+                                    <span class="qw_border">
+                                    </span>
+                                </a>
+                            </div>
+                            <div class="jGoodsInfo">
+                                <div class="jDesc" title="好吃嘴火爆鸡丁麻辣辣子串土鸡肉宫保超值鸡脆骨鸡爪65g*4">
+                                    <a href="http://item.jd.com/10037401364.html?appId=442241&amp;pageInstanceId=10051604"
+                                    target="_blank">
+                                        好吃嘴火爆鸡丁麻辣辣子串土鸡肉宫保超值鸡脆骨鸡爪65g*4
+                                    </a>
+                                </div>
+                                <div class="jPrice">
+                                    <div class="jdPrice">
+                                        <span class="jText">
+                                            秒杀价
+                                        </span>
+                                        <span class="qw_price">
+                                            <span class="jRmb">
+                                                ¥
+                                            </span>
+                                            <span class="jdNum">
+                                                14.80
+                                            </span>
+                                        </span>
+                                        <a target="_blank" href="" class="addCart">
+                                            立即抢购 &gt;
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="jEnd">
+                        <div class="jItem">
+                            <div class="jPic">
+                                <a href="http://item.jd.com/1073185146.html?appId=442241&amp;pageInstanceId=10051604"
+                                target="_blank">
+                                    <img class="" src="http://img12.360buyimg.com/n6/jfs/t526/87/147755198/349704/7f3553e3/5466cf1dN5ee58d4d.jpg"
+                                    alt="年货礼品内蒙古特产 休闲零食小吃 科尔沁特产 游牧旺手撕风干牛肉干420克 原味" height="240" width="240">
+                                    <span class="qw_border">
+                                    </span>
+                                </a>
+                            </div>
+                            <div class="jGoodsInfo">
+                                <div class="jDesc" title="年货礼品内蒙古特产 休闲零食小吃 科尔沁特产 游牧旺手撕风干牛肉干420克 原味">
+                                    <a href="http://item.jd.com/1073185146.html?appId=442241&amp;pageInstanceId=10051604"
+                                    target="_blank">
+                                        年货礼品内蒙古特产 休闲零食小吃 科尔沁特产 游牧旺手撕风干牛肉干420克 原味
+                                    </a>
+                                </div>
+                                <div class="jPrice">
+                                    <div class="jdPrice">
+                                        <span class="jText">
+                                            秒杀价
+                                        </span>
+                                        <span class="qw_price">
+                                            <span class="jRmb">
+                                                ¥
+                                            </span>
+                                            <span class="jdNum">
+                                                72.00
+                                            </span>
+                                        </span>
+                                        <a target="_blank" href="" class="addCart">
+                                            立即抢购 &gt;
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+<div class=" jSnappingup">
+    <div class="mc" style=";min-height:0px;">
+        <div class="qw_miao_inner preparing">
+            <div class="j-module">
+                <ul>
+                    <li class="jWait">
+                        <div class="jItem">
+                            <div class="jPic">
+                                <a href="http://item.jd.com/1133434.html?appId=442241&amp;pageInstanceId=10051604"
+                                target="_blank">
+                                    <img class="" src="http://img14.360buyimg.com/n6/jfs/t613/296/109513048/133338/dae4607/544f52b5N7b498a0f.jpg"
+                                    alt="美赞臣(MeadJohnson) 安儿宝A+幼儿配方奶粉 3段(1-3岁幼儿适用) 200克(进口奶源)" height="240"
+                                    width="240">
+                                    <span class="qw_border">
+                                    </span>
+                                </a>
+                            </div>
+                            <div class="jGoodsInfo">
+                                <div class="jDesc" title="美赞臣(MeadJohnson) 安儿宝A+幼儿配方奶粉 3段(1-3岁幼儿适用) 200克(进口奶源)">
+                                    <a href="http://item.jd.com/1133434.html?appId=442241&amp;pageInstanceId=10051604"
+                                    target="_blank">
+                                        美赞臣(MeadJohnson) 安儿宝A+幼儿配方奶粉 3段(1-3岁幼儿适用) 200克(进口奶源)
+                                    </a>
+                                </div>
+                                <div class="jPrice">
+                                    <div class="jdPrice">
+                                        <span class="jText">
+                                            秒杀价
+                                        </span>
+                                        <span class="qw_price">
+                                            <span class="jRmb">
+                                                ¥
+                                            </span>
+                                            <span class="jdNum">
+                                                1.00
+                                            </span>
+                                        </span>
+                                        <a target="_blank" href="" class="addCart">
+                                            立即抢购 &gt;
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="jWait">
+                        <div class="jItem">
+                            <div class="jPic">
+                                <a href="http://item.jd.com/10037401364.html?appId=442241&amp;pageInstanceId=10051604"
+                                target="_blank">
+                                    <img class="" src="http://img14.360buyimg.com/n6/jfs/t2224/116/1198479442/344039/d6e51e66/564d3358N3850f773.jpg"
+                                    alt="好吃嘴火爆鸡丁麻辣辣子串土鸡肉宫保超值鸡脆骨鸡爪65g*4" height="240" width="240">
+                                    <span class="qw_border">
+                                    </span>
+                                </a>
+                            </div>
+                            <div class="jGoodsInfo">
+                                <div class="jDesc" title="好吃嘴火爆鸡丁麻辣辣子串土鸡肉宫保超值鸡脆骨鸡爪65g*4">
+                                    <a href="http://item.jd.com/10037401364.html?appId=442241&amp;pageInstanceId=10051604"
+                                    target="_blank">
+                                        好吃嘴火爆鸡丁麻辣辣子串土鸡肉宫保超值鸡脆骨鸡爪65g*4
+                                    </a>
+                                </div>
+                                <div class="jPrice">
+                                    <div class="jdPrice">
+                                        <span class="jText">
+                                            秒杀价
+                                        </span>
+                                        <span class="qw_price">
+                                            <span class="jRmb">
+                                                ¥
+                                            </span>
+                                            <span class="jdNum">
+                                                14.80
+                                            </span>
+                                        </span>
+                                        <a target="_blank" href="" class="addCart">
+                                            立即抢购 &gt;
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="jEnd">
+                        <div class="jItem">
+                            <div class="jPic">
+                                <a href="http://item.jd.com/1073185146.html?appId=442241&amp;pageInstanceId=10051604"
+                                target="_blank">
+                                    <img class="" src="http://img12.360buyimg.com/n6/jfs/t526/87/147755198/349704/7f3553e3/5466cf1dN5ee58d4d.jpg"
+                                    alt="年货礼品内蒙古特产 休闲零食小吃 科尔沁特产 游牧旺手撕风干牛肉干420克 原味" height="240" width="240">
+                                    <span class="qw_border">
+                                    </span>
+                                </a>
+                            </div>
+                            <div class="jGoodsInfo">
+                                <div class="jDesc" title="年货礼品内蒙古特产 休闲零食小吃 科尔沁特产 游牧旺手撕风干牛肉干420克 原味">
+                                    <a href="http://item.jd.com/1073185146.html?appId=442241&amp;pageInstanceId=10051604"
+                                    target="_blank">
+                                        年货礼品内蒙古特产 休闲零食小吃 科尔沁特产 游牧旺手撕风干牛肉干420克 原味
+                                    </a>
+                                </div>
+                                <div class="jPrice">
+                                    <div class="jdPrice">
+                                        <span class="jText">
+                                            秒杀价
+                                        </span>
+                                        <span class="qw_price">
+                                            <span class="jRmb">
+                                                ¥
+                                            </span>
+                                            <span class="jdNum">
+                                                72.00
+                                            </span>
+                                        </span>
+                                        <a target="_blank" href="" class="addCart">
+                                            立即抢购 &gt;
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+<div class=" jSnappingup">
+    <div class="mc" style=";min-height:0px;">
+        <div class="qw_miao_inner preparing">
+            <div class="j-module">
+                <ul>
+                    <li class="jWait">
+                        <div class="jItem">
+                            <div class="jPic">
+                                <a href="http://item.jd.com/1133434.html?appId=442241&amp;pageInstanceId=10051604"
+                                target="_blank">
+                                    <img class="" src="http://img14.360buyimg.com/n6/jfs/t613/296/109513048/133338/dae4607/544f52b5N7b498a0f.jpg"
+                                    alt="美赞臣(MeadJohnson) 安儿宝A+幼儿配方奶粉 3段(1-3岁幼儿适用) 200克(进口奶源)" height="240"
+                                    width="240">
+                                    <span class="qw_border">
+                                    </span>
+                                </a>
+                            </div>
+                            <div class="jGoodsInfo">
+                                <div class="jDesc" title="美赞臣(MeadJohnson) 安儿宝A+幼儿配方奶粉 3段(1-3岁幼儿适用) 200克(进口奶源)">
+                                    <a href="http://item.jd.com/1133434.html?appId=442241&amp;pageInstanceId=10051604"
+                                    target="_blank">
+                                        美赞臣(MeadJohnson) 安儿宝A+幼儿配方奶粉 3段(1-3岁幼儿适用) 200克(进口奶源)
+                                    </a>
+                                </div>
+                                <div class="jPrice">
+                                    <div class="jdPrice">
+                                        <span class="jText">
+                                            秒杀价
+                                        </span>
+                                        <span class="qw_price">
+                                            <span class="jRmb">
+                                                ¥
+                                            </span>
+                                            <span class="jdNum">
+                                                1.00
+                                            </span>
+                                        </span>
+                                        <a target="_blank" href="" class="addCart">
+                                            立即抢购 &gt;
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="jWait">
+                        <div class="jItem">
+                            <div class="jPic">
+                                <a href="http://item.jd.com/10037401364.html?appId=442241&amp;pageInstanceId=10051604"
+                                target="_blank">
+                                    <img class="" src="http://img14.360buyimg.com/n6/jfs/t2224/116/1198479442/344039/d6e51e66/564d3358N3850f773.jpg"
+                                    alt="好吃嘴火爆鸡丁麻辣辣子串土鸡肉宫保超值鸡脆骨鸡爪65g*4" height="240" width="240">
+                                    <span class="qw_border">
+                                    </span>
+                                </a>
+                            </div>
+                            <div class="jGoodsInfo">
+                                <div class="jDesc" title="好吃嘴火爆鸡丁麻辣辣子串土鸡肉宫保超值鸡脆骨鸡爪65g*4">
+                                    <a href="http://item.jd.com/10037401364.html?appId=442241&amp;pageInstanceId=10051604"
+                                    target="_blank">
+                                        好吃嘴火爆鸡丁麻辣辣子串土鸡肉宫保超值鸡脆骨鸡爪65g*4
+                                    </a>
+                                </div>
+                                <div class="jPrice">
+                                    <div class="jdPrice">
+                                        <span class="jText">
+                                            秒杀价
+                                        </span>
+                                        <span class="qw_price">
+                                            <span class="jRmb">
+                                                ¥
+                                            </span>
+                                            <span class="jdNum">
+                                                14.80
+                                            </span>
+                                        </span>
+                                        <a target="_blank" href="" class="addCart">
+                                            立即抢购 &gt;
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="jEnd">
+                        <div class="jItem">
+                            <div class="jPic">
+                                <a href="http://item.jd.com/1073185146.html?appId=442241&amp;pageInstanceId=10051604"
+                                target="_blank">
+                                    <img class="" src="http://img12.360buyimg.com/n6/jfs/t526/87/147755198/349704/7f3553e3/5466cf1dN5ee58d4d.jpg"
+                                    alt="年货礼品内蒙古特产 休闲零食小吃 科尔沁特产 游牧旺手撕风干牛肉干420克 原味" height="240" width="240">
+                                    <span class="qw_border">
+                                    </span>
+                                </a>
+                            </div>
+                            <div class="jGoodsInfo">
+                                <div class="jDesc" title="年货礼品内蒙古特产 休闲零食小吃 科尔沁特产 游牧旺手撕风干牛肉干420克 原味">
+                                    <a href="http://item.jd.com/1073185146.html?appId=442241&amp;pageInstanceId=10051604"
+                                    target="_blank">
+                                        年货礼品内蒙古特产 休闲零食小吃 科尔沁特产 游牧旺手撕风干牛肉干420克 原味
+                                    </a>
+                                </div>
+                                <div class="jPrice">
+                                    <div class="jdPrice">
+                                        <span class="jText">
+                                            秒杀价
+                                        </span>
+                                        <span class="qw_price">
+                                            <span class="jRmb">
+                                                ¥
+                                            </span>
+                                            <span class="jdNum">
+                                                72.00
+                                            </span>
+                                        </span>
+                                        <a target="_blank" href="" class="addCart">
+                                            立即抢购 &gt;
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- 促销模块html end-->
+
+<script src="../jquery.min.js"></script>
+<script>
+$(document).ready(function() {
+    if (!window.Helper) {
+        window.Helper = {};
+    }
+    if (!window.Helper.getTime) {
+        $.extend(Helper, {
+            timeDiff: null,
+            getTimeDtd: null,
+            getTimePromise: null,
+            debug: false,
+            getTime: function() {
+                var _this = this,
+                current_time, serverTime;
+                if (!_this.getTimePromise) {
+                    _this.getTimeDtd = $.Deferred();
+                    _this.getTimePromise = _this.getTimeDtd.promise();
+                    if (_this.debug) {
+                        _this.timeDiff = 0;
+                        _this.getTimeDtd.resolve(_this.timeDiff);
+                    } else {
+                        $.ajax('http://act.jshop.jd.com/serverTime.html', {
+                            dataType: 'jsonp',
+                            success: function(data) {
+                                if (data.status == 1) {
+                                    current_time = new Date();
+                                    serverTime = new Date(data.nowTime);
+                                    _this.timeDiff = serverTime.getTime() - current_time.getTime();
+                                    _this.getTimeDtd.resolve(_this.timeDiff);
+                                } else {
+                                    _this.timeDiff = 0;
+                                    _this.getTimeDtd.resolve(_this.timeDiff);
+                                }
+                            },
+                            error: function() {
+                                _this.timeDiff = 0;
+                                _this.getTimeDtd.resolve(_this.timeDiff);
+                            }
+                        });
+                    }
+                } else {
+                    _this.getTimeDtd.resolve(_this.timeDiff);
+                }
+
+                return _this.getTimePromise;
+            }
+        });
+    }
+
+    var Now;
+    var tHour, tMin, tSec;
+    var Hour;
+    var Min;
+    var Sec;
+    $.when(Helper.getTime()).done(function(diff) {
+        // diff为服务器时间与本地时间的差值
+        Now = new Date((new Date()).getTime() + diff);
+        Hour = Now.getHours();
+        Min = Now.getMinutes();
+        Sec = Now.getSeconds();
+
+        checkTimeEnd();
+
+        setInterval(function() {
+            tSec--;
+
+            if (tSec < 0) {
+                tSec = 59;
+                tMin--;
+                $(".second").text(tSec);
+                if (tMin <= 9) {
+                    $(".minute").text("0" + tMin);
+                } else {
+                    $(".minute").text(tMin);
+                }
+
+            } else if (tSec <= 9) {
+                $(".second").text("0" + tSec);
+            } else $(".second").text(tSec);
+            if (tMin < 0) {
+                tHour--;
+                tMin = tSec = 59;
+                $(".second").text(tSec);
+                $(".minute").text(tMin);
+                $(".hour").text(tHour);
+            };
+
+            if (tSec === 0 && tMin === 0 && tHour === 0) {
+                checkTimeEnd();
+            };
+        },
+        1000);
+    });
+
+    function checkTimeEnd() {
+        if (Hour < 10) {
+            $(".qw_timeLess strong").text("距离开始还有：");
+            tHour = 9 - Hour;
+            tMin = 59 - Min;
+            tSec = 59 - Sec;
+
+            $(".morning").addClass("red").removeClass("ing").removeClass("gray");
+            $(".afternoon").addClass("yellow").removeClass("red").removeClass("gray");
+            $(".night").addClass("yellow").removeClass("red");
+            $(".qw_timePart li").eq(0).addClass("active").siblings().removeClass("active");
+
+            $(".qw_miao_inner").addClass("hide").eq(0).removeClass("hide");
+            $(".qw_timeLess").addClass("preparing").removeClass("end");
+
+            $(".qw_timeLess").attr("data-stage", "000");
+        } else if (Hour < 14) {
+            $(".qw_timeLess strong").text("距离结束还有：");
+            tHour = 13 - Hour;
+            tMin = 59 - Min;
+            tSec = 59 - Sec;
+
+            $(".morning").addClass("red").addClass("ing").removeClass("gray");
+            $(".afternoon").addClass("yellow").removeClass("red").removeClass("gray");
+            $(".night").addClass("yellow").removeClass("red");
+            $(".qw_timePart li").eq(0).addClass("active").siblings().removeClass("active");
+
+            $(".qw_miao_inner").addClass("hide").eq(0).removeClass("hide");
+            $(".qw_timeLess").removeClass("preparing");
+            $(".qw_timeLess").attr("data-stage", "100");
+        } else if (Hour < 21) {
+            $(".qw_timeLess strong").text("距离结束还有：");
+            tHour = 20 - Hour;
+            tMin = 59 - Min;
+            tSec = 59 - Sec;
+
+            $(".morning").removeClass("red").removeClass("ing").addClass("gray");
+            $(".afternoon").addClass("red").removeClass("yellow").removeClass("gray");
+            $(".night").addClass("yellow").removeClass("red");
+            $(".qw_timePart li").eq(1).addClass("active").siblings().removeClass("active");
+
+            $(".qw_miao_inner").addClass("hide").eq(1).removeClass("hide");
+            $(".qw_timeLess").attr("data-stage", "210");
+        } else {
+            $(".qw_timeLess strong").text("距离结束还有：");
+            tHour = 23 - Hour;
+            tMin = 59 - Min;
+            tSec = 59 - Sec;
+            // console.log(tHour+","+tMin+","+tSec);
+            $(".morning").removeClass("red").removeClass("ing").addClass("gray");
+            $(".afternoon").removeClass("yellow").removeClass("red").addClass("gray");
+            $(".night").removeClass("yellow").addClass("red");
+            $(".qw_timePart li").eq(2).addClass("active").siblings().removeClass("active");
+
+            $(".qw_miao_inner").addClass("hide").eq(2).removeClass("hide");
+            $(".qw_timeLess").attr("data-stage", "221");
+        }
+        $(".hour").text(tHour);
+        tMin <= 9 ? $(".minute").text("0" + tMin) : $(".minute").text(tMin);
+        tSec <= 9 === 1 ? $(".second").text("0" + tSec) : $(".second").text(tSec);
+    }
+
+    $(".qw_timePart li").hover(function() {
+        var index = $(this).index();
+        var $timeLess = $(".qw_timeLess");
+        var $hour = $(".hour");
+        var stage = $timeLess.attr("data-stage");
+        $(".qw_miao_inner").addClass("hide").eq(index).removeClass("hide");
+        $timeLess.find("span").removeClass("hide");
+        switch (index) {
+        case 0:
+            switch (stage[index]) {
+            case "0":
+                $timeLess.find("strong").text("距离开始还有：");
+                $hour.text(tHour);
+                break;
+            case "1":
+                $timeLess.find("strong").text("距离结束还有：");
+                $hour.text(tHour);
+                break;
+            case "2":
+                $timeLess.find("strong").text("已结束");
+                $timeLess.find("span").addClass("hide");
+                break;
+            };
+            break;
+        case 1:
+            switch (stage[index]) {
+            case "0":
+                $timeLess.find("strong").text("距离开始还有：");
+                if (stage[0] === "0") {
+                    $hour.text(tHour + 4);
+                } else $hour.text(tHour);
+                break;
+            case "1":
+                $timeLess.find("strong").text("距离结束还有：");
+                $hour.text(tHour);
+                break;
+            case "2":
+                $timeLess.find("strong").text("已结束");
+                $timeLess.find("span").addClass("hide");
+                break;
+            };
+            break;
+        case 2:
+            switch (stage[index]) {
+            case "0":
+                $timeLess.find("strong").text("距离开始还有：");
+                if (stage[0] === "0") {
+                    $hour.text(tHour + 11);
+                } else if (stage[1] === "0") {
+                    $hour.text(tHour + 7);
+                } else $hour.text(tHour);
+                break;
+            case "1":
+                $timeLess.find("strong").text("距离结束还有：");
+                $hour.text(tHour);
+                break;
+            };
+            break;
+        }
+    })
+
+    var listHoverTimeout;
+    $(".list_widther li").hover(function() {
+        var _this = $(this);
+        listHoverTimeout = setTimeout(function() {
+            _this.find("img").addClass("slideUp_width").removeClass("slideDown_width");
+        },
+        100);
+    },
+    function() {
+        clearTimeout(listHoverTimeout);
+        $(this).find("img").addClass("slideDown_width").removeClass("slideUp_width");
+    })
+
+    $(".list_taller li").hover(function() {
+        var _this = $(this);
+        listHoverTimeout = setTimeout(function() {
+            _this.find("img").addClass("slideUp_tall").removeClass("slideDown_tall");
+            _this.find(".qw_hot").addClass("hide");
+        },
+        100);
+    },
+    function() {
+        var _this = $(this);
+        clearTimeout(listHoverTimeout);
+        $(this).find("img").addClass("slideDown_tall").removeClass("slideUp_tall");
+        _this.find(".qw_hot").removeClass("hide");
+    })
+
+    $(".qw_timePart li").hover(function() {
+        $(this).addClass("active").siblings().removeClass("active");
+    })
+})
+</script>
+</body>
+</html>

@@ -1,0 +1,394 @@
+<html lang="zh-cn">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0,user-scalable=no">
+  <title>促销秒杀-4列-含：会员价+京东价+会员级别</title>
+  <link rel="stylesheet" href="../normalize.css">
+<style>
+/* 促销模块 start*/
+.J_CxTpl821{
+    margin: auto;
+    width: 990px;
+}
+.J_CxTpl821 ul{
+    margin: 0; padding: 0;
+}
+.J_CxTpl821 .list-style {margin: 0 auto;/*width: 990px;*/overflow: hidden;}
+.J_CxTpl821 .vip-price{
+    margin: 0;
+}
+.J_CxTpl821 .list-style .vip-g-list {margin-left: -10px;margin-top: -10px;overflow: hidden;}
+.J_CxTpl821 .list-style .vip-g-list .vip-item {position: relative;float: left;margin: 10px 0 0 10px;_display:inline;width: 240px;height: 406px;overflow: hidden;}
+.J_CxTpl821 .list-style .vip-g-list .vip-item .item-main-wrap {width: 238px;height: 404px;border: 1px solid #c7c7c7;}
+.J_CxTpl821 .list-style .vip-g-list .item-main-wrap:hover,
+.J_CxTpl821 .list-style .vip-g-list .hover {border: 2px solid #f6273a;width: 236px;height: 402px;}
+.J_CxTpl821 .list-style .vip-item .up-box {padding: 1px 9px 0;height: 276px;background-color: #fff;}
+.J_CxTpl821 .list-style .vip-item .down-box {padding: 0 9px 1px;height: 126px;background-color: #f2f2f2;}
+.J_CxTpl821 .list-style .vip-g-list .item-main-wrap:hover .up-box,
+.J_CxTpl821 .list-style .vip-g-list .hover .up-box,
+.J_CxTpl821 .list-style .vip-g-list .hover .down-box,
+.J_CxTpl821 .list-style .vip-g-list .item-main-wrap:hover .down-box {padding: 0 8px;}
+.J_CxTpl821 .list-style .vip-item .vip-info {position: relative;padding: 0 15px;height: 37px;line-height: 37px;border-bottom: 1px solid #eaeaea;}
+.J_CxTpl821 .list-style .vip-item .vip-info .square {position: absolute;left: 0;top: 50%;margin-top: -2px;width: 4px;height: 4px;line-height: 0;font-size: 0;background-color: #a5a5a5;}
+.J_CxTpl821 .list-style .vip-item .vip-info .sq-right {left: auto;right: 0;}
+.J_CxTpl821 .list-style .vip-icon {display: inline-block;*display: inline;*zoom: 1;vertical-align: middle;width: 29px;height: 29px;background: url(http://img13.360buyimg.com/cms/jfs/t1765/46/527433700/11525/7fdc1d0b/55d42a33Nb715195e.png) 999em 999em no-repeat;background-position: -78px 0;}
+.J_CxTpl821 .list-style .vip-icon-basic {background-position: 0 0;}
+.J_CxTpl821 .list-style .vip-icon-tong {background-position: -39px 0;}
+.J_CxTpl821 .list-style .vip-icon-yin {background-position: -78px 0;}
+.J_CxTpl821 .list-style .vip-icon-jin {background-position: -117px 0;}
+.J_CxTpl821 .list-style .vip-icon-diamond {background-position: -156px 0;}
+.J_CxTpl821 .list-style .vip-item .vip-info .vip-text {display: inline-block;*display: inline;*zoom: 1;vertical-align: middle;font: 16px/1.5 '\5fae\8f6f\96c5\9ed1', Arial, sans-serif;color: #666;}
+.J_CxTpl821 .list-style .vip-item .g-pic {margin-top: 5px;width: 220px;height: 220px;}
+.J_CxTpl821 .list-style .vip-item .g-pic img {width: 220px;height: 220px;}
+.J_CxTpl821 .list-style .vip-item .g-name-wrap {padding: 2px 0;height: 36px;line-height: 18px;border-bottom: 1px dashed #c9c9c9;overflow: hidden;font-size: 12px;}
+.J_CxTpl821 .list-style .vip-item .g-name-wrap .g-link {color: #000;text-decoration: none;}
+.J_CxTpl821 .list-style .vip-item .price-wrap {position: relative;margin: 3px 0 2px;height: 38px;overflow: hidden;}
+.J_CxTpl821 .list-style .vip-item .price-wrap .jd-price {font-size: 12px;color: #8b8b8b;text-decoration: line-through;line-height: 1;}
+.J_CxTpl821 .list-style .vip-item .price-wrap .vip-price {position: absolute;right: 0;bottom: 0;color: #000;font: 16px/1.5 '\5fae\8f6f\96c5\9ed1', Arial, sans-serif;line-height: 1;}
+.J_CxTpl821 .list-style .vip-item .price-wrap .price-show {visibility: hidden;color: #4b3e3f;}
+.J_CxTpl821 .list-style .vip-item .price-wrap .dollar {font-weight: 600;color: #f12937;}
+.J_CxTpl821 .list-style .vip-item .price-wrap .price-num {font-weight: 600;color: #f12937;font-size: 36px;}
+.J_CxTpl821 .list-style .vip-item .add-to-cart {display: block;margin: 0 auto;width: 216px;height: 34px;text-indent: -9999px;background: url(http://img10.360buyimg.com/cms/jfs/t1795/115/489506615/6473/1271a55b/55d4330cN0200f3d7.png) center center no-repeat;overflow: hidden;}
+.J_CxTpl821 .list-style .vip-item .vip-mask {display: none;position: absolute;top: -1px;right: -1px;bottom: -1px;left: -1px;z-index: 1;}
+.J_CxTpl821 .list-style .is-over .vip-mask {display: block;}
+.J_CxTpl821 .list-style .vip-item .vip-mask .bgc-opacity {position: absolute;left: 0;top: 0;width: 100%;height: 100%;background-color: #000;opacity: 0.7;filter: alpha(opacity=70);}
+.J_CxTpl821 .list-style .vip-item .vip-mask .mask-main {position: absolute;left: 0;top: 50%;margin-top: -66px;padding-bottom: 20px;width: 100%;height: 112px;background: url(http://img12.360buyimg.com/cms/jfs/t1834/173/521677845/1544/74c28650/55d438baN147441ab.png) center bottom no-repeat;color: #fff;text-align: center;}
+.J_CxTpl821 .list-style .vip-item .vip-mask .diamond {display: inline-block;*display: inline;*zoom: 1;vertical-align: top;width: 71px;height: 50px;background: url(http://img11.360buyimg.com/cms/jfs/t1774/43/508482362/1930/d4713a10/55d438dcN7d36be9b.png) center center no-repeat;}
+.J_CxTpl821 .list-style .vip-item .vip-mask .mask-text {padding-top: 5px;font: 20px/1.5 '\5fae\8f6f\96c5\9ed1', Arial, sans-serif;}
+
+.J_CxTpl821 .list-style .vip-item .g-name-wrap{
+    margin:0;
+}
+/* 促销模块 end*/
+</style>  
+</head>
+<body>
+<!-- 促销模块html 有三个相同的促销模块  分时段使用 start-->
+<div class=" J_CxTpl821" instanceid="9855434" style="margin-bottom: 10px;"
+module-name="PromptRecommend" module_title="促销推荐模块">
+    <div class="mc" style=";min-height:0px;">
+        <div class="list-style">
+            <ul class="vip-g-list">
+                <li class="vip-item" data-id="1874716257" clstag="sale|keycount|9855434|1">
+                    <div class="item-main-wrap">
+                        <div class="up-box">
+                            <div class="vip-info">
+                                <span class="square sq-left">
+                                </span>
+                                <span class="vip-icon vip-icon-basic">
+                                </span>
+                                <strong class="vip-text">
+                                    及以上会员专享
+                                </strong>
+                                <span class="square sq-right">
+                                </span>
+                            </div>
+                            <div class="g-pic">
+                                <a href="http://item.jd.com/1705293493.html" target="_blank" class="g-link">
+                                    <img class="" src="http://img10.360buyimg.com/n6/jfs/t2161/337/993608960/375607/42982a94/563b0126N7d3197be.jpg"
+                                    alt="">
+                                </a>
+                            </div>
+                        </div>
+                        <div class="down-box">
+                            <p class="g-name-wrap">
+                                <a href="http://item.jd.com/1705293493.html" target="_blank" class="g-link">
+                                    【茗茶尝鲜 300g】 百年老字号红茶茶叶 高品质高海拔坦洋工夫小种红茶叶礼盒组合装 珍藏版
+                                </a>
+                            </p>
+                            <div class="price-wrap">
+                                <del class="jd-price">
+                                    京东价：¥
+                                    <span class="jdNum" jshop="price" jdprice="1705293493">
+                                        128.00
+                                    </span>
+                                </del>
+                                <p class="vip-price">
+                                    会员价：
+                                    <span class="price-show" data-price="58.00" style="visibility: visible;">
+                                        <span class="dollar">
+                                            ¥
+                                        </span>
+                                        <strong class="price-num">
+                                            58
+                                        </strong>
+                                        <span class="price-tail">
+                                            .00
+                                        </span>
+                                    </span>
+                                </p>
+                            </div>
+                            <a href="http://cart.jd.com/cart/dynamic/gate.action?pid=1705293493&amp;pcount=1&amp;ptype=1"
+                            class="add-to-cart">
+                                加入购物车
+                            </a>
+                        </div>
+                    </div>
+                    <div class="vip-mask">
+                        <p class="bgc-opacity">
+                        </p>
+                        <div class="mask-main">
+                            <span class="diamond">
+                            </span>
+                            <p class="mask-text">
+                                抢购结束
+                                <br>
+                                下份惊喜马上到
+                            </p>
+                        </div>
+                    </div>
+                </li>
+                <li class="vip-item" data-id="1874756529" clstag="sale|keycount|9855434|2">
+                    <div class="item-main-wrap">
+                        <div class="up-box">
+                            <div class="vip-info">
+                                <span class="square sq-left">
+                                </span>
+                                <span class="vip-icon vip-icon-basic">
+                                </span>
+                                <strong class="vip-text">
+                                    及以上会员专享
+                                </strong>
+                                <span class="square sq-right">
+                                </span>
+                            </div>
+                            <div class="g-pic">
+                                <a href="http://item.jd.com/1732223339.html" target="_blank" class="g-link">
+                                    <img class="" src="http://img10.360buyimg.com/n6/jfs/t2242/70/134383853/751875/1663af75/55f19a46N405226d7.jpg"
+                                    alt="">
+                                </a>
+                            </div>
+                        </div>
+                        <div class="down-box">
+                            <p class="g-name-wrap">
+                                <a href="http://item.jd.com/1732223339.html" target="_blank" class="g-link">
+                                    【买一送一】安溪铁观音茶叶清香型简装250g/盒
+                                </a>
+                            </p>
+                            <div class="price-wrap">
+                                <del class="jd-price">
+                                    京东价：¥
+                                    <span class="jdNum" jshop="price" jdprice="1732223339">
+                                        68.00
+                                    </span>
+                                </del>
+                                <p class="vip-price">
+                                    会员价：
+                                    <span class="price-show" data-price="68.00" style="visibility: visible;">
+                                        <span class="dollar">
+                                            ¥
+                                        </span>
+                                        <strong class="price-num">
+                                            68
+                                        </strong>
+                                        <span class="price-tail">
+                                            .00
+                                        </span>
+                                    </span>
+                                </p>
+                            </div>
+                            <a href="http://cart.jd.com/cart/dynamic/gate.action?pid=1732223339&amp;pcount=1&amp;ptype=1"
+                            class="add-to-cart">
+                                加入购物车
+                            </a>
+                        </div>
+                    </div>
+                    <div class="vip-mask">
+                        <p class="bgc-opacity">
+                        </p>
+                        <div class="mask-main">
+                            <span class="diamond">
+                            </span>
+                            <p class="mask-text">
+                                抢购结束
+                                <br>
+                                下份惊喜马上到
+                            </p>
+                        </div>
+                    </div>
+                </li>
+                <li class="vip-item" data-id="1874419502" clstag="sale|keycount|9855434|3">
+                    <div class="item-main-wrap">
+                        <div class="up-box">
+                            <div class="vip-info">
+                                <span class="square sq-left">
+                                </span>
+                                <span class="vip-icon vip-icon-basic">
+                                </span>
+                                <strong class="vip-text">
+                                    及以上会员专享
+                                </strong>
+                                <span class="square sq-right">
+                                </span>
+                            </div>
+                            <div class="g-pic">
+                                <a href="http://item.jd.com/1017668112.html" target="_blank" class="g-link">
+                                    <img class="" src="http://img11.360buyimg.com/n6/jfs/t1438/312/1107451510/152360/8b2ac0b6/55b9f2a8N20b5b7f5.jpg"
+                                    alt="">
+                                </a>
+                            </div>
+                        </div>
+                        <div class="down-box">
+                            <p class="g-name-wrap">
+                                <a href="http://item.jd.com/1017668112.html" target="_blank" class="g-link">
+                                    醉品茶叶 金骏眉红茶 和之道150g
+                                </a>
+                            </p>
+                            <div class="price-wrap">
+                                <del class="jd-price">
+                                    京东价：¥
+                                    <span class="jdNum" jshop="price" jdprice="1017668112">
+                                        69.00
+                                    </span>
+                                </del>
+                                <p class="vip-price">
+                                    会员价：
+                                    <span class="price-show" data-price="59.00" style="visibility: visible;">
+                                        <span class="dollar">
+                                            ¥
+                                        </span>
+                                        <strong class="price-num">
+                                            59
+                                        </strong>
+                                        <span class="price-tail">
+                                            .00
+                                        </span>
+                                    </span>
+                                </p>
+                            </div>
+                            <a href="http://cart.jd.com/cart/dynamic/gate.action?pid=1017668112&amp;pcount=1&amp;ptype=1"
+                            class="add-to-cart">
+                                加入购物车
+                            </a>
+                        </div>
+                    </div>
+                    <div class="vip-mask">
+                        <p class="bgc-opacity">
+                        </p>
+                        <div class="mask-main">
+                            <span class="diamond">
+                            </span>
+                            <p class="mask-text">
+                                抢购结束
+                                <br>
+                                下份惊喜马上到
+                            </p>
+                        </div>
+                    </div>
+                </li>
+                <li class="vip-item" data-id="187317133" clstag="sale|keycount|9855434|4">
+                    <div class="item-main-wrap">
+                        <div class="up-box">
+                            <div class="vip-info">
+                                <span class="square sq-left">
+                                </span>
+                                <span class="vip-icon vip-icon-basic">
+                                </span>
+                                <strong class="vip-text">
+                                    及以上会员专享
+                                </strong>
+                                <span class="square sq-right">
+                                </span>
+                            </div>
+                            <div class="g-pic">
+                                <a href="http://item.jd.com/1133434.html" target="_blank" class="g-link">
+                                    <img class="" src="http://img14.360buyimg.com/n6/jfs/t613/296/109513048/133338/dae4607/544f52b5N7b498a0f.jpg"
+                                    alt="">
+                                </a>
+                            </div>
+                        </div>
+                        <div class="down-box">
+                            <p class="g-name-wrap">
+                                <a href="http://item.jd.com/1133434.html" target="_blank" class="g-link">
+                                    美赞臣(MeadJohnson) 安儿宝A+幼儿配方奶粉 3段(1-3岁幼儿适用) 200克(进口奶源)
+                                </a>
+                            </p>
+                            <div class="price-wrap">
+                                <del class="jd-price">
+                                    京东价：¥
+                                    <span class="jdNum" jshop="price" jdprice="1133434">
+                                        <span class="jdNumNo">
+                                            暂无定价
+                                        </span>
+                                    </span>
+                                </del>
+                                <p class="vip-price">
+                                    会员价：
+                                    <span class="price-show" data-price="1.00" style="visibility: visible;">
+                                        <span class="dollar">
+                                            ¥
+                                        </span>
+                                        <strong class="price-num">
+                                            1
+                                        </strong>
+                                        <span class="price-tail">
+                                            .00
+                                        </span>
+                                    </span>
+                                </p>
+                            </div>
+                            <a href="http://cart.jd.com/cart/dynamic/gate.action?pid=1133434&amp;pcount=1&amp;ptype=1"
+                            class="add-to-cart">
+                                加入购物车
+                            </a>
+                        </div>
+                    </div>
+                    <div class="vip-mask">
+                        <p class="bgc-opacity">
+                        </p>
+                        <div class="mask-main">
+                            <span class="diamond">
+                            </span>
+                            <p class="mask-text">
+                                抢购结束
+                                <br>
+                                下份惊喜马上到
+                            </p>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+        </div>
+        
+    </div>
+</div>
+<!-- 促销模块html end-->
+
+<script src="../jquery.min.js"></script>
+<!-- 促销模块js start-->
+<script>
+    jQuery(function() {
+        var skus = [],
+        skuObj = {};
+        jQuery('.J_VipPriceShow').each(function(idx, vps) {
+            var _this = jQuery(vps),
+            _p = _this.parents('.vip-item'),
+            price = _this.attr('data-price'),
+            pArr = price.split('.');
+            skus.push(_p.attr('data-id'));
+            skuObj[_p.attr('data-id')] = _p;
+            _this.html('<span class="dollar">¥</span><strong class="price-num">' + (pArr[0] || 0) + '</strong><span class="price-tail">.' + (pArr[1] || '00') + '</span>').css('visibility', 'visible').removeClass('J_VipPriceShow');
+        });
+        jQuery.ajax({
+            url: '//act-jshop.jd.com/ms.html',
+            type: 'get',
+            data: {
+                promoId: skus.join(',')
+            },
+            dataType: 'jsonp',
+            success: function(data) {
+                if (data.result) {
+                    jQuery.each(data.values,
+                    function(idx, d) {
+                        if (d.status == "0" || d.status == "2") {
+                            skuObj[d.id].addClass('is-over');
+                        }
+                    });
+                }
+            }
+        });
+    });
+</script>
+<!-- 促销模块js end-->
+</body>
+</html>
