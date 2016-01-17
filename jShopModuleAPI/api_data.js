@@ -2,9 +2,139 @@ define({ "api": [
   {
     "type": "JSHOP",
     "url": "none",
+    "title": "base()",
+    "name": "base",
+    "group": "PromptRecommend",
+    "description": "<p>none</p>",
+    "examples": [
+      {
+        "title": "module-param",
+        "content": "none",
+        "type": "json"
+      },
+      {
+        "title": "code",
+        "content": "base : function(arg){\n\tvar _this = $(this),\n\t\t_arg = $.extend({\n\t\t\tnode : 'li',\n\t\t\tclick_node : '.jBtnArea a'\n\t\t},arg || {}),\n\t\t_ids = [],\n\t\t_base_url = INTERFACE.actJshop.ms;\n\t\n\tfunction _init(){\n\t\t_get_ids();\n\t\t_get_state();\n\t}\n\t\n\tfunction _get_ids(){\n\t\t_this.find(_arg.node).each(function(index,n){\n\t\t\t_ids.push($(n).attr('prompt-id'));\n\t\t});\t\t\t\t\n\t}\n\t\n\tfunction _get_state(){\n\t\t$.ajax({\n\t\t\turl : _base_url,\n\t\t\ttype : 'POST',\n\t\t\tdata : {promoId : _ids.join(',')},\n\t\t\tdataType : 'jsonp',\n\t\t\tsuccess : function(data){\n\t\t\t\tif(data.result){\n\t\t\t\t\tdata.values.each(function(index,n){\n\t\t\t\t\t\tif(n.status == '0'){\n\t\t\t\t\t\t\t$(_this).find('li[prompt-id=\"' + n.id + '\"]').attr('class',_arg.overCls).find(_arg.click_node).attr('href','#none');\n\t\t\t\t\t\t}\n\t\t\t\t\t\telse if(n.status == '1'){\n\t\t\t\t\t\t\t$(_this).find('li[prompt-id=\"' + n.id + '\"]').attr('class',_arg.underwayCls);\n\t\t\t\t\t\t}\n\t\t\t\t\t\telse{\n\t\t\t\t\t\t\t$(_this).find('li[prompt-id=\"' + n.id + '\"]').attr('class',_arg.waitCls).find(_arg.click_node).attr('href','#none');;\n\t\t\t\t\t\t}\n\t\t\t\t\t});\n\t\t\t\t}\n\t\t\t}\n\t\t});\n\t}\n\t_init();\n}",
+        "type": "json"
+      }
+    ],
+    "version": "0.0.0",
+    "filename": "input/test.js",
+    "groupTitle": "PromptRecommend"
+  },
+  {
+    "type": "JSHOP",
+    "url": "none",
+    "title": "jingdou()",
+    "name": "jingdou",
+    "group": "PromptRecommend",
+    "description": "<p>none</p>",
+    "examples": [
+      {
+        "title": "module-param",
+        "content": "none",
+        "type": "json"
+      },
+      {
+        "title": "code",
+        "content": "jingdou : function(arg){\n\tvar _this = $(this),\n\t\t_args = $.extend({\n\t\t\tpprice:'.Jpprice',\n\t\t\tjingNum:'.Jjnum'\n\t\t},arg || {}),\n\t\t_ids = [];\n\t\n\tfunction _init(){\n\t\t_get_skuids();\n\t\tif(!_ids.length) return;\n\t\t_get_jindou_info();\n\t}\n\t\n\tfunction _get_skuids(){\n\t\t_this.find('[prompt-id]').each(function(index,n){\n\t\t\t_ids.push($(n).attr('skuid') + '-' + $(n).attr('prompt-id'));\n\t\t});\n\t}\n\t\n\tfunction _get_jindou_info(){\n\t\t$.ajax({\n\t\t\turl : '//jprice.360buy.com/skuprice/' + _ids.join(',') + '-1-1.html',\n\t\t\tdataType : 'jsonp',\n\t\t\tcache : false,\n\t\t\tsuccess : function(data){\n\t\t\t\tif(data&&data.length){\n\t\t\t\t\tdata.each(function(index,n){\n\t\t\t\t\t\tif(n.s != 1) return;\n\t\t\t\t\t\tvar __node = _this.find('[skuid=' + n.sid + ']');\n\t\t\t\t\t\t__node.find(_args.pprice).html(n.pp);\n\t\t\t\t\t\t__node.find(_args.jingNum).html(n.jbn || 0);\n\t\t\t\t\t});\n\t\t\t\t}\n\t\t\t}\n\t\t})\n\t}\n\t_init();\n}",
+        "type": "json"
+      }
+    ],
+    "version": "0.0.0",
+    "filename": "input/test.js",
+    "groupTitle": "PromptRecommend"
+  },
+  {
+    "type": "ATTENTION",
+    "url": "UserDefine模块还扩展了公共模块中的所有函数",
+    "title": "ATTENTION!!!",
+    "name": "ATTENTION___",
+    "group": "UserDefine",
+    "version": "0.0.0",
+    "filename": "input/test.js",
+    "groupTitle": "UserDefine"
+  },
+  {
+    "type": "JSHOP",
+    "url": "none",
+    "title": "addFavorite()",
+    "name": "addFavorite",
+    "group": "UserDefine",
+    "description": "<p>添加收藏--将链接地址添加到浏览器收藏夹，方便以后访问。</p>",
+    "examples": [
+      {
+        "title": "module-param",
+        "content": "title:字符串，自定义名字\nurl:自定义链接地址",
+        "type": "json"
+      },
+      {
+        "title": "code",
+        "content": "addFavorite: function(args) {\n\tif(args == undefined){\n\t\tif(validateData($(this).attr('module-param'))){\n\t\t\tvar args = eval('('+$(this).attr('module-param')+')');\n\t\t}\n\t}\n\t\n\tvar _this = this,\n\t\tparam = $.extend({title:'京东商城', url:'//www.jd.com'},args),\n\t\ttitle = param.title,\n\t\turl = param.url;\n\t\n\t$(_this).css('cursor','pointer');\n\t$(_this).click(function(e){\n\t\tif (document.all) {\n\t        window.external.AddFavorite(url, title);\n\t    } else if (window.sidebar) {\n\t        window.sidebar.addPanel(title, url, \"\");\n\t    } else {\n\t        alert(\"对不起，您的浏览器不支持此操作!\\n请您使用菜单栏或Ctrl+D收藏本站。\");\n\t    }\n\t});\t\t    \n}",
+        "type": "json"
+      }
+    ],
+    "version": "0.0.0",
+    "filename": "input/test.js",
+    "groupTitle": "UserDefine"
+  },
+  {
+    "type": "JSHOP",
+    "url": "none",
+    "title": "autoCenter()",
+    "name": "autoCenter",
+    "group": "UserDefine",
+    "description": "<p>none</p>",
+    "examples": [
+      {
+        "title": "module-param",
+        "content": "none",
+        "type": "json"
+      },
+      {
+        "title": "code",
+        "content": "autoCenter : function(args){\n\tvar _this = $(this),\n\t\tparam = $.extend({autoMiddleNode:'.userDefinedArea', isOwnLink : true} , args || {}),\n\t\tnode = _this.find(param.autoMiddleNode),\n\t\tisOwnLink = param.isOwnLink;\n\t\n\talignCenter();\n\t$(window).resize(function(){\n\t\talignCenter();\n\t});\n\t\n\tfunction alignCenter(){\n\t\tvar extra = node.width()-_this.width();\n\t\tif(extra>0){\n\t\t\tnode.css({'margin-left':-extra/2});\n\t\t}else{\n\t\t\tnode.css('margin','0 auto');\n\t\t}\n\t}\n\t\n\t//判断自定义编辑器里面的图片是否有链接  20150907 by cdwanchuan@jd.ccom\n\tif(isOwnLink && location.href.indexOf('visualEditing')!= -1){\n\t\tvar img = node.find('img');\n\t\timg.each(function(i,e){\n\t\t\tif((jQuery(e).parent()[0].tagName!= 'A') && !jQuery(e).attr('usemap')){\n\t\t\t\tvar relativePar = jQuery(jQuery(e)[0].offsetParent);\n\t\t\t\tif(relativePar.length && jQuery(e).length){\n\t\t\t\t\tvar top = jQuery(e).offset().top - relativePar.offset().top + jQuery(e).height()/2 -11,\n\t\t\t\t\t\tleft = jQuery(e).width()/2 - 31;\n\t\t\t\t\tnode.append('<img src=\"//img11.360buyimg.com/cms/jfs/t2353/241/73326232/691/b8435b2b/55ed2da1N0a73abac.png\" width=\"62\" height=\"23\" style=\"position:absolute; left:' + left +'px; top:' + top + 'px;\" />');\n\t\t\t\t}\n\t\t\t}\n\t\t});\n\t}",
+        "type": "json"
+      }
+    ],
+    "version": "0.0.0",
+    "filename": "input/test.js",
+    "groupTitle": "UserDefine"
+  },
+  {
+    "type": "JSHOP",
+    "url": "none",
+    "title": "sideSlip()",
+    "name": "sideSlip",
+    "group": "UserDefine",
+    "description": "<p>侧滑--用于当页链接锚点或专题入口跳转</p>",
+    "examples": [
+      {
+        "title": "module-param",
+        "content": "vertical:字符串，样式里面的垂直位置参数，可选值top、bottom\nverticalValue:数字，当垂直位置为top时，此值必须大于170，不然无效。（因京东头高度为170px，此功能展示界面不能遮挡京东头）\nhorizontal:字符串，样式里面的水平位置参数，可选值left、right\nhorizontalValue:数字，无限制\nzindex:数字，前后位置",
+        "type": "json"
+      },
+      {
+        "title": "param-Example",
+        "content": "<div class=\"j-module\" module-function=\"sideSlip\" module-param=\"{vertical:'top', verticalValue:170, horizontal:'left', horizontalValue:0}\">\n也可以不传使用默认参数: <div class=\"j-module\" module-function=\"sideSlip\" module-param=\"{}\">;",
+        "type": "json"
+      },
+      {
+        "title": "code",
+        "content": "sideSlip:function(args){\n   \n   \t//此方法应用的图片不使用懒加载\n\t   var imgs = $(this).find('img');\n\t   imgs.each(function(index,n){\n\t\t  $(n).attr('src',$(n).attr('original'));\n\t\t  $(n).removeAttr('original');\n\t\t  $(n).removeClass('J_imgLazyload');\n\t   });\n\t   \n\t\tif(args == undefined){\n\t\t\tif(validateData($(this).attr('module-param'))){\n\t\t\t\tvar args = eval('('+$(this).attr('module-param')+')');\n\t\t\t}\n\t\t}\n\t\t\n\t\tvar _this = this,\n\t\t\tparam = $.extend({vertical:'top', verticalValue:170, horizontal:'left', horizontalValue:0, zindex:10},args),\n\t\t\tvertical = param.vertical,\n\t\t\tverticalValue = param.verticalValue,\n\t\t\thorizontal = param.horizontal,\n\t\t\thorizontalValue = param.horizontalValue,\n\t\t\tzindex = param.zindex;\n\t\t\n\t\t//判断参数个数\n\t\tvar count = 0;\n\t\tfor(var i in param){\n\t\t\tcount++;\n\t\t}\n\t\t//如果垂直是top，水平是right\n\t\tif(count == 5 && vertical == 'top' && verticalValue >= 170 && horizontal == 'right'){\n\t\t\tsetInterval(function(){\n\t\t\t\tverticalValue += (getTop() + param.verticalValue - verticalValue)/20;\n\t\t\t\t$(_this).css({'position':'absolute', 'top':verticalValue, 'right':horizontalValue, 'zIndex':zindex});\n\t\t\t},20);\n\t\t}\n\t\t//如果垂直是top，水平是left\n\t\tif(count == 5 && vertical == 'top' && verticalValue >= 170 && horizontal == 'left'){\n\t\t\tsetInterval(function(){\n\t\t\t\tverticalValue += (getTop() + param.verticalValue - verticalValue)/20;\n\t\t\t\t$(_this).css({'position':'absolute', 'top':verticalValue, 'left':horizontalValue, 'zIndex':zindex});\n\t\t\t},20);\n\t\t}\n\t\t//如果垂直是bottom，水平是right\n\t\tif(count == 5 && vertical == 'bottom' && horizontal == 'right'){\n\t\t\tvar a = $(window).height()-$(_this).height()-param.verticalValue,\n\t\t\t\tb = a;\n\t\t\tsetInterval(function(){\n\t\t\t\ta += (getTop() + b - a)/20;\n\t\t\t\t$(_this).css({'position':'absolute', 'top':a, 'right':horizontalValue, 'zIndex':zindex});\n\t\t\t},20);\n\t\t}\n\t\t//如果垂直是bottom，水平是left\n\t\tif(count == 5 && vertical == 'bottom' && horizontal == 'left'){\n\t\t\tvar a = $(window).height()-$(_this).height()-param.verticalValue,\n\t\t\t\tb = a;\n\t\t\tsetInterval(function(){\n\t\t\t\ta += (getTop() + b - a)/20;\n\t\t\t\t$(_this).css({'position':'absolute', 'top':a, 'left':horizontalValue, 'zIndex':zindex});\n\t\t\t},20);\n\t\t}\n\t\t//如果垂直是bottom，水平是middle\n\t\tif(count == 5 && vertical == 'bottom' && horizontal == 'middle'){\n\t\t\tvar a = $(window).height()-$(_this).height()-param.verticalValue,\n\t\t\t\tb = a;\n\t\t\t\n\t\t\tsetInterval(function(){\n\t\t\t\ta += (getTop() + b - a)/20;\n\t\t\t\t$(_this).css({'position':'absolute','top':a, 'left':horizontalValue, 'margin-left':-($(_this).width()/2), 'zIndex':zindex});\n\t\t\t},20);\n\t\t}\n\t\tfunction getTop(){\n\t\t\treturn (document.documentElement.scrollTop||document.body.scrollTop||0)-(document.documentElement.clientTop||document.body.clientTop||0);\n\t\t}\n\t}",
+        "type": "json"
+      }
+    ],
+    "version": "0.0.0",
+    "filename": "input/test.js",
+    "groupTitle": "UserDefine"
+  },
+  {
+    "type": "JSHOP",
+    "url": "none",
     "title": "addEllipsis()",
     "name": "addEllipsis",
-    "group": "module_function",
+    "group": "public_modules",
     "description": "<p>新EPT商品名称截断处理，自动添加省略号</p>",
     "examples": [
       {
@@ -20,15 +150,15 @@ define({ "api": [
     ],
     "version": "0.0.0",
     "filename": "input/test.js",
-    "groupTitle": "module_function"
+    "groupTitle": "public_modules"
   },
   {
     "type": "JSHOP",
     "url": "none",
     "title": "addToCart()",
     "name": "addToCart",
-    "group": "module_function",
-    "description": "<p>function：飞入购物车 <br>description：点击购物车，获取商品图片飞入购物车特效</p>",
+    "group": "public_modules",
+    "description": "<p>飞入购物车--点击购物车，获取商品图片飞入购物车特效</p>",
     "examples": [
       {
         "title": "module-param",
@@ -43,19 +173,19 @@ define({ "api": [
     ],
     "version": "0.0.0",
     "filename": "input/test.js",
-    "groupTitle": "module_function"
+    "groupTitle": "public_modules"
   },
   {
     "type": "JSHOP",
     "url": "none",
     "title": "attentStoreOrAct()",
     "name": "attentStoreOrAct",
-    "group": "module_function",
-    "description": "<p>[attentStoreOrAct 关注店铺或活动] <br>return {[type]}      [description]</p>",
+    "group": "public_modules",
+    "description": "<p>关注店铺或活动</p>",
     "examples": [
       {
         "title": "module-param",
-        "content": "param  {[type]} args [description]",
+        "content": "none",
         "type": "json"
       },
       {
@@ -66,19 +196,19 @@ define({ "api": [
     ],
     "version": "0.0.0",
     "filename": "input/test.js",
-    "groupTitle": "module_function"
+    "groupTitle": "public_modules"
   },
   {
     "type": "JSHOP",
     "url": "none",
     "title": "autoFill()",
     "name": "autoFill",
-    "group": "module_function",
-    "description": "<p>function：自动填充宽度：通过传入不同的参数，让商品呈现不同的间距排列; <br>description：可应用于列表类模块; <br>autoFillNode为需要计算宽度的节点，默认为li；xInner为节点之间的横向间距；yInner为节点之间的纵向间距; <br>minWidth为节点除内外边距、边框之后的宽度，如果没传则自动获取。如果最终算出来的宽度小于最小宽度，则不做改变; <br>xOuter为节点父级左右边距，默认为空，表示两边没有间距；如果传入值大于0，则两边增加传入的间距值；如果等于0，则表示两边完全不要间距，包括每一行第一个节点和最后一个节点的边距。yOuter和xOuter相反; <br>length 每一行的数量有三种方式：1是自定义传；2是根据每一行的宽度和单个的宽度计算能放下的数量；3是当一行的数量不够占一行的数量</p>",
+    "group": "public_modules",
+    "description": "<p>自动填充宽度：通过传入不同的参数，让商品呈现不同的间距排列--可应用于列表类模块</p>",
     "examples": [
       {
         "title": "module-param",
-        "content": "如{autoFillNode:'li', xInner:0, yInner:0, minWidth:' ', xOuter:' ', yOuter:' '}",
+        "content": "如{autoFillNode:'li', xInner:0, yInner:0, minWidth:' ', xOuter:' ', yOuter:' '}\n1、autoFillNode为需要计算宽度的节点，默认为li；xInner为节点之间的横向间距；yInner为节点之间的纵向间距;\n2、minWidth为节点除内外边距、边框之后的宽度，如果没传则自动获取。如果最终算出来的宽度小于最小宽度，则不做改变;\n3、xOuter为节点父级左右边距，默认为空，表示两边没有间距；如果传入值大于0，则两边增加传入的间距值；如果等于0，则表示两边完全不要间距，包括每一行第一个节点和最后一个节点的边距。yOuter和xOuter相反;\n4、length 每一行的数量有三种方式：1是自定义传；2是根据每一行的宽度和单个的宽度计算能放下的数量；3是当一行的数量不够占一行的数量",
         "type": "json"
       },
       {
@@ -89,14 +219,14 @@ define({ "api": [
     ],
     "version": "0.0.0",
     "filename": "input/test.js",
-    "groupTitle": "module_function"
+    "groupTitle": "public_modules"
   },
   {
     "type": "JSHOP",
     "url": "none",
     "title": "autoTag()",
     "name": "autoTag",
-    "group": "module_function",
+    "group": "public_modules",
     "description": "<p>给a链接增加埋点</p>",
     "examples": [
       {
@@ -112,14 +242,14 @@ define({ "api": [
     ],
     "version": "0.0.0",
     "filename": "input/test.js",
-    "groupTitle": "module_function"
+    "groupTitle": "public_modules"
   },
   {
     "type": "JSHOP",
     "url": "none",
     "title": "autoWidth()",
     "name": "autoWidth",
-    "group": "module_function",
+    "group": "public_modules",
     "description": "<p>自适应布局：自适应布局宽度，根据布局的宽度判断能放下的一行数量，并将多余的宽度赋给每一个列表。支持css对象传入</p>",
     "examples": [
       {
@@ -135,38 +265,38 @@ define({ "api": [
     ],
     "version": "0.0.0",
     "filename": "input/test.js",
-    "groupTitle": "module_function"
+    "groupTitle": "public_modules"
   },
   {
     "type": "JSHOP",
     "url": "none",
     "title": "brandAttent()",
     "name": "brandAttent",
-    "group": "module_function",
-    "description": "<p>function：关注品牌 <br>description：支持多个品牌关注 、业务 0、关注店铺和关注品牌街活动，传的都是“品牌街”那边的品牌活动ID，当前活动的“品牌活动ID”可以在隐藏域#tb_id里面获取 1、点击元素：系统用j-attention（用此class名做唯一区分），用户自定义用e-attention 2、品牌活动ID：data-id（节点伪属性，将品牌活动ID保存在此）,品牌街活动是“品牌街活动ID”，商家是shopId 3、区分关注功能类型：data-type（节点伪属性，用户手动传入），0表示不需要改变文案及取消功能，1表示需要改变文案和要取消功能 4、currentDom：当前点击的元素 5、临时状态data-state ：0未关注；1关注成功；2已经关注；3关注数量达到上限；4关注失败 6、逻辑业务： 1）页面打开时，获取页面上所有带有点击class节点上的data-id，整体初始化； 2）点击某一个元素时，将此元素设置为当前元素，获取元素上的data-id，和data-state发送不同请求（关注或取消关注） 3）当元素是关注状态1和已经关注状态2时，hover上去都显示取消关注 4）根据不同的请求状态，修改按钮文案</p> <pre><code>二、系统使用（引入attent_bp.js）：     1、点击元素：j-attention（用此class名做唯一区分）     2、品牌活动ID：data-id（节点伪属性，将品牌活动ID保存在此）,品牌街活动是“品牌街活动ID”     3、区分关注功能类型：data-type（节点伪属性，用户手动传入），0表示不需要改变文案及取消功能，1表示需要改变文案和要取消功能 </code></pre> <p>三、公共方法（Module.js里面增加brandAttent方法） 1、点击元素：e-attention（用此class名做唯一区分） 2、品牌活动ID：data-id（节点伪属性，将品牌活动ID保存在此）,品牌街活动是“品牌街活动ID” 3、区分关注功能类型：data-type（节点伪属性，用户手动传入），0表示不需要改变文案及取消功能，1表示需要改变文案和要取消功能 4、点击元素，受限于模块module-name，只有在模块下才能使用 5、使用方法：<div class=\"j-module\" module-function=\"brandAttent\" module-param=\"{}\">自定义代码</div></p>",
+    "group": "public_modules",
+    "description": "<p>关注品牌--支持多个品牌关注</p>",
     "examples": [
       {
         "title": "module-param",
-        "content": "none",
+        "content": "一、业务\n      0、关注店铺和关注品牌街活动，传的都是“品牌街”那边的品牌活动ID，当前活动的“品牌活动ID”可以在隐藏域#tb_id里面获取\n      1、点击元素：系统用j-attention（用此class名做唯一区分），用户自定义用e-attention\n      2、品牌活动ID：data-id（节点伪属性，将品牌活动ID保存在此）,品牌街活动是“品牌街活动ID”，商家是shopId\n      3、区分关注功能类型：data-type（节点伪属性，用户手动传入），0表示不需要改变文案及取消功能，1表示需要改变文案和要取消功能\n      4、currentDom：当前点击的元素\n      5、临时状态data-state ：0未关注；1关注成功；2已经关注；3关注数量达到上限；4关注失败\n      6、逻辑业务：\n          1）页面打开时，获取页面上所有带有点击class节点上的data-id，整体初始化；\n          2）点击某一个元素时，将此元素设置为当前元素，获取元素上的data-id，和data-state发送不同请求（关注或取消关注）\n          3）当元素是关注状态1和已经关注状态2时，hover上去都显示取消关注\n          4）根据不同的请求状态，修改按钮文案\n\n  二、系统使用（引入attent_bp.js）：\n      1、点击元素：j-attention（用此class名做唯一区分）\n      2、品牌活动ID：data-id（节点伪属性，将品牌活动ID保存在此）,品牌街活动是“品牌街活动ID”\n      3、区分关注功能类型：data-type（节点伪属性，用户手动传入），0表示不需要改变文案及取消功能，1表示需要改变文案和要取消功能\n\n 三、公共方法（Module.js里面增加brandAttent方法）\n      1、点击元素：e-attention（用此class名做唯一区分）\n      2、品牌活动ID：data-id（节点伪属性，将品牌活动ID保存在此）,品牌街活动是“品牌街活动ID”\n      3、区分关注功能类型：data-type（节点伪属性，用户手动传入），0表示不需要改变文案及取消功能，1表示需要改变文案和要取消功能\n      4、点击元素，受限于模块module-name，只有在模块下才能使用\n      5、使用方法：<div class=\"j-module\" public modules=\"brandAttent\" module-param=\"{}\">自定义代码</div>",
         "type": "json"
       },
       {
         "title": "code",
-        "content": "brandAttent : function(args){\n        var param = jQuery.extend({\n            node : '.e-attention', //关注点击元素\n            pageIdValue : '#tb_id',\n            dataId : 'data-id',//（节点伪属性，将品牌活动ID保存在此）,品牌街活动是“品牌街活动ID”\n            dataState : 'data-state',\n            dataType : 'data-type'//关注类型，如果是1，则只需要关注和已经关注2个状态\n        }, args || {}),\n            _this = jQuery(this),\n            node = _this.find(param.node),\n            dataTye,//全局变量，获取点击元素上的类型  0只要关注和已经关注，非0则默认有取消功能，且修改按钮文案\n            currentDom,//全局变量，获取当前点击的元素\n            para = []; //传入参数\n\n        if(!node.length)return;}\n\n        var attentHtml = '<div class=\"follow-dialog-mask\"></div>'\n        +'<div class=\"follow-dialog\">'\n        +   '<div class=\"attent-mt\">'\n        +       '<span class=\"attent-close\" title=\"关闭\">关闭</span>'\n        +       '<span class=\"attent-title\">提示</span>'\n        +   '</div>'\n        +   '<div class=\"attent-mc\">'\n        +       '<div class=\"attent-con\">'\n        +           '<span class=\"attent-msg\"></span>'\n        +           '<span class=\"attent-other\"></span>'\n        +       '</div>'\n        +   '</div>'\n        +'</div>';\n\n        var attentCss = '<style id=\"followCls\">'\n        +'.follow-dialog-mask{position:fixed; _position:absolute; left:0; top:0; right:0; bottom:0; background:#000; opacity:0.3; filter:alpha(opacity=30); z-index:100; display:none;}'\n        +'.follow-dialog-mask.current{display:block;}'\n        +'.follow-dialog{width:310px; height:185px; /*border:solid 5px rgba(8,1,3,0.3);",
+        "content": "brandAttent : function(args){\n        var param = jQuery.extend({\n            node : '.e-attention', //关注点击元素\n            pageIdValue : '#tb_id',\n            dataId : 'data-id',//（节点伪属性，将品牌活动ID保存在此）,品牌街活动是“品牌街活动ID”\n            dataState : 'data-state',\n            dataType : 'data-type'//关注类型，如果是1，则只需要关注和已经关注2个状态\n        }, args || {}),\n            _this = jQuery(this),\n            node = _this.find(param.node),\n            dataTye,//全局变量，获取点击元素上的类型  0只要关注和已经关注，非0则默认有取消功能，且修改按钮文案\n            currentDom,//全局变量，获取当前点击的元素\n            para = []; //传入参数\n\n        if(!node.length)return;}\n\n        var attentHtml = '<div class=\"follow-dialog-mask\"></div>'\n        +'<div class=\"follow-dialog\">'\n        +   '<div class=\"attent-mt\">'\n        +       '<span class=\"attent-close\" title=\"关闭\">关闭</span>'\n        +       '<span class=\"attent-title\">提示</span>'\n        +   '</div>'\n        +   '<div class=\"attent-mc\">'\n        +       '<div class=\"attent-con\">'\n        +           '<span class=\"attent-msg\"></span>'\n        +           '<span class=\"attent-other\"></span>'\n        +       '</div>'\n        +   '</div>'\n        +'</div>';\n\n        var attentCss = '<style id=\"followCls\">'\n        +'.follow-dialog-mask{position:fixed; _position:absolute; left:0; top:0; right:0; bottom:0; background:#000; opacity:0.3; filter:alpha(opacity=30); z-index:100; display:none;}'\n        +'.follow-dialog-mask.current{display:block;}'\n        +'.follow-dialog{width:310px; height:185px; border:solid 5px #ccc; background:#fff; position:fixed; _position:absolute; left:50%; top:50%; margin:-92px 0 0 -155px; z-index:101; display:none;}'\n        +'.follow-dialog.current{display:block;}'\n        +'.follow-dialog .attent-mt{height:32px; line-height:32px; background:#f5f5f5; font-size:16px; color:#222; text-indent:10px; overflow:hidden;}'\n        +'.follow-dialog .attent-close{float:right; width:32px; height:32px; text-indent:-9999px; background:url(//img10.360buyimg.com/cms/jfs/t1420/84/156758085/1080/d48a39fe/555e9e79N85386290.png) center center no-repeat; cursor:pointer;}'\n        +'.follow-dialog .attent-ok, .follow-dialog .attent-repeat, .follow-dialog .attent-error, .follow-dialog .attent-max{margin:48px 0 0 55px; height:40px; padding-left:48px;}'\n        +'.follow-dialog .attent-ok{background:url(//img12.360buyimg.com/cms/jfs/t1435/352/153421548/1347/d377c92d/555e9e71Nb767e906.png) left center no-repeat;}'\n        +'.follow-dialog .attent-repeat, .follow-dialog .attent-error, .follow-dialog .attent-max{background:url(//img14.360buyimg.com/cms/jfs/t1516/358/164942511/1418/e0c25f0c/555e9e75Nfca9da16.png) left center no-repeat;}'\n        +'.follow-dialog .attent-ok .attent-msg{font-size:14px; color:#009900; font-weight:bold;}'\n        +'.follow-dialog .attent-repeat .attent-msg, .follow-dialog .attent-error .attent-msg, .follow-dialog .attent-max .attent-msg{font-size:14px; color:#ff771e; font-weight:bold;}'\n        +'.follow-dialog .attent-other{color:#6f6363; display:block; margin-top:3px;}'\n        +'.follow-dialog .attent-other a{color:#004499;}'\n        +'.follow-dialog.attent-mall .attent-other a{margin:0 5px;}'\n        +'</style>';\n\n        var attentInfo = {\n            brand : {\n                msgOk : '&#x5173;&#x6CE8;&#x54C1;&#x724C;&#x6210;&#x529F;',\n                msgRepeat : '&#x5DF2;&#x7ECF;&#x5173;&#x6CE8;',\n                msgError : '&#x5173;&#x6CE8;&#x54C1;&#x724C;&#x5931;&#x8D25;',\n                msgMax : '&#x5173;&#x6CE8;&#x7684;&#x54C1;&#x724C;&#x8FBE;&#x5230;&#x6700;&#x5927;&#x6570;&#x91CF;',\n                msgOther : '<a href=\"//t.jd.com/follow/brand/list.action\" target=\"_blank\">&#x67E5;&#x770B;&#x6211;&#x7684;&#x5173;&#x6CE8;>></a>'\n            },\n            mall : {\n                msgOk : '&#x5173;&#x6CE8;&#x6210;&#x529F;',\n                msgRepeat : '&#x5DF2;&#x7ECF;&#x5173;&#x6CE8;',\n                msgError : '&#x5173;&#x6CE8;&#x5931;&#x8D25;',\n                msgOther : '&#x67E5;&#x770B;&#x6211;&#x5173;&#x6CE8;&#x7684;<a href=\"//t.jd.com/vender/followVenderList.action\" target=\"_blank\">&#x5E97;&#x94FA;</a>&#x548C;<a href=\"//t.jd.com/follow/brand/list.action\" target=\"_blank\">&#x54C1;&#x724C;</a>'\n            }\n        };\n\n        //临时状态data-state ：0未关注；1关注成功；2已经关注；3关注数量达到上限；4关注失败\n        function domOperate(){\n            //取消关注\n            if(currentDom.attr(param.dataState) == 0){\n                if(dataType == 1){currentDom.html('\\u5173\\u6ce8\\u54c1\\u724c');}//如果当前需要取消关注功能，就需要修改文案\n               return;\n            }\n\n            jQuery('body').append(attentHtml,attentCss);\n            var _this = jQuery('.follow-dialog'),\n                mask = jQuery('.follow-dialog-mask'),\n                con = _this.find('.attent-con'),\n                msg = _this.find('.attent-msg'),\n                other = _this.find('.attent-other'),\n                close = _this.find('.attent-close'),\n\t\t\t\tcssDom = jQuery('#followCls'),\n                current = 'current';\n\n            //关注成功\n            if(currentDom.attr(param.dataState) == 1){\n                if(dataType == 1){currentDom.html('\\u5df2\\u5173\\u6ce8');}//如果当前需要取消关注功能，就需要修改文案\n                msg.html(attentInfo.brand.msgOk);\n                other.html(attentInfo.brand.msgOther);\n                con.addClass('attent-ok');\n                _this.addClass(current);\n                mask.addClass(current);\n            }\n            //已经关注\n            if(currentDom.attr(param.dataState) == 2){\n                msg.html(attentInfo.brand.msgRepeat);\n                other.html(attentInfo.brand.msgOther);\n                con.addClass('attent-repeat');\n                _this.addClass(current);\n                mask.addClass(current);\n            }\n            //关注达到最大数量\n            if(currentDom.attr(param.dataState) == 3){\n                msg.html(attentInfo.brand.msgMax);\n                other.html(attentInfo.brand.msgOther);\n                con.addClass('attent-repeat');\n                _this.addClass(current);\n                mask.addClass(current);\n            }\n            //关注失败\n            if(currentDom.attr(param.dataState) == 4){\n                msg.html(attentInfo.brand.msgError);\n                other.html(attentInfo.brand.msgOther);\n                con.addClass('attent-error');\n                _this.addClass(current);\n                mask.addClass(current);\n            }\n            close.click(function(){\n                _this.remove();\n                mask.remove();\n\t\t\t\tcssDom.remove();\n            });\n        }\n\n        //获取参数ID，此段供初始化元素状态及文案所用\n        !function getActivityId(){\n            for(var i = 0, len = node.length; i<len; i+=1){\n                para.push({activityId : jQuery(node[i]).attr(param.dataId)});\n            }\n        }();\n\n        //获取预览页面活动ID\n        function getAppId(){\n             var args=new Object(),\n                qry=location.search.substring(1),\n                pairs=qry.split(\"&\");\n            for(var i=0;i<pairs.length;i++)\n             {\n                var pos=pairs[i].indexOf('=');\n                    if(pos==-1)   continue;\n                    var argname=pairs[i].substring(0,pos),\n                        val=pairs[i].substring(pos+1);\n                    args[argname]=unescape(val);\n             }\n           return args['veBean.appId'];\n        }\n\n        function init(){\n            getState();\n            event();\n        }\n\n        function event(){\n            node.mouseenter(function(){\n                var _state = jQuery(this).attr(param.dataState),\n                    dataType = jQuery(this).attr(param.dataType);\n\n                if(_state == 1 || _state == 2){\n                    if(dataType!=0){jQuery(this).html('\\u53d6\\u6d88\\u5173\\u6ce8');}//如果当前需要取消关注功能，就需要修改文案\n                }\n            }).mouseleave(function(){\n                var _state = jQuery(this).attr(param.dataState),\n                    dataType = jQuery(this).attr(param.dataType);\n\n                if(_state == 1 || _state == 2){\n                    if(dataType!=0){jQuery(this).html('\\u5df2\\u5173\\u6ce8');}//如果当前需要取消关注功能，就需要修改文案\n                }\n            });\n\n            node.click(function(){\n                //获取当前点击元素上的品牌活动ID伪属性data-id\n                currentDom = jQuery(this);\n                para = [{activityId:currentDom.attr(param.dataId)}],\n                dataType = currentDom.attr(param.dataType);\n\n                if(dataType!=0){//如果当前需要取消关注功能\n                    if(currentDom.attr(param.dataState) == 1 || currentDom.attr(param.dataState) == 2){\n                        thick_login(abortAttent); \n                    }else{\n                        thick_login(attent);\n                    }\n                }else{\n                    thick_login(attent);\n                }\n            });\n        }\n\n        function getState(){\n            $.ajax({\n                url : INTERFACE.brandFollow.batchIsFollow,\n\t\t\t\tdata : {brandId : JSON.stringify(para), sysName : 'sale.jd.com'},\n                dataType : 'jsonp',\n                success : function(data){\n                    if(data.code == 'F10000'){\n                        for(var i = 0, len = node.length; i < len; i+=1){\n                            var _node = jQuery(node[i]),\n                                dataId = _node.attr(param.dataId),\n                                dataType = _node.attr(param.dataType);\n\n                            if(data.data[dataId]){\n                                if(dataType == 1){_node.html('\\u5df2\\u5173\\u6ce8');}//如果当前需要取消关注功能，就需要修改文案\n                                _node.attr(param.dataState,1);//已关注\n                            }else{\n                                if(dataType == 1){_node.html('\\u5173\\u6ce8\\u54c1\\u724c');}//如果当前需要取消关注功能，就需要修改文案\n                                _node.attr(param.dataState,0);//未关注\n                            }\n                        }\n                    };\n                }\n            });\n        }\n\n        function attent(){\n            $.ajax({\n                url : INTERFACE.brandFollow.batchfollow,\n\t\t\t\tdata : {brandId : JSON.stringify(para), sysName : 'sale.jd.com'},\n                dataType : 'jsonp',\n                success : function(data){\n                    if(data.code == 'F10000'){\n                        if(data.data){\n                            currentDom.attr(param.dataState,1);\n                            domOperate();\n                        }\n                    }else if(data.code == 'F0402'){\n                        if(!data.data){\n                            currentDom.attr(param.dataState,2);\n                            domOperate();\n                        }\n                    }else if(data.code == 'F0410'){\n                        currentDom.attr(param.dataState,3);\n                        domOperate();\n                    }else{\n                        currentDom.attr(param.dataState,4);\n                        domOperate();\n                    }\n                }\n            });\n        }\n\n        function abortAttent(){\n            $.ajax({\n                url : INTERFACE.brandFollow.batchUnfollow,\n\t\t\t\tdata : {brandId : JSON.stringify(para), sysName : 'sale.jd.com'},\n                dataType : 'jsonp',\n                success : function(data){\n                    if(data.code == 'F10000'){\n                        if(data.data){\n                            currentDom.attr(param.dataState,0);\n                            domOperate();\n                        }\n                    }\n                }\n            });\n        }\n\n        init();\n    }",
         "type": "json"
       }
     ],
     "version": "0.0.0",
     "filename": "input/test.js",
-    "groupTitle": "module_function"
+    "groupTitle": "public_modules"
   },
   {
     "type": "JSHOP",
     "url": "none",
     "title": "changePageUrl()",
     "name": "changePageUrl",
-    "group": "module_function",
-    "description": "<p>function：页面跳转 <br>description： 应用场景：装修、预览、浏览</p>",
+    "group": "public_modules",
+    "description": "<p>页面跳转--应用场景：装修、预览、浏览</p>",
     "examples": [
       {
         "title": "module-param",
@@ -181,14 +311,14 @@ define({ "api": [
     ],
     "version": "0.0.0",
     "filename": "input/test.js",
-    "groupTitle": "module_function"
+    "groupTitle": "public_modules"
   },
   {
     "type": "JSHOP",
     "url": "none",
     "title": "changePhoto()",
     "name": "changePhoto",
-    "group": "module_function",
+    "group": "public_modules",
     "description": "<p>改变图片，点击小图看大图</p>",
     "examples": [
       {
@@ -204,19 +334,19 @@ define({ "api": [
     ],
     "version": "0.0.0",
     "filename": "input/test.js",
-    "groupTitle": "module_function"
+    "groupTitle": "public_modules"
   },
   {
     "type": "JSHOP",
     "url": "none",
     "title": "changeStyle()",
     "name": "changeStyle",
-    "group": "module_function",
+    "group": "public_modules",
     "description": "<p>给鼠标当前出发的节点增加一个样式：主要应用在鼠标移动到节点，节点伸缩与展开等。</p>",
     "examples": [
       {
         "title": "module-param",
-        "content": "如{node:'li', defaultClass:'jCurrent', defaultShow:0}。\n参数node为单个节点名；参数defaultClass可任意命名，只要css里面有这个名字。",
+        "content": "如{node:'li', defaultClass:'jCurrent', defaultShow:0}。\n1、参数node为单个节点名；\n2、参数defaultClass可任意命名，只要css里面有这个名字。",
         "type": "json"
       },
       {
@@ -227,19 +357,19 @@ define({ "api": [
     ],
     "version": "0.0.0",
     "filename": "input/test.js",
-    "groupTitle": "module_function"
+    "groupTitle": "public_modules"
   },
   {
     "type": "JSHOP",
     "url": "none",
     "title": "clickToFly()",
     "name": "clickToFly",
-    "group": "module_function",
-    "description": "<p>[clickToFly 点击元素飞入，目标元素显示+1] <br>return {[type]}      [description]</p>",
+    "group": "public_modules",
+    "description": "<p>点击元素飞入，目标元素显示+1</p>",
     "examples": [
       {
         "title": "module-param",
-        "content": "param  {[type]} args [description]",
+        "content": "none",
         "type": "json"
       },
       {
@@ -250,19 +380,19 @@ define({ "api": [
     ],
     "version": "0.0.0",
     "filename": "input/test.js",
-    "groupTitle": "module_function"
+    "groupTitle": "public_modules"
   },
   {
     "type": "JSHOP",
     "url": "none",
     "title": "createQrCode()",
     "name": "createQrCode",
-    "group": "module_function",
-    "description": "<p>function：创建二维码 <br>description：可应用于所有模块。</p>",
+    "group": "public_modules",
+    "description": "<p>创建二维码--可应用于所有模块。</p>",
     "examples": [
       {
         "title": "module-param",
-        "content": "如{node:'li', defaultClass:'jCurrent', defaultShow:0}。\n参数node为单个节点名；参数defaultClass可任意命名，只要css里面有这个名字。",
+        "content": "如{node:'li', defaultClass:'jCurrent', defaultShow:0}。\n1、参数node为单个节点名；\n2、参数defaultClass可任意命名，只要css里面有这个名字。",
         "type": "json"
       },
       {
@@ -273,14 +403,14 @@ define({ "api": [
     ],
     "version": "0.0.0",
     "filename": "input/test.js",
-    "groupTitle": "module_function"
+    "groupTitle": "public_modules"
   },
   {
     "type": "JSHOP",
     "url": "none",
     "title": "equallyWidth()",
     "name": "equallyWidth",
-    "group": "module_function",
+    "group": "public_modules",
     "description": "<p>根据父节点宽度，平均分配子节点宽度</p>",
     "examples": [
       {
@@ -296,19 +426,19 @@ define({ "api": [
     ],
     "version": "0.0.0",
     "filename": "input/test.js",
-    "groupTitle": "module_function"
+    "groupTitle": "public_modules"
   },
   {
     "type": "JSHOP",
     "url": "none",
     "title": "estimation()",
     "name": "estimation",
-    "group": "module_function",
-    "description": "<p>获取商品评论相关信息 评价星级规则：五星，好评度≥95%，四星，好评度≥90%，三星，好评度≥85%，二星，好评度≥80%，一星，好评度≥75% 备注：skuNode节点需要位于starNode、commentNode节点层级之上</p>",
+    "group": "public_modules",
+    "description": "<p>获取商品评论相关信息--评价星级规则：五星，好评度≥95%，四星，好评度≥90%，三星，好评度≥85%，二星，好评度≥80%，一星，好评度≥75%</p>",
     "examples": [
       {
         "title": "module-param",
-        "content": "param args.item         存放skuid商品单元节点选择器\nparam args.j-star       星级评价节点选择器\nparam args.j-rate       好评率节点选择器\nparam args.j-count      评论数节点选择器\nparam args.j-comment    评论内容节点选择器\nparam args.skuid        存放skuid的属性名称",
+        "content": "注意：skuNode节点需要位于starNode、commentNode节点层级之上\n1、item         存放skuid商品单元节点选择器\n2、j-star       星级评价节点选择器\n3、j-rate       好评率节点选择器\n4、j-count      评论数节点选择器\n5、j-comment    评论内容节点选择器\n6、skuid        存放skuid的属性名称",
         "type": "json"
       },
       {
@@ -319,15 +449,15 @@ define({ "api": [
     ],
     "version": "0.0.0",
     "filename": "input/test.js",
-    "groupTitle": "module_function"
+    "groupTitle": "public_modules"
   },
   {
     "type": "JSHOP",
     "url": "none",
     "title": "fullHeight()",
     "name": "fullHeight",
-    "group": "module_function",
-    "description": "<p>撑满高度：用在相对定位里面有绝对定位时，背景透明图层以父节点为基准将高度撑满</p>",
+    "group": "public_modules",
+    "description": "<p>撑满高度--用在相对定位里面有绝对定位时，背景透明图层以父节点为基准将高度撑满</p>",
     "examples": [
       {
         "title": "module-param",
@@ -342,19 +472,19 @@ define({ "api": [
     ],
     "version": "0.0.0",
     "filename": "input/test.js",
-    "groupTitle": "module_function"
+    "groupTitle": "public_modules"
   },
   {
     "type": "JSHOP",
     "url": "none",
     "title": "getGoodsAttentCount()",
     "name": "getGoodsAttentCount",
-    "group": "module_function",
-    "description": "<p>[getGoodsAttentCount 获取商品关注数] <br>return {[type]}      [description]</p>",
+    "group": "public_modules",
+    "description": "<p>获取商品关注数</p>",
     "examples": [
       {
         "title": "module-param",
-        "content": "param  {[type]} args [模板参数]",
+        "content": "none",
         "type": "json"
       },
       {
@@ -365,19 +495,19 @@ define({ "api": [
     ],
     "version": "0.0.0",
     "filename": "input/test.js",
-    "groupTitle": "module_function"
+    "groupTitle": "public_modules"
   },
   {
     "type": "JSHOP",
     "url": "none",
     "title": "getProTag()",
     "name": "getProTag",
-    "group": "module_function",
-    "description": "<p>function：获取促销标签 <br>description：根据获取的促销标签编号显示促销标签 应用场景：带有SKUID商品的模块</p>",
+    "group": "public_modules",
+    "description": "<p>获取促销标签--根据获取的促销标签编号显示促销标签，应用场景：带有SKUID商品的模块</p>",
     "examples": [
       {
         "title": "module-param",
-        "content": "node方法应用节点；tagNode标签节点；tagValue标签键值；dataNum每次最多能获取的商品数量；url接口；urlNum可用接口长度",
+        "content": "1、node方法应用节点；\n2、tagNode标签节点；\n3、tagValue标签键值；\n4、dataNum每次最多能获取的商品数量；\n5、url接口；\n6、urlNum可用接口长度",
         "type": "json"
       },
       {
@@ -388,19 +518,19 @@ define({ "api": [
     ],
     "version": "0.0.0",
     "filename": "input/test.js",
-    "groupTitle": "module_function"
+    "groupTitle": "public_modules"
   },
   {
     "type": "JSHOP",
     "url": "none",
     "title": "getWechatPrice()",
     "name": "getWechatPrice",
-    "group": "module_function",
-    "description": "<p>[getWechatPrice 获取微信专享价] <br>return {[type]}      [description]</p>",
+    "group": "public_modules",
+    "description": "<p>获取微信专享价</p>",
     "examples": [
       {
         "title": "module-param",
-        "content": "param  {[type]} args [模板参数]",
+        "content": "none",
         "type": "json"
       },
       {
@@ -411,14 +541,14 @@ define({ "api": [
     ],
     "version": "0.0.0",
     "filename": "input/test.js",
-    "groupTitle": "module_function"
+    "groupTitle": "public_modules"
   },
   {
     "type": "JSHOP",
     "url": "none",
     "title": "goodsFollow()",
     "name": "goodsFollow",
-    "group": "module_function",
+    "group": "public_modules",
     "description": "<p>none</p>",
     "examples": [
       {
@@ -434,14 +564,14 @@ define({ "api": [
     ],
     "version": "0.0.0",
     "filename": "input/test.js",
-    "groupTitle": "module_function"
+    "groupTitle": "public_modules"
   },
   {
     "type": "JSHOP",
     "url": "none",
     "title": "goodsShare()",
     "name": "goodsShare",
-    "group": "module_function",
+    "group": "public_modules",
     "description": "<p>none</p>",
     "examples": [
       {
@@ -457,15 +587,15 @@ define({ "api": [
     ],
     "version": "0.0.0",
     "filename": "input/test.js",
-    "groupTitle": "module_function"
+    "groupTitle": "public_modules"
   },
   {
     "type": "JSHOP",
     "url": "none",
     "title": "hideNode()",
     "name": "hideNode",
-    "group": "module_function",
-    "description": "<p>隐藏节点 鼠标移动到某个节点时，隐藏传入的其他参数节点</p>",
+    "group": "public_modules",
+    "description": "<p>隐藏节点--鼠标移动到某个节点时，隐藏传入的其他参数节点</p>",
     "examples": [
       {
         "title": "module-param",
@@ -480,19 +610,19 @@ define({ "api": [
     ],
     "version": "0.0.0",
     "filename": "input/test.js",
-    "groupTitle": "module_function"
+    "groupTitle": "public_modules"
   },
   {
     "type": "JSHOP",
     "url": "none",
     "title": "hoverAnimate()",
     "name": "hoverAnimate",
-    "group": "module_function",
-    "description": "<p>function：移入动画 <br>description：对节点的移入及移出执行不同的CSS属性动画 css value: backgroundPosition, borderWidth, borderBottomWidth, borderLeftWidth, borderRightWidth, borderTopWidth, borderSpacing, margin, marginBottom, marginLeft, marginRight, marginTop, outlineWidth, padding, paddingBottom, paddingLeft, paddingRight, paddingTop, height, width, maxHeight, maxWidth, minHeight, maxWidth, font, fontSize, bottom, left, right, top, letterSpacing, wordSpacing, lineHeight, textIndent, opacity 应用场景：所有</p>",
+    "group": "public_modules",
+    "description": "<p>移入动画--对节点的移入及移出执行不同的CSS属性动画，应用场景：所有。</p>",
     "examples": [
       {
         "title": "module-param",
-        "content": "hoverNode执行css动画的节点；cssValueOne和cssValueTwo数组对象；timerOne和timerTwo为时间值",
+        "content": "1、hoverNode执行css动画的节点；\n2、cssValueOne和cssValueTwo数组对象--css value: backgroundPosition, borderWidth, borderBottomWidth, borderLeftWidth, borderRightWidth, borderTopWidth, borderSpacing, margin, marginBottom, marginLeft, marginRight, marginTop, outlineWidth, padding, paddingBottom, paddingLeft, paddingRight, paddingTop, height, width, maxHeight, maxWidth, minHeight, maxWidth, font, fontSize, bottom, left, right, top, letterSpacing, wordSpacing, lineHeight, textIndent, opacity\n3、timerOne和timerTwo为时间值",
         "type": "json"
       },
       {
@@ -503,15 +633,15 @@ define({ "api": [
     ],
     "version": "0.0.0",
     "filename": "input/test.js",
-    "groupTitle": "module_function"
+    "groupTitle": "public_modules"
   },
   {
     "type": "JSHOP",
     "url": "none",
     "title": "marqueeLeft()",
     "name": "marqueeLeft",
-    "group": "module_function",
-    "description": "<p>function：向左移动 <br>description：可应用于图片类模块。</p>",
+    "group": "public_modules",
+    "description": "<p>向左移动--可应用于图片类模块。</p>",
     "examples": [
       {
         "title": "module-param",
@@ -526,14 +656,14 @@ define({ "api": [
     ],
     "version": "0.0.0",
     "filename": "input/test.js",
-    "groupTitle": "module_function"
+    "groupTitle": "public_modules"
   },
   {
     "type": "JSHOP",
     "url": "none",
     "title": "middle()",
     "name": "middle",
-    "group": "module_function",
+    "group": "public_modules",
     "description": "<p>none</p>",
     "examples": [
       {
@@ -549,19 +679,19 @@ define({ "api": [
     ],
     "version": "0.0.0",
     "filename": "input/test.js",
-    "groupTitle": "module_function"
+    "groupTitle": "public_modules"
   },
   {
     "type": "JSHOP",
     "url": "none",
     "title": "moveNode()",
     "name": "moveNode",
-    "group": "module_function",
-    "description": "<p>function： 移动节点 <br>description：点击左右箭头移动节点，可移动单个节点，也可移动一屏节点，可左右移动，也可左右循环移动 note：如果是移动一屏，则需要的节点总数量必须为每一屏可显示的整数倍；如果是循环切换，disabled参数可不用。</p>",
+    "group": "public_modules",
+    "description": "<p>移动节点--点击左右箭头移动节点，可移动单个节点，也可移动一屏节点，可左右移动，也可左右循环移动</p>",
     "examples": [
       {
         "title": "module-param",
-        "content": "moveNode需要移动的节点；arrowPrev左箭头；arrowNext右箭头；disabled箭头不可用样式；showNum一屏显示数量，可传入正确的一屏数量，没传则程序计算；\ncssValue改变的css属性名；isLoop是否循环，默认为真；isScreen是否是移动一屏，默认为真；timer每一次移动的时间，默认为1，值取0-4之间。",
+        "content": "注意：如果是移动一屏，则需要的节点总数量必须为每一屏可显示的整数倍；如果是循环切换，disabled参数可不用。 \n1、moveNode需要移动的节点；\n2、arrowPrev左箭头；\n3、arrowNext右箭头；\n4、disabled箭头不可用样式；\n5、showNum一屏显示数量，可传入正确的一屏数量，没传则程序计算；\n6、cssValue改变的css属性名；\n7、isLoop是否循环，默认为真；\n8、isScreen是否是移动一屏，默认为真；\n9、timer每一次移动的时间，默认为1，值取0-4之间。",
         "type": "json"
       },
       {
@@ -572,14 +702,14 @@ define({ "api": [
     ],
     "version": "0.0.0",
     "filename": "input/test.js",
-    "groupTitle": "module_function"
+    "groupTitle": "public_modules"
   },
   {
     "type": "JSHOP",
     "url": "none",
     "title": "movePhoto()",
     "name": "movePhoto",
-    "group": "module_function",
+    "group": "public_modules",
     "description": "<p>移动图片，点击左右箭头移动图片</p>",
     "examples": [
       {
@@ -595,14 +725,14 @@ define({ "api": [
     ],
     "version": "0.0.0",
     "filename": "input/test.js",
-    "groupTitle": "module_function"
+    "groupTitle": "public_modules"
   },
   {
     "type": "JSHOP",
     "url": "none",
     "title": "notity()",
     "name": "notity",
-    "group": "module_function",
+    "group": "public_modules",
     "description": "<p>none</p>",
     "examples": [
       {
@@ -618,19 +748,19 @@ define({ "api": [
     ],
     "version": "0.0.0",
     "filename": "input/test.js",
-    "groupTitle": "module_function"
+    "groupTitle": "public_modules"
   },
   {
     "type": "JSHOP",
     "url": "none",
     "title": "operateNode()",
     "name": "operateNode",
-    "group": "module_function",
-    "description": "<p>function：操作节点：通过不同的条件，调用不同的方法，查找对象里面的某一个或一些节点，并对这些节点做操作，默认为增加一个样式。 <br>description：可应用于任意模块，只要有使用场景。 operateNode为需要查找的节点；operateParentNode为查找节点的父级节点；defaultClass为默认样式名；length为每一行的节点个数；subFunction为此方法里面的子方法； number为数组对象，当使用getNode方法时，表示数组里面指定的节点，当使用getColumn方法时，表示指定的列节点。当使用getRow方法时，表示指定的行节点； callBack为函数体，参数接收一个节点对象，可在函数体里对接收的这个对象做操作。</p>",
+    "group": "public_modules",
+    "description": "<p>操作节点：通过不同的条件，调用不同的方法，查找对象里面的某一个或一些节点，并对这些节点做操作，默认为增加一个样式--可应用于任意模块，只要有使用场景。</p>",
     "examples": [
       {
         "title": "module-param",
-        "content": "如{operateNode:'li', operateParentNode:null, defaultClass:'jCurrent', length:0, subFunction:null, number:[], callBack:null}",
+        "content": "如{operateNode:'li', operateParentNode:null, defaultClass:'jCurrent', length:0, subFunction:null, number:[], callBack:null}\n1、operateNode为需要查找的节点；\n2、operateParentNode为查找节点的父级节点；\n3、defaultClass为默认样式名；\n4、length为每一行的节点个数；\n5、subFunction为此方法里面的子方法；\n6、number为数组对象，当使用getNode方法时，表示数组里面指定的节点，当使用getColumn方法时，表示指定的列节点。当使用getRow方法时，表示指定的行节点；\n7、callBack为函数体，参数接收一个节点对象，可在函数体里对接收的这个对象做操作。",
         "type": "json"
       },
       {
@@ -641,14 +771,14 @@ define({ "api": [
     ],
     "version": "0.0.0",
     "filename": "input/test.js",
-    "groupTitle": "module_function"
+    "groupTitle": "public_modules"
   },
   {
     "type": "JSHOP",
     "url": "none",
     "title": "positionLayout()",
     "name": "positionLayout",
-    "group": "module_function",
+    "group": "public_modules",
     "description": "<p>none</p>",
     "examples": [
       {
@@ -664,19 +794,19 @@ define({ "api": [
     ],
     "version": "0.0.0",
     "filename": "input/test.js",
-    "groupTitle": "module_function"
+    "groupTitle": "public_modules"
   },
   {
     "type": "JSHOP",
     "url": "none",
     "title": "removeBg()",
     "name": "removeBg",
-    "group": "module_function",
+    "group": "public_modules",
     "description": "<p>给每行最后一个节点增加样式：主要应用在每一行有多个节点，并且想给最后一个节点如改变背景、边框等</p>",
     "examples": [
       {
         "title": "module-param",
-        "content": "如{node:'li', defaultClass:'noBg'}。\n参数node为单个节点名；参数defaultClass可任意命名，只要css里面有这个名字。",
+        "content": "如{node:'li', defaultClass:'noBg'}。\n1、参数node为单个节点名；\n2、参数defaultClass可任意命名，只要css里面有这个名字。",
         "type": "json"
       },
       {
@@ -687,15 +817,15 @@ define({ "api": [
     ],
     "version": "0.0.0",
     "filename": "input/test.js",
-    "groupTitle": "module_function"
+    "groupTitle": "public_modules"
   },
   {
     "type": "JSHOP",
     "url": "none",
     "title": "renderHTML()",
     "name": "renderHTML",
-    "group": "module_function",
-    "description": "<p>function: 简单模板渲染 <br>description：根据html模板及数据拼接html片段 应用场景：任意</p>",
+    "group": "public_modules",
+    "description": "<p>简单模板渲染--根据html模板及数据拼接html片段，应用场景任意。</p>",
     "examples": [
       {
         "title": "module-param",
@@ -710,14 +840,14 @@ define({ "api": [
     ],
     "version": "0.0.0",
     "filename": "input/test.js",
-    "groupTitle": "module_function"
+    "groupTitle": "public_modules"
   },
   {
     "type": "JSHOP",
     "url": "none",
     "title": "rid()",
     "name": "rid",
-    "group": "module_function",
+    "group": "public_modules",
     "description": "<p>none</p>",
     "examples": [
       {
@@ -733,14 +863,14 @@ define({ "api": [
     ],
     "version": "0.0.0",
     "filename": "input/test.js",
-    "groupTitle": "module_function"
+    "groupTitle": "public_modules"
   },
   {
     "type": "JSHOP",
     "url": "none",
     "title": "ridLazy()",
     "name": "ridLazy",
-    "group": "module_function",
+    "group": "public_modules",
     "description": "<p>none</p>",
     "examples": [
       {
@@ -756,15 +886,15 @@ define({ "api": [
     ],
     "version": "0.0.0",
     "filename": "input/test.js",
-    "groupTitle": "module_function"
+    "groupTitle": "public_modules"
   },
   {
     "type": "JSHOP",
     "url": "none",
     "title": "saleAttent()",
     "name": "saleAttent",
-    "group": "module_function",
-    "description": "<p>function：关注 <br>description：活动关注、店铺关注、商品关注，依赖module/utils.js</p>",
+    "group": "public_modules",
+    "description": "<p>关注--活动关注、店铺关注、商品关注，依赖module/utils.js</p>",
     "examples": [
       {
         "title": "module-param",
@@ -779,14 +909,14 @@ define({ "api": [
     ],
     "version": "0.0.0",
     "filename": "input/test.js",
-    "groupTitle": "module_function"
+    "groupTitle": "public_modules"
   },
   {
     "type": "JSHOP",
     "url": "none",
     "title": "seamlessScroll()",
     "name": "seamlessScroll",
-    "group": "module_function",
+    "group": "public_modules",
     "description": "<p>none</p>",
     "examples": [
       {
@@ -802,19 +932,19 @@ define({ "api": [
     ],
     "version": "0.0.0",
     "filename": "input/test.js",
-    "groupTitle": "module_function"
+    "groupTitle": "public_modules"
   },
   {
     "type": "JSHOP",
     "url": "none",
     "title": "showAppPriceCoupon()",
     "name": "showAppPriceCoupon",
-    "group": "module_function",
+    "group": "public_modules",
     "description": "<p>显示App专享价及相对于京东价的优惠金额</p>",
     "examples": [
       {
         "title": "module-param",
-        "content": "\tparam param.jdPriceNode     京东价格节点选择器\n    param param.appPriceNode    app价格节点选择器\n    param param.couponPriceNode 优惠额度节点选择器\n    param param.couponType      优惠额度计算类型，1：算优惠了多少金额（京东价 - App专享价），2：算相当于打了几折（App专享价 / 京东价10）\n    param param.skuAttName      价格节点上的sku标示\n    param param.itemNode        单个sku最外层的节点\n    param param.noAppPriceClass 没有app专享价时给itemNode添加的样式",
+        "content": "jdPriceNode    京东价格节点选择器\nappPriceNode    app价格节点选择器\ncouponPriceNode 优惠额度节点选择器\ncouponType      优惠额度计算类型，1：算优惠了多少金额（京东价 - App专享价），2：算相当于打了几折（App专享价 / 京东价10）\nskuAttName      价格节点上的sku标示\nitemNode        单个sku最外层的节点\nnoAppPriceClass 没有app专享价时给itemNode添加的样式",
         "type": "json"
       },
       {
@@ -825,37 +955,37 @@ define({ "api": [
     ],
     "version": "0.0.0",
     "filename": "input/test.js",
-    "groupTitle": "module_function"
+    "groupTitle": "public_modules"
   },
   {
     "type": "JSHOP",
     "url": "none",
     "title": "showNode()",
     "name": "showNode",
-    "group": "module_function",
-    "description": "<p>function：显示节点：触发一个元素，根据设定的数量按先后顺序显示元素 <br>description：可应用于任意模块，只要有使用场景。 par为被显示元素的父级元素；node被显示元素；btn触发元素；pageNum每一次显示数量；className被显示元素增加的class名</p>",
+    "group": "public_modules",
+    "description": "<p>显示节点：触发一个元素，根据设定的数量按先后顺序显示元素--可应用于任意模块，只要有使用场景。</p>",
     "examples": [
       {
         "title": "module-param",
-        "content": "如{par : '.jSaleAttention20150423-1', node : 'li', btn : '.jBtn', pageNum : 10, className : 'current'}",
+        "content": "如{par : '.jSaleAttention20150423-1', node : 'li', btn : '.jBtn', pageNum : 10, className : 'current'}\n1、par为被显示元素的父级元素；\n2、node被显示元素；btn触发元素；\n3、pageNum每一次显示数量；\n4、className被显示元素增加的class名",
         "type": "json"
       },
       {
         "title": "code",
-        "content": "showNode : function(args){\n    var _this = this,\n        param = jQuery.extend({\n        par : '.jSaleAttention20150423-1',\n        node : 'li',\n        btn : '.jBtn',\n        pageNum : 10,\n        className : 'current'\n     }, args || {}),\n        par = jQuery(param.par),\n        node = jQuery(_this).find(param.node),\n        btn = jQuery(_this).find(param.btn),\n        index = 0,\n        pageTotal = Math.ceil(node.length/param.pageNum);\n\n    function showData(){\n        node.removeClass(param.className);\n        for(var i = index*param.pageNum; i <= index*param.pageNum +param.pageNum - 1; i+=1){\n            node.eq(i).addClass(param.className);\n        }\n    }\n    showData();\n\n    btn.click(function(){\n        if((index+1) == pageTotal) {\n            index = 0;\n        }else{\n            index +=1;\n        }\n        showData();\n    });\n    },\n    countdown : (function(){\n        var timer = null,\n            countList = [],\n            sysTime = 0;\n       return function(arg){\n            var that = this,\n                args = $.extend({\n                    hasDay : true,\n                    dayCnt : '.days',\n                    hourCnt : 'hours',\n                    minuteCnt : '.minutes',\n                    secondCnt : '.seconds'\n                },arg || {}),\n                cutTime = [];\n\n            function init(){\n                if(!args.countdownInfo)return;\n\n                getCutTime();\n                $(that).data('cutTime',cutTime).data('arg',args);\n                setTimeout(function(){\n                    countList = $('[module-function*=\"countdown\"]').toArray();\n                },0);\n                if(!timer){\n                    getServerTime(function(data){\n                        sysTime = new Date() - data;\n                        count();\n                    });\n                }\n            }\n\n            function timeStrHandler(str){\n                var rowTemp = str.split(' '),\n                    inplicit = rowTemp[0].split('-'),\n                    explicit = rowTemp[1].split(':');\n               return new Date(Number(inplicit[0]),(Number(inplicit[1]) + 11)%12,Number(inplicit[2]),Number(explicit[0]),Number(explicit[1]),Number(explicit[2]));\n            }\n\n            function getCutTime(){\n                var temp = args.countdownInfo;\n                if(temp.constructor == String){\n                    cutTime.push(timeStrHandler(temp));\n                }\n                else{\n                    $.each(temp,function(index,data){\n                        cutTime.push(timeStrHandler(data));\n                    });\n                }\n            }\n\n            function count(){\n                timer = setInterval(function(){\n                    for(var i = 0, len = countList.length; i < len; i++){\n                        var item = $(countList[i]),\n                            cT = item.data('cutTime'),\n                            options = item.data('arg'),\n                            leftTime = parseInt((cT[0] - new Date() + sysTime)/1000);\n                        if(leftTime < 0){\n                            cT.shift();\n                            if(cT.length === 0){\n                                countList.splice(i,1);\n                                len -- ;\n                                i--;\n                            }\n                            else{\n                                item.data('cutTime',cT);\n                            }\n                            item.closest('[module-name]').trigger('countdownchange');\n                        }\n                        else{\n                            var day = Math.floor(leftTime/(24*3600)),\n                                hour = Math.floor(leftTime/3600) - (options.hasDay?day*24 : 0),\n                                minute = Math.floor(leftTime%3600/60),\n                                second = leftTime%60;\n\n                            if(options.hasDay){\n                                item.find(options.dayCnt).html(day > 9?day : '0' + day);\n                            }\n\n                            item.find(options.hourCnt).html(hour > 9?hour : '0' + hour);\n                            item.find(options.minuteCnt).html(minute > 9?minute : '0' + minute);\n                            item.find(options.secondCnt).html(second > 9?second : '0' + second);\n                        }\n                    }\n                },1000);\n            }\n\n            init();\n        };\n    })(),\n\n    loop : function(arg){\n        var that = this,\n        root = $(that),\n        options = $.extend({\n            auto : false,\n            next : '.next',\n            prev : '.prev',\n            container : '.con',\n            item : '.item'\n        },arg),\n        container = root.find(options.container),\n        itemWidth = 0,\n        total = 0,\n        animating = false,\n        index = 0,step = 1,\n        itemContainer = null,\n        duration = options.duration || 1000;\n\n        function css(){\n            container.css({\n                overflow : 'hidden',\n                position : 'relative'\n            });\n            root.find(options.item).css('float','left');\n        }\n\n        function dom(){\n            var html = container.html(),\n                height = options.height || container.height();\n            root.find(options.item).remove();\n            container.height(height);\n            itemContainer = $('<div></div>').prependTo(container).css({\n                width : (total + 2*step)*itemWidth,\n                height : height,\n                position : 'absolute',\n                left : 0,\n                top :0\n            }).html(html);\n            if(options.conCls){\n                itemContainer.addClass(options.conCls);\n            }\n            var node = root.find(options.item);\n            for(var i = total - 1, little = total - step; i >= little; i--){\n                node.eq(i).clone(true).prependTo(itemContainer);\n            }\n            for(var i = 0;i < step; i++){\n                node.eq(i).clone(true).appendTo(itemContainer);\n            }\n            itemContainer.css('left',-step*itemWidth);\n        }\n\n        function event(){\n            root.find(options.next).click(function(){\n                if(animating)return;\n                animating = true;\n                index += step;\n                itemContainer.animate({\n                    left : -index*itemWidth\n                },duration,function(){\n                    if(index >= total + step){\n                        index = index - total;\n                        itemContainer.css('left',-(index)*itemWidth);\n                    }\n                    animating = false;\n                });\n            });\n\n            root.find(options.prev).click(function(){\n                if(animating)return;\n                animating = true;\n                index -= step;\n                itemContainer.animate({\n                    left : -index*itemWidth\n                },duration,function(){\n                    if(index < step){\n                        index = index + total;\n                        itemContainer.css('left',-index*itemWidth);\n                    }\n                    animating = false;\n                });\n            });\n\n            if(options.eventType){\n                root.find(options.item).each(function(index,n){\n                    $(n)[options.eventType](function(){\n                        options.handle(n,index,step);\n                    });\n                });\n            }\n\n        }\n\n        function init(){\n            css();\n            if(!root.find(options.item).length)return;\n            step = Math.ceil(container.width()/root.find(options.item).outerWidth(true));\n            itemWidth = root.find(options.item).outerWidth(true);\n            total = root.find(options.item).length;\n            index = step;\n            if(root.find(options.item).length < step)return;\n            dom();\n            event();\n        }\n\n        init();\n    }",
+        "content": "showNode : function(args){\n    var _this = this,\n        param = jQuery.extend({\n        par : '.jSaleAttention20150423-1',\n        node : 'li',\n        btn : '.jBtn',\n        pageNum : 10,\n        className : 'current'\n     }, args || {}),\n        par = jQuery(param.par),\n        node = jQuery(_this).find(param.node),\n        btn = jQuery(_this).find(param.btn),\n        index = 0,\n        pageTotal = Math.ceil(node.length/param.pageNum);\n\n    function showData(){\n        node.removeClass(param.className);\n        for(var i = index*param.pageNum; i <= index*param.pageNum +param.pageNum - 1; i+=1){\n            node.eq(i).addClass(param.className);\n        }\n    }\n    showData();\n\n    btn.click(function(){\n        if((index+1) == pageTotal) {\n            index = 0;\n        }else{\n            index +=1;\n        }\n        showData();\n    });\n    },\n    countdown : (function(){\n        var timer = null,\n            countList = [],\n            sysTime = 0;\n       return function(arg){\n            var that = this,\n                args = $.extend({\n                    hasDay : true,\n                    dayCnt : '.days',\n                    hourCnt : 'hours',\n                    minuteCnt : '.minutes',\n                    secondCnt : '.seconds'\n                },arg || {}),\n                cutTime = [];\n\n            function init(){\n                if(!args.countdownInfo)return;\n\n                getCutTime();\n                $(that).data('cutTime',cutTime).data('arg',args);\n                setTimeout(function(){\n                    countList = $('[public modules*=\"countdown\"]').toArray();\n                },0);\n                if(!timer){\n                    getServerTime(function(data){\n                        sysTime = new Date() - data;\n                        count();\n                    });\n                }\n            }\n\n            function timeStrHandler(str){\n                var rowTemp = str.split(' '),\n                    inplicit = rowTemp[0].split('-'),\n                    explicit = rowTemp[1].split(':');\n               return new Date(Number(inplicit[0]),(Number(inplicit[1]) + 11)%12,Number(inplicit[2]),Number(explicit[0]),Number(explicit[1]),Number(explicit[2]));\n            }\n\n            function getCutTime(){\n                var temp = args.countdownInfo;\n                if(temp.constructor == String){\n                    cutTime.push(timeStrHandler(temp));\n                }\n                else{\n                    $.each(temp,function(index,data){\n                        cutTime.push(timeStrHandler(data));\n                    });\n                }\n            }\n\n            function count(){\n                timer = setInterval(function(){\n                    for(var i = 0, len = countList.length; i < len; i++){\n                        var item = $(countList[i]),\n                            cT = item.data('cutTime'),\n                            options = item.data('arg'),\n                            leftTime = parseInt((cT[0] - new Date() + sysTime)/1000);\n                        if(leftTime < 0){\n                            cT.shift();\n                            if(cT.length === 0){\n                                countList.splice(i,1);\n                                len -- ;\n                                i--;\n                            }\n                            else{\n                                item.data('cutTime',cT);\n                            }\n                            item.closest('[module-name]').trigger('countdownchange');\n                        }\n                        else{\n                            var day = Math.floor(leftTime/(24*3600)),\n                                hour = Math.floor(leftTime/3600) - (options.hasDay?day*24 : 0),\n                                minute = Math.floor(leftTime%3600/60),\n                                second = leftTime%60;\n\n                            if(options.hasDay){\n                                item.find(options.dayCnt).html(day > 9?day : '0' + day);\n                            }\n\n                            item.find(options.hourCnt).html(hour > 9?hour : '0' + hour);\n                            item.find(options.minuteCnt).html(minute > 9?minute : '0' + minute);\n                            item.find(options.secondCnt).html(second > 9?second : '0' + second);\n                        }\n                    }\n                },1000);\n            }\n\n            init();\n        };\n    })(),\n\n    loop : function(arg){\n        var that = this,\n        root = $(that),\n        options = $.extend({\n            auto : false,\n            next : '.next',\n            prev : '.prev',\n            container : '.con',\n            item : '.item'\n        },arg),\n        container = root.find(options.container),\n        itemWidth = 0,\n        total = 0,\n        animating = false,\n        index = 0,step = 1,\n        itemContainer = null,\n        duration = options.duration || 1000;\n\n        function css(){\n            container.css({\n                overflow : 'hidden',\n                position : 'relative'\n            });\n            root.find(options.item).css('float','left');\n        }\n\n        function dom(){\n            var html = container.html(),\n                height = options.height || container.height();\n            root.find(options.item).remove();\n            container.height(height);\n            itemContainer = $('<div></div>').prependTo(container).css({\n                width : (total + 2*step)*itemWidth,\n                height : height,\n                position : 'absolute',\n                left : 0,\n                top :0\n            }).html(html);\n            if(options.conCls){\n                itemContainer.addClass(options.conCls);\n            }\n            var node = root.find(options.item);\n            for(var i = total - 1, little = total - step; i >= little; i--){\n                node.eq(i).clone(true).prependTo(itemContainer);\n            }\n            for(var i = 0;i < step; i++){\n                node.eq(i).clone(true).appendTo(itemContainer);\n            }\n            itemContainer.css('left',-step*itemWidth);\n        }\n\n        function event(){\n            root.find(options.next).click(function(){\n                if(animating)return;\n                animating = true;\n                index += step;\n                itemContainer.animate({\n                    left : -index*itemWidth\n                },duration,function(){\n                    if(index >= total + step){\n                        index = index - total;\n                        itemContainer.css('left',-(index)*itemWidth);\n                    }\n                    animating = false;\n                });\n            });\n\n            root.find(options.prev).click(function(){\n                if(animating)return;\n                animating = true;\n                index -= step;\n                itemContainer.animate({\n                    left : -index*itemWidth\n                },duration,function(){\n                    if(index < step){\n                        index = index + total;\n                        itemContainer.css('left',-index*itemWidth);\n                    }\n                    animating = false;\n                });\n            });\n\n            if(options.eventType){\n                root.find(options.item).each(function(index,n){\n                    $(n)[options.eventType](function(){\n                        options.handle(n,index,step);\n                    });\n                });\n            }\n\n        }\n\n        function init(){\n            css();\n            if(!root.find(options.item).length)return;\n            step = Math.ceil(container.width()/root.find(options.item).outerWidth(true));\n            itemWidth = root.find(options.item).outerWidth(true);\n            total = root.find(options.item).length;\n            index = step;\n            if(root.find(options.item).length < step)return;\n            dom();\n            event();\n        }\n\n        init();\n    }",
         "type": "json"
       }
     ],
     "version": "0.0.0",
     "filename": "input/test.js",
-    "groupTitle": "module_function"
+    "groupTitle": "public_modules"
   },
   {
     "type": "JSHOP",
     "url": "none",
     "title": "slide()",
     "name": "slide",
-    "group": "module_function",
+    "group": "public_modules",
     "description": "<p>none</p>",
     "examples": [
       {
@@ -871,14 +1001,14 @@ define({ "api": [
     ],
     "version": "0.0.0",
     "filename": "input/test.js",
-    "groupTitle": "module_function"
+    "groupTitle": "public_modules"
   },
   {
     "type": "JSHOP",
     "url": "none",
     "title": "tab()",
     "name": "tab",
-    "group": "module_function",
+    "group": "public_modules",
     "description": "<p>none</p>",
     "examples": [
       {
@@ -894,14 +1024,14 @@ define({ "api": [
     ],
     "version": "0.0.0",
     "filename": "input/test.js",
-    "groupTitle": "module_function"
+    "groupTitle": "public_modules"
   },
   {
     "type": "JSHOP",
     "url": "none",
     "title": "tabClass()",
     "name": "tabClass",
-    "group": "module_function",
+    "group": "public_modules",
     "description": "<p>none</p>",
     "examples": [
       {
@@ -917,19 +1047,19 @@ define({ "api": [
     ],
     "version": "0.0.0",
     "filename": "input/test.js",
-    "groupTitle": "module_function"
+    "groupTitle": "public_modules"
   },
   {
     "type": "JSHOP",
     "url": "none",
     "title": "tabShow()",
     "name": "tabShow",
-    "group": "module_function",
-    "description": "<p>function：切换显示：通过触发一个元素，切换其他元素的显示。可选择闭环切换、前进后退及随机切换显示。 <br>description：可应用于任意模块，只要有使用场景。 eventNode触发切换的节点；<br>parent切换节点的父节点；<br>child切换节点；<br>defaultClass显示样式；<br>eventType触发的事件类型； <br>num初始显示第几个；<br>tabTime每一屏切换的时间；<br>subFunction显示方式：<br>闭环circle、前进倒退direction、随机random；</p>",
+    "group": "public_modules",
+    "description": "<p>切换显示--通过触发一个元素，切换其他元素的显示。可选择闭环切换、前进后退及随机切换显示--可应用于任意模块，只要有使用场景。</p>",
     "examples": [
       {
         "title": "module-param",
-        "content": "如{eventNode:'.jClick', parentNode:'.jSortContent', childNode:'ul', defaultClass:'current', eventType:'click', num:0, tabTime:500, subFunction:'circle'}",
+        "content": "如{eventNode:'.jClick', parentNode:'.jSortContent', childNode:'ul', defaultClass:'current', eventType:'click', num:0, tabTime:500, subFunction:'circle'}\n1、eventNode触发切换的节点；\n2、parent切换节点的父节点；\n3、child切换节点；\n4、defaultClass显示样式；\n5、eventType触发的事件类型；\n6、num初始显示第几个；\n7、tabTime每一屏切换的时间；\n8、subFunction显示方式：闭环circle、前进倒退direction、随机random。",
         "type": "json"
       },
       {
@@ -940,15 +1070,15 @@ define({ "api": [
     ],
     "version": "0.0.0",
     "filename": "input/test.js",
-    "groupTitle": "module_function"
+    "groupTitle": "public_modules"
   },
   {
     "type": "data",
     "url": "http://active.coupon.jd.com/ilink/couponActiveFront/ifram_index.action?key=79566ba7fcee44e8924a4354cdeda7ce&roleId=1422862&to=sale.jd.com/act/syji8khazyfjwluq.html",
     "title": "userGetCoupon()",
     "name": "userGetCoupon",
-    "group": "module_function",
-    "description": "<p>function：优惠券iframe调用 <br>description：支持module-function调用（里面除A链接外每一个结构上设置伪属性data-href）；a链接调用需在href里填写javascript:void(0) 应用场景：公用调用（采用module-function方式）；a链接调用；优惠券iframe方法由高铁gaotie@jd.com提供</p>",
+    "group": "public_modules",
+    "description": "<p>优惠券iframe调用--支持public modules调用（里面除A链接外每一个结构上设置伪属性data-href）；a链接调用需在href里填写javascript:void(0)。应用场景：公用调用（采用public modules方式）；a链接调用。</p>",
     "examples": [
       {
         "title": "module-param",
@@ -963,19 +1093,19 @@ define({ "api": [
     ],
     "version": "0.0.0",
     "filename": "input/test.js",
-    "groupTitle": "module_function"
+    "groupTitle": "public_modules"
   },
   {
     "type": "JSHOP",
     "url": "none",
     "title": "waterfallFlow()",
     "name": "waterfallFlow",
-    "group": "module_function",
-    "description": "<p>瀑布流：主要应用在商品列表图片交错布局，就像瀑布一样</p>",
+    "group": "public_modules",
+    "description": "<p>瀑布流--主要应用在商品列表图片交错布局，就像瀑布一样</p>",
     "examples": [
       {
         "title": "module-param",
-        "content": "如{node:'li', topSpac:15}。\n参数node为单个节点名；参数topSpac为第一行与顶部的距离",
+        "content": "如{node:'li', topSpac:15}。\n1、参数node为单个节点名；\n2、参数topSpac为第一行与顶部的距离",
         "type": "json"
       },
       {
@@ -986,6 +1116,29 @@ define({ "api": [
     ],
     "version": "0.0.0",
     "filename": "input/test.js",
-    "groupTitle": "module_function"
+    "groupTitle": "public_modules"
+  },
+  {
+    "type": "JSHOP",
+    "url": "none",
+    "title": "follow()",
+    "name": "follow",
+    "group": "shopAtten",
+    "description": "<p>none</p>",
+    "examples": [
+      {
+        "title": "module-param",
+        "content": "none",
+        "type": "json"
+      },
+      {
+        "title": "code",
+        "content": "\t\tfollow : function(args){\n\t\t\tvar _para = $.extend({\n\t\t\t\tcoll : '.jshop-btn-coll',\n\t\t\t\tnode : 'li',\n\t\t\t\tdefault_pop : '.j_default'\n\t\t\t},args || {}), _this = this,\n\t\t\t\t_follow_url = INTERFACE.venderFollow.follow,\n\t\t\t\t_shop_id = null,\n\t\t\t\t_followVM = null, _loaded = false, _user_cnt = null,_msg_timer,_node,_shop_url;\n\t\t\t\n\t\t\t//数据初始化\n\t\t\tfunction _init(){\n\t\t\t\tif($(_this).parents('.mc:first').find('#j-follow-cnt').length){\n\t\t\t\t\t_user_cnt = $(_this).parents('.mc:first').find('#j-follow-cnt');\n\t\t\t\t\t_user_cnt.find('.icon_close').unbind('click').click(function(){\n\t\t\t\t\t\t_close_box();\n\t\t\t\t\t});\n\t\t\t\t}\n\t\t\t}\n\t\t\t// 事件初始化\n\t\t\tfunction _event_init(){\n\t\t\t\t$(_this).find(_para.node + ' ' + _para.coll).click(function(){\n\t\t\t\t\t_shop_url = $(this).attr('shopurl');\n\t\t\t\t\tif(_user_cnt){\n\t\t\t\t\t\t_user_cnt.find('.p1>a,.p3>a').attr('href',_shop_url);\n\t\t\t\t\t}\n\t\t\t\t\t_login_and_follow.call(this);\n\t\t\t\t});\n\t\t\t};\n\t\t\t\n\t\t\t//登录及关注店铺\n\t\t\tfunction _login_and_follow(){\n\t\t\t\t_shop_id = $(this).attr('shopid'),\n\t\t\t\tdata = {venderId : _shop_id, sysName : 'mall.jd.com'};\n\t\t\t\tfunction __follow(){\n\t\t\t\t\t$.ajax({\n\t\t\t\t\t\tasync : false,\n\t\t\t\t\t\turl : _follow_url,\n\t\t\t\t\t\tdata : data,\n\t\t\t\t\t\tdataType : 'jsonp',\n\t\t\t\t\t\tsuccess : function(data){\n\t\t\t\t\t\t\t_follow_handle(data);\n\t\t\t\t\t\t},\n\t\t\t\t\t\terror : function(){\n\t\t\t\t\t\t\t_follow_error(data);\n\t\t\t\t\t\t}\n\t\t\t\t\t}); \n\t\t\t\t}\n\t\t\t\t\n\t\t\t\tthick_login(__follow);\n\t\t\t\t\n\t\t\t\t\n//\t\t\t$.login({\n//\t\t            modal: true,\n//\t\t            complete: function(result) {\n//\t\t                if (result != null && result.IsAuthenticated != null && result.IsAuthenticated) {\n//                            jdModelCallCenter.settings.fn();//已经登陆后。增加关注\n//                            jdModelCallCenter.settings.fn = null;\n//\t\t                }\n//\t\t            }\n//\t\t\t\t });\n//\t\t\t\t jdModelCallCenter.settings.fn = function() {\n//\t\t\t\t\t __follow();//登录后回调函数 。增加关注\n//\t\t\t\t };\n\t\t\t\t \n\t\t\t}\n\t\t\t\n\t\t\t//关注返回处理逻辑\n\t\t\tfunction _follow_handle(data){\n\n\t\t\t\t$('<link rel=\"stylesheet\" type=\"text/css\" href=\"//misc.360buyimg.com/product/skin/2012/product-attention.css\"/>').appendTo('head');\n\t\t\t\t_followVM = $(_this).parents('.mc:first').find(_para.default_pop);\n\t\t\t\t\n\t\t\t\t_check(data);\n\t\t\t}\n\t\t\t//根据关注返回数据转移逻辑\n\t\t\tfunction _check(data){\n\t\t\t\tswitch(data.code){\n\t\t\t\t\tcase 'F10000' : {\n\t\t\t\t\t\t_follow_success();\n\t\t\t\t\t\tbreak;\n\t\t\t\t\t}\n\t\t\t\t\tcase 'F0402' : {\n\t\t\t\t\t\t_followed();\n\t\t\t\t\t\tbreak;\n\t\t\t\t\t}\n\t\t\t\t\tcase 'F0410' : {\n\t\t\t\t\t\t_follow_error('followMaxDiv',1);\n\t\t\t\t\t\tbreak;\n\t\t\t\t\t}\n\t\t\t\t\tdefault : {\n\t\t\t\t\t\t_follow_error('followFailDiv',2);\n\t\t\t\t\t\t\n\t\t\t\t\t}\n\t\t\t\t}\n\t\t\t}\n\t\t\t\n\t\t\tfunction _follow_error(cnt,type){\n\t\t\t\tif(_user_cnt){\n\t\t\t\t\ttry{\n\t\t\t\t\t\t_user_cnt.find('.p1,.p2,.p3').hide();\n\t\t\t\t\t\tif(type == 1){\n\t\t\t\t\t\t\t_user_cnt.find('.p3').show();\n\t\t\t\t\t\t}\n\t\t\t\t\t\telse{\n\t\t\t\t\t\t\t_user_cnt.find('.p2').show();\n\t\t\t\t\t\t}\n\t\t\t\t\t\t_open_box();\n\t\t\t\t\t}\n\t\t\t\t\tcatch(e){\n\t\t\t\t\t\t_show_box(cnt);\n\t\t\t\t\t}\n\t\t\t\t}\n\t\t\t\telse{\n\t\t\t\t\t_show_box(cnt);\n\t\t\t\t}\n\t\t\t}\n\t\t\t\n\t\t\tfunction _follow_success(){\n\t\t\t\t_get_follow_num(function(){\n\t\t\t\t\tif(_user_cnt){\n\t\t\t\t\t\t_user_cnt.find('.p2,.p3').hide();\n\t\t\t\t\t\t_user_cnt.find('.p1').show();\n\t\t\t\t\t\t_open_box();\n\t\t\t\t\t}\n\t\t\t\t\telse{\n\t\t\t\t\t\t_get_follow_tags();\n\t\t\t\t\t}\n\t\t\t\t});\n\t\t\t}\n\t\t\t\n\t\t\tfunction _open_box(){\n\t\t\t\t_center(_user_cnt);\n\t\t\t\t_mask();\n\t\t\t\t$('.thickdiv').show();\n\t\t\t\t_user_cnt.show();\n\t\t\t}\n\t\t\t\n\t\t\tfunction _close_box(){\n\t\t\t\t_user_cnt.hide();\n\t\t\t\t$('.thickdiv').hide();\n\t\t\t}\n\t\t\tfunction _show_success(html,handle){\n                $('.thickbox').html('');\n\t\t\t\t$.jdThickBox({\n\t\t\t\t\twidth : 510,\n\t\t\t\t\theight : 260,\n\t\t\t\t\ttitle : '关注店铺',\n\t\t\t\t\t_box : 'btn_coll_shop_pop',\n\t\t\t\t\tsource : html\n\t\t\t\t},function(){\n\t\t\t\t\thandle();\n\t\t\t\t});\n\t\t\t}\n\t\t\t\n\t\t\tfunction _get_follow_tags(){\n\t\t\t\tvar __url = INTERFACE.venderFollow.queryTagForListByCount + '?count=5';\n\t\t\t\t$.ajax({\n\t\t\t\t\tasync : false,\n\t\t\t\t\turl : __url,\n\t\t\t\t\tdataType : 'jsonp',\n\t\t\t\t\tsuccess : function(data){\n\t\t\t\t\t\t_fill_in_tags(data);\n\t\t\t\t\t}\n\t\t\t\t});\n\t\t\t}\n\t\t\t\n\t\t\tfunction _fill_in_tags(data){\n\t\t\t\tvar _data = data.data,\n\t\t\t\t\t_cnt = '<ul id=\"oldTags\" class=\"att-tag-list\">';\n\t\t\t\tfor(var i = 0, len = _data.length; i < len; i++){\n                    _cnt += '<li isnewadd=\"true\"><a href=\"javascript:;\" isCheck=\"false\">' + decodeURIComponent(_data[i]) + '</a><li>';\n\t\t\t\t}\n\t\t\t\t_cnt +='</ul><ul id=\"newTags\" class=\"att-tag-list att-tag-list-save\">';\n\t\t\t\t_cnt +='<li id=\"att-tag-new\" class=\"att-tag-new\"><input id=\"newTag\" type=\"text\" placeholder=\"自定义\" maxLength=\"10\" /><span>保存</span></li></ul>';\n\t\t\t\t_followVM.find('#followTags').html(_cnt);\n\t\t\t\t_show_success(_followVM.find('#followSuccessDiv').html(),function(){\n\t\t\t\t    var pop = $('#btn_coll_shop_pop'),\n\t\t\t        \ttarget = $('#attention-tags').find('.mc');\n\t\t\t\t    pop.find('.thickcon').css('height', 'auto');\n\t\t\t\t    pop.css('height', 'auto');\n\t\t\t\t    //IE下占位符不起作用的补偿方式\n\t\t\t\t    $('#newTag').val( $('#newTag').attr('placeholder'));\n\t\t\t\t    $('#newTag').focus(function(){\n\t\t\t\t    \tif($.trim($(this).val()) == $(this).attr('placeholder'))\n\t\t\t\t    \t\t$(this).val('');\n\t\t\t\t    }).keyup(function(){\n\t\t\t\t    \t$(this).val($(this).val().substring(0,10));\n\t\t\t\t    }).blur(function(){\n\t\t\t\t    \tif($(this).val() == ''){\n\t\t\t\t    \t}\n\t\t\t\t    });\n\t\t\t\t    \n\t\t\t\t    $('#newTag').next('span').click(function(){\n\t\t\t\t    \t_check_tags();\n\t\t\t\t    });\n\n                    $('#oldTags li').click(function(){\n                        _chooseTag(this);\n                    });\n\n\t\t\t\t    $('#attention-tags .att-tag-btn>a:first').click(function(){\n\t\t\t\t    \tvar __names = '', __count = 0;\n\t\t\t\t    \t$('#oldTags,#newTags').find('a').each(function(index,n){\n\t\t\t\t    \t\tif($(n).attr('ischeck') == 'true'){\n\t\t\t\t    \t\t\t__count ++;\n\t\t\t\t    \t\t\tif(__names != ''){\n                                    __names += ',';\n\t\t\t\t    \t\t\t}\n\t\t\t\t    \t\t\t__names += $(n).html();\n\t\t\t\t    \t\t}\n\t\t\t\t    \t});\n\t\t\t\t    \t\n\t\t\t\t    \tif(__names == ''){\n\t\t\t\t    \t\t_show_message('请至少提供一个标签');\n\t\t\t\t    \t}\n\t\t\t\t    \tif(__count > 3){\n\t\t\t\t    \t\t_show_message('标签最多可选3个');\n\t\t\t\t    \t}\n\t\t\t\t    \t__names = encodeURIComponent(__names);\n\t\t\t\t    \tvar __url = INTERFACE.venderFollow.editTag;\n\t\t\t\t    \t\n\t\t\t\t    \t$.ajax({\n\t\t\t\t    \t\turl : __url,\n\t\t\t\t    \t\tdataType : 'jsonp',\n\t\t\t\t    \t\tdata : {\n\t\t\t\t    \t\t\tvenderId : _shop_id,\n\t\t\t\t    \t\t\ttagNames : __names\n\t\t\t\t    \t\t},\n\t\t\t\t    \t\tsuccess : function(data){\n\t\t\t\t    \t\t\tif(data.code == 'F10000'){\n\t\t\t\t    \t\t\t\t$('#follow_error_msg').removeClass();\n\t\t\t\t    \t\t\t\t$('#follow_error_msg').addClass('hl_green fl');\n\t\t\t\t    \t\t\t\t$('#follow_error_msg').html(\"设置成功\");\n\t\t\t\t\t   \t\t    \t$('#follow_error_msg').show();\n\t\t\t\t\t   \t\t    \tsetTimeout(function(){\n\t\t\t\t\t   \t\t    \t\t$('#follow_error_msg').hide();\n                                        $('.thickclose').click();\n                                    }, 5000);\n                                }\n                                else if(data.code == 'F0410'){\n                                    _show_message('设置的标签数超过最大限制');\n                                }\n                                else{\n                                    _show_message('设置失败');\n                                }\n                            },\n                            error : function(){\n                                _show_message('设置失败');\n                            }\n\t\t\t\t    \t});\n\t\t\t\t    });\n\t\t\t\t});\n\t\t\t\t\n\t\t\t\t\n\t\t\t}\n\t\t\t\n\t\t\t\n\t\t\tfunction _check_tags(){\n\t\t\t\tvar _val = $('#newTag').val(),\n\t\t\t\t\t_tips = '标签由数字、字母、汉字组成';\n\t\t\t\t\n\t\t\t\tfunction __validate(value){\n\t\t\t\t\tvar __reg = /[\\u4e00-\\u9fa5]|[0-9]|[a-z]|[A-Z]+/g,\n\t\t\t\t\t\t__result = value.match(__reg);\n\t\t\t\t\treturn !!__result;\n\t\t\t\t}\n\t\t\t\t\n\t\t\t\tif(_val.length > 10 || _val.trim().length > 10){\n\t\t\t\t\t_show_message(_tips);\n\t\t\t\t\treturn false;\n\t\t\t\t}\n\t\t\t\tif(!__validate(_val)){\n\t\t\t\t\t_show_message(_tips);\n\t\t\t\t\treturn false;\n\t\t\t\t}\n\t\t\t\tif(_val == $('#newTag').attr('placeholder'))\n\t\t\t\t\treturn false;\n\t\t\t\t$('<li isNewAdd=\"true\"><a class=\"current\" href=\"javascript:;\" isCheck=\"true\">' + _val + '</a></li>').click(function(){\n\t\t\t\t\t_chooseTag(this);\n\t\t\t\t}).insertBefore( $('#att-tag-new'));\n                if($('#newTags li[isNewAdd]').length >= 3){\n\t\t\t\t\t$('#att-tag-new').hide();\n\t\t\t\t}\n                $('#newTag').val('');\n\t\t\t}\n\t\t\t\n\t\t\tfunction _chooseTag(obj){\n\t\t\t\tvar isCheck=$(obj).find('a').attr(\"isCheck\");\n\t\t\t\tif( 'undefined' == typeof isCheck || isCheck=='false' ){\n\t\t\t\t\t$(obj).find('a').attr(\"isCheck\",\"true\");\n\t\t\t\t\t$(obj).find('a').addClass(\"current\");\n\t\t\t\t}else{\n\t\t\t\t\t$(obj).find('a').attr(\"isCheck\",\"false\");\n\t\t\t\t\t$(obj).find('a').removeClass(\"current\");\n\t\t\t\t}\n\t\t\t}\n\t\t\t\n\t\t\tfunction _show_message(msg){\n\t\t\t\t$('#follow_error_msg').html(msg);\n\t\t    \t $('#follow_error_msg').show();\n\t\t    \t if(_msg_timer){\n\t\t    \t\t clearTimeout(_msg_timer);\n\t\t    \t }\n\t    \t\t _msg_timer = setTimeout(function(){\n\t\t    \t\t  $('#follow_error_msg').hide();\n\t\t     \t }, 3000);\n\t\t\t}\n\t\t\t\n\t\t\tfunction _followed(){\n\t\t\t\tif(_user_cnt){\n\t\t\t\t\t_user_cnt.find('.p1,.p2,.p3').hide();\n\t\t\t\t\t_user_cnt.find('.p3').show();\n\t\t\t\t\t_open_box();\n\t\t\t\t}\n\t\t\t\telse{\n\t\t\t\t\t_get_follow_num(function(){\n\t\t\t\t\t\t_show_box('followedDiv','已关注过该店铺');\n\t\t\t\t\t});\n\t\t\t\t}\n\t\t\t}\n\t\t\t\n\t\t\tfunction _get_follow_num(handle){\n\t\t\t\tvar __url = INTERFACE.venderFollow.queryForCount,\n\t\t\t\t\tdata = {sysName : 'mall.jd.com'};\n\t\t\t\t$.ajax({\n\t\t\t\t\turl : __url,\n\t\t\t\t\tdata : data,\n\t\t\t\t\tdataType : 'jsonp',\n\t\t\t\t\tasync : false,\n\t\t\t\t\tsuccess : function(data){\n\t\t\t\t\t\t_followVM.find('#followSuccessDiv #followedNum,#followedDiv #followedNum').html('您已关注' + data.data + '个店铺，');\n\t\t\t\t\t\thandle();\n\t\t\t\t\t\t\n\t\t\t\t\t}\n\t\t\t\t});\n\t\t\t}\n\t\t\t\n\t\t\tfunction _show_box(cnt,title){\n                $('.thickbox').html('');\n\t\t\t\t$.jdThickBox({\n\t\t\t\t\twidth : 300,\n\t\t\t\t\theight : 80,\n\t\t\t\t\ttitle : title || '关注失败',\n\t\t\t\t\tsource : _followVM.find('#' + cnt).html()\n\t\t\t\t});\n\t\t\t} \n\t\t\t\n\t\t\tfunction _center(obj){\n\t\t\t\tvar __w = obj.outerWidth(),__h = obj.outerHeight();\n\t\t\t\tobj.css({\n\t\t\t\t\tposition:'absolute',\n\t\t\t\t\tleft : ($(window).width() - __w)/2 + $(window).scrollLeft() + 'px',\n\t\t\t\t\ttop : ($(window).height() - __h)/2 + $(window).scrollTop() + 'px',\n\t\t\t\t\tzIndex : 10000005\n\t\t\t\t});\n\t\t\t}\n\t\t\t\n\t\t\tfunction _mask(){\n\t\t\t\tif(!$('.thickdiv').length){\n\t\t\t\t\t$('<div class=\"thickdiv\"></div>').appendTo('body');\n\t\t\t\t}\n\t\t\t}\n\t\t\t_init();\n\t\t\t_event_init();\t\n\t\t}",
+        "type": "json"
+      }
+    ],
+    "version": "0.0.0",
+    "filename": "input/test.js",
+    "groupTitle": "shopAtten"
   }
 ] });
