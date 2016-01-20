@@ -1,0 +1,437 @@
+html {
+	-webkit-text-size-adjust:none;
+	-webkit-user-select:none;
+	-webkit-touch-callout:none;
+	font-family:Arial, Helvetica;
+	overflow-x:hidden;
+	width:100%
+}
+body {
+	font-size:.4rem;
+	-webkit-tap-highlight-color:transparent;
+	overflow-x:hidden;
+	width:100%
+}
+body,p,pre,h1,h2,h3,h4,h5,h6,dl,dd,ul,ol,form,input,textarea,th,td,select {
+	margin:0;
+	padding:0;
+	font-weight:normal;
+	text-indent:0
+}
+a,button,input,textarea,select {
+	background:none;
+	-webkit-tap-highlight-color:rgba(255,0,0,0);
+	outline:none;
+	-webkit-appearance:none
+}
+em {
+	font-style:normal
+}
+li {
+	list-style:none
+}
+a {
+	text-decoration:none
+}
+img {
+	border:none;
+	vertical-align:top
+}
+table {
+	border-collapse:collapse
+}
+textarea {
+	resize:none;
+	overflow:auto
+}
+.clearfix,.wish-list,.order-list .goods-unit a,.goods-list {
+	zoom:1
+}
+.clearfix:after,.wish-list:after,.order-list .goods-unit a:after,.goods-list:after {
+	content:'';
+	display:block;
+	clear:both
+}
+.boxSiz {
+	-webkit-box-sizing:border-box;
+	-moz-box-sizing:border-box;
+	-ms-box-sizing:border-box;
+	-o-box-sizing:border-box;
+	box-sizing:border-box
+}
+.toWrap {
+	word-break:break-all;
+	word-wrap:break-word;
+	white-space:pre-wrap
+}
+.noWrap {
+	white-space:nowrap
+}
+.noWrapEllipsis {
+	white-space:nowrap;
+	overflow:hidden;
+	text-overflow:ellipsis
+}
+.text-justify {
+	text-align:justify;
+	text-justify:inter-ideograph
+}
+.flex-center {
+	display:-webkit-box;
+	display:-moz-box;
+	display:-ms-flexbox;
+	display:-o-box;
+	display:box;
+	-webkit-box-pack:center;
+	-moz-box-pack:center;
+	-ms-flex-pack:center;
+	-o-box-pack:center;
+	box-pack:center;
+	-webkit-box-align:center;
+	-moz-box-align:center;
+	-ms-flex-align:center;
+	-o-box-align:center;
+	box-align:center
+}
+body {
+	background-color:#1a94e8;
+}
+.wrapper {
+	font-family:Arial;
+	width:100%;
+	position:relative
+}
+.wrap-menu {
+	width:15rem;
+	height:1.2rem;
+	background-color:#1c0254;
+	margin:0 auto;
+	overflow:hidden;
+	font-size:0
+}
+.wrap-menu-list {
+	display:-webkit-table;
+	display:-moz-table;
+	display:table;
+	height:100%
+}
+.wrap-menu-list li {
+	display:-webkit-table-cell;
+	display:-moz-table-cell;
+	display:table-cell;
+	vertical-align:middle;
+	position:relative;
+	width:5rem;
+	text-align:center;
+	height:100%
+}
+.wrap-menu a {
+	display:block;
+	font-size:.45rem;
+	text-decoration:none;
+	color:#fff;
+	width:100%;
+	height:100%
+}
+.wrap-menu .icon {
+	position:absolute;
+	right:0rem;
+	top:.425rem;
+	height:.55rem;
+	width:1px;
+	background-color:#7f35fa
+}
+.wrap-menu-1,.wrap-menu-2,.wrap-menu-3 {
+	padding-top:.25rem
+}
+.wrap-menu-3 {
+	letter-spacing:-.025rem
+}
+.wrap-menu-list .active {
+	background-color:#7f35fa
+}
+.goods-list-2 {
+	margin-bottom:1.375rem
+}
+.floor-title {
+	width:100%
+}
+.goods-list {
+	padding:.25rem 0 0 .25rem;
+	width:15.5rem;
+	margin:0 auto 0;
+}
+.goods-list li {
+	float:left;
+	width:7.5rem;
+	margin:0 .25rem .25rem 0;
+	height:12.125rem;
+	background-color:#fff
+}
+.goods-list .j-pic {
+	width:7.5rem;
+	height:7.5rem;
+	position:relative
+}
+.goods-list .discount {
+	position:absolute;
+	width:1.375rem;
+	height:1.375rem;
+	border-radius:1.375rem;
+	background-color:#ff0000;
+	left:0.275rem;
+	top:0.275rem;
+	line-height:1.375rem;
+	text-align:center;
+	color:#fff;
+	font-size: 0.45rem;
+}
+.goods-list .details {
+	background-color:#f3f3f3;
+	padding:.35rem .35rem 0 .35rem;
+	height:3.95rem;
+	position:relative
+}
+.goods-list .title {
+	line-height:.6rem;
+	font-size:.5rem;
+	color:#484848;
+	margin-bottom:.425rem;
+	height:1.2rem;
+	overflow:hidden;
+}
+.goods-list .arrival {
+	color:#ea494f;
+	line-height:.6rem;
+	font-size:.45rem;
+	font-weight:bold;
+	margin-bottom:.175rem;
+	height:.6rem;
+	display:none;
+	margin-left:-.25rem
+}
+.goods-list .price {
+	line-height:.7rem;
+	margin-bottom:.5rem
+}
+.goods-list .j-jd-price {
+	color:#0f0f0f;
+	font-size:.7rem;
+	font-weight:bold;
+	display:inline-block;
+	vertical-align:middle;
+	max-width:3.3rem;
+	overflow:hidden;
+	margin-right:.375rem
+}
+.goods-list .j-sku-price {
+	color:#999999;
+	font-size:.5rem;
+	display:inline-block;
+	vertical-align:middle;
+	max-width:3.3rem;
+	overflow:hidden
+}
+.goods-list .btn-buy {
+	font-size:.45rem;
+	font-weight:bold;
+	width:100%;
+	height:1.1rem;
+	line-height:1.1rem;
+	text-align:center;
+	margin: auto;
+}
+.goods-list .btn-buy img{
+	display: block;
+	width: 100%;
+	height: 100%;
+}
+.j-heart-icon {
+	position:absolute;
+	background-image:url(http://img13.360buyimg.com/cms/jfs/t2521/192/1322040243/867/e88efd04/569f0174Nb6c95a2a.png);
+	width:1rem;
+	height:1rem;
+	right: 0.375rem;
+	bottom: 0.625rem;
+	background-size:1rem;
+	background-position: 0 1rem;
+	z-index: 999;
+}
+.j-heart-icon.active{
+	background-position: 0 0;
+	transition:background-position .5s;
+	-webkit-transition:background-position .5s;
+	-o-transition:background-position .5s;
+	-moz-transition:background-position .5s;
+	-ms-transition:background-position .5s;
+}
+.flr-hd-3,.flr-hd-4,.flr-hd-5 {
+	width:15rem;
+	height:1.05rem;
+	font-size:.55rem;
+	line-height:1.90909;
+	color:#fff;
+	background-color:#7f35fa;
+	text-align:center;
+	margin:.45rem auto .3rem
+}
+#flr3 .goods-list,#flr4 .goods-list,#flr5 .goods-list {
+	margin-bottom:.45rem
+}
+.actbanner {
+	width:15rem;
+	margin:0 auto .25rem;
+	display:block
+}
+.menu-list-fix {
+	position:fixed;
+	top:0;
+	width:15rem;
+	height:1.375rem;
+	background-color:#f25b00;
+	margin:0 auto;
+	z-index:22
+}
+@media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+	.menu-list-fix {
+	position:relative
+}
+}
+/*# sourceMappingURL=man_sales.css.map*/
+
+/*kingvid add*/
+.seaHouse-list.goods-list li{
+	float: none;
+	width: auto;
+	height: 7.625rem;
+	position: relative;
+}
+span.qw_border{
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	z-index: 2;
+	box-sizing:border-box;
+}
+span.qw_border:hover{
+	border: #fbd93a solid 5px;
+}
+.seaHouse-list.goods-list .j-pic{
+	width: auto;
+	height: 7.625rem;
+	float: left;
+}
+.seaHouse-list.goods-list .j-pic > img{
+	width: 7.625rem;
+	height: 7.625rem;
+}
+.seaHouse-list.goods-list .details{
+	width: 6.25rem;
+	height: 6.5rem;
+	float: left;
+	background-color: #fff;
+	margin: 0.5rem 0.375rem 0.625rem 1rem;
+	box-sizing:border-box;
+	position: relative;
+	padding: 0;
+}
+.seaHouse-list.goods-list .price{
+	margin-bottom: 0.625rem;
+}
+.seaHouse-list.goods-list .j-jd-price,.seaHouse-list.goods-list .title{
+	font-size: 0.6rem;
+}
+.seaHouse-list.goods-list .title{
+	color: #8f8f8f;
+}
+.seaHouse-list.goods-list .btn-buy,.seaHouse-list.goods-list .btn-buy img{
+	width: 4.2rem;
+	height: 1.1rem;
+	margin: 0;
+}
+.seaHouse-list.goods-list .j-jd-price{
+	color: #e4012c;
+}
+.selling-point span{
+	color: #107bc6;
+	font-size: 0.35rem;
+	font-weight: bold;
+	display: block;
+}
+.selling-point{
+	height: 2.4rem;
+	overflow: hidden;
+}
+.floor-title{
+	margin-top: 0.85rem;
+}
+.tips{
+	position: absolute;
+	bottom: 1.8rem;
+	right: 0.375rem;
+	margin: 0;
+	border-radius: 4px;
+	background-color: #1a94e8;
+	color: #fff;
+	font-size: 0.3rem;
+	padding: 3px 6px;
+	opacity: 0;
+	text-align: center;
+}
+.tips:after{
+	content: "▼";
+	color: #1a94e8;
+	position: absolute;
+    top: 15px;
+    right: 15px;
+    opacity: 0;
+}
+.tips.active{
+	opacity: 1;
+	-webkit-animation: shake .8s Linear;
+	-o-animation: shake .8s Linear;
+	animation: shake .8s Linear;
+}
+.tips.active:after{
+	opacity: 1;
+}
+@-webkit-keyframes shake {
+  from, to {
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+  }
+
+  10%, 30%, 50%, 70%, 90% {
+    -webkit-transform: translate3d(-10px, 0, 0);
+    transform: translate3d(-10px, 0, 0);
+  }
+
+  20%, 40%, 60%, 80% {
+    -webkit-transform: translate3d(10px, 0, 0);
+    transform: translate3d(10px, 0, 0);
+  }
+}
+
+@keyframes shake {
+  from, to {
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+  }
+
+  10%, 30%, 50%, 70%, 90% {
+    -webkit-transform: translate3d(-10px, 0, 0);
+    transform: translate3d(-10px, 0, 0);
+  }
+
+  20%, 40%, 60%, 80% {
+    -webkit-transform: translate3d(10px, 0, 0);
+    transform: translate3d(10px, 0, 0);
+  }
+}
+
+.shake {
+  -webkit-animation-name: shake;
+  animation-name: shake;
+}
