@@ -159,10 +159,14 @@
     <ul id="list2" class="goods-list" marketstart="0" markettplid="list1Tpl2" marketurl="http://acen.jd.com/tjw/get/tjw2015/tjw15698cf4fe2c30.js" marketonload="xmlLoad(1);">
     </ul>
 </section>
+<!-- 常规商品楼层-->
+<div class="cover">
+  <p>Зарегистрируйтесь,пожалуйста.</p>
+</div>
 <!-- 海景房-->
 <script type="text/html" id="list1Tpl1">
     <li class="seaHouse-list-inner">
-        <a class="goods-link" href="http://m.jd.ru/ware/detail/{#id#}" hasclstag="true" spuid="{#id#}">
+        <a class="goods-link" href="#" onclick="window.activity.gotoProductDetail('detail', '{#id#}')" hasclstag="true">
             <span class="qw_border"></span>
             <div class="j-pic">
                 <img src="{#image#}" width="100%">
@@ -182,7 +186,7 @@
                 <p class="btn-buy"><img src="http://img13.360buyimg.com/cms/jfs/t2065/9/2124527435/2540/70c38935/569e0151N32ada9cd.jpg"></p>
             </div>
         </a>
-        <span class="j-heart-icon"></span>
+        <span class="j-heart-icon" spuid="{#id#}"></span>
         <p class="tips">Товар был успешно добавлен в корзину!</p>
     </li>
 </script>
@@ -190,7 +194,7 @@
 <!-- 常规商品楼层模板-->
 <script type="text/html" id="list1Tpl2">
     <li>
-        <a class="goods-link" href="http://m.jd.ru/ware/detail/{#id#}" hasclstag="true" spuid="{#id#}">
+        <a class="goods-link" href="#" onclick="window.activity.gotoProductDetail('detail', '{#id#}')"  hasclstag="true">
             <div class="j-pic">
                 <img src="{#image#}" width="100%">
                 <span class="discount"><span class="num">-{#appPrice#}</span></span>
@@ -230,15 +234,15 @@
 <!--<script src="../media/js/new_year.js"></script>-->
 <script>
     $(function(){
-        var userPin_email, userPin;
+        var userPin_email, userPin, login_app;
 
         if(window.activity && window.activity.getLoginUserPin){
           userPin_email = window.activity.getLoginUserPin();
           if(!userPin_email == ''){
             userPin = userPin_email.split('_')[0];
           }
+          login_app = userPin ? false : true;
         }
-
         //激活ios active状态
         document.addEventListener("touchstart", function() {},false);
 
@@ -253,14 +257,14 @@
                 xmlObj.loadedNo ++;
             }
             if(xmlObj.loadedNo == xmlObj.total){
-                marketRendered(userPin);
+                marketRendered(userPin,login_app);
             }
         }
     })
 
 
     /* 数据源加载完毕执行的code */
-    function marketRendered(userId){
+    function marketRendered(userId,login_app){
         //链接地址拼接埋点
         $.each($('[hasclstag]'), function (index,item){
             var spuId = $(item).attr('spuid');
@@ -273,12 +277,12 @@
         //批量获取加入心愿单人数
         var wishArray = [],
           spuids = '',
-          wishList = $('.j-heart-icon').prev();
+          wishList = $('.j-heart-icon');
         $.each(Zepto(wishList), function (index, item){
           wishArray.push($(item).attr('spuid'));
         });
         spuids = wishArray.toString().replace(/\,/g, '|');
-        if (userId) {
+        if (userId || login_app ) {
           //app端处理
           //批量判断是否存在于加入心愿单中
           $.ajax({
@@ -299,31 +303,38 @@
           //点击加入心愿单
           $(".j-heart-icon").click(function(e){
             e.stopPropagation();
-            if ($(this).hasClass("active")) {
-              var _this = $(this);
-              _this.next(".tips").addClass("active");
+            if (login_app) {
+              $(".cover").addClass("active");
               setTimeout(function(){
-                _this.next(".tips").removeClass("active");
-              },2500);
+                $(".cover").removeClass("active");
+              },1500);
             }else{
-              var _this = $(this);
-              //加入心愿单
-              var spuid = $(this).prev().attr("spuid");
-              $.ajax({
-                url: 'http://m.jd.ru/wish/add.do?pin=' + userId + '&wareId=' + spuid,
-                dataType: 'jsonp',
-                success: function(e){
-                  if(e.success && e.code == 1){
-                    _this.addClass("active");
-                  }else{
-                    if(e.code == 403){
-                      window.location.href = e.redirectLoginUrl;
+              if ($(this).hasClass("active")) {
+                var _this = $(this);
+                _this.next(".tips").addClass("active");
+                setTimeout(function(){
+                  _this.next(".tips").removeClass("active");
+                },2500);
+              }else{
+                var _this = $(this);
+                //加入心愿单
+                var spuid = $(this).attr("spuid");
+                $.ajax({
+                  url: 'http://m.jd.ru/wish/add.do?pin=' + userId + '&wareId=' + spuid,
+                  dataType: 'jsonp',
+                  success: function(e){
+                    if(e.success && e.code == 1){
+                      _this.addClass("active");
+                    }else{
+                      if(e.code == 403){
+                        window.location.href = e.redirectLoginUrl;
+                      }
                     }
                   }
-                }
-              })
-                
-              return false;
+                })
+                  
+                return false;
+              }
             }
           })
         }else{
@@ -344,8 +355,7 @@
             }
           })
           //点击加入心愿单
-          $(".j-heart-icon").click(function(e){
-            e.stopPropagation();
+          $(".j-heart-icon").click(function(){
             if ($(this).hasClass("active")) {
               var _this = $(this);
               _this.next(".tips").addClass("active");
@@ -354,7 +364,7 @@
               },2500);
             }else{
               var _this = $(this);
-              var spuid = $(this).prev().attr("spuid");
+              var spuid = $(this).attr("spuid");
               $.ajax({
                 url: 'http://m.jd.ru/wish/add.do?wareId=' + spuid,
                 dataType: 'jsonp',

@@ -435,3 +435,67 @@ span.qw_border:hover{
   -webkit-animation-name: shake;
   animation-name: shake;
 }
+.cover{
+	position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    text-align: center;
+    background: rgba(0,0,0,0.6);
+    z-index: 300;
+    display: none;
+}
+.cover p{
+	position: relative;
+    top: 8rem;
+    width: auto;
+    max-width: 5rem;
+    height: auto;
+    padding: 10px 20px;
+    margin : auto;
+    text-align: center;
+    box-sizing:border-box;    
+    background-color: #fff;
+    -webkit-background-clip: padding-box;
+    background-clip: padding-box;
+    border: 1px solid #999;
+    border: 1px solid rgba(0,0,0,0.2);
+    border-radius: 6px;
+    outline: 0;
+    -webkit-box-shadow: 0 3px 9px rgba(0,0,0,0.5);
+    box-shadow: 0 3px 9px rgba(0,0,0,0.5);
+}
+.cover.active{
+	display: block;
+	-webkit-animation: fade .5s;
+	-o-animation: fade .5s;
+	animation: fade .5s;
+}
+
+@-webkit-keyframes fade {
+  from{
+    opacity: 0;
+  }
+
+  to{
+    opacity: 1;
+  }
+}
+
+@keyframes fade {
+  from{
+    opacity: 0;
+  }
+
+  to{
+    opacity: 1;
+  }
+}
+
+.fade {
+  -webkit-animation-name: fade;
+  animation-name: fade;
+  -webkit-transform-origin: center bottom;
+  transform-origin: center bottom;
+}
