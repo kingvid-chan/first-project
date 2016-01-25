@@ -1,14 +1,14 @@
 {
   "name": "jShop Modules",
   "version": "0.0.0",
-  "description": "简洁 Nice",
+  "description": "jshop模块加载逻辑介绍文档: <a href='http://kingvid-chan.github.io/jshop-module-logic/' target='_blank'>http://kingvid-chan.github.io/jshop-module-logic/</a>",
   "title": "API for jShop Module",
   "url": "",
   "sampleUrl": false,
   "apidoc": "0.2.0",
   "generator": {
     "name": "apidoc",
-    "time": "2016-01-15T07:47:55.003Z",
+    "time": "2016-01-25T02:04:29.675Z",
     "url": "http://apidocjs.com",
     "version": "0.14.0"
   }
