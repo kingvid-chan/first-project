@@ -7233,8 +7233,25 @@ define({ "api": [
             "group": "Parameter",
             "type": "String",
             "optional": false,
-            "field": "lastname",
-            "description": "<p>Mandatory Lastname.</p>"
+            "field": "tabContainer",
+            "defaultValue": ".jItem",
+            "description": ""
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "tabNode",
+            "defaultValue": ".jSortTab a",
+            "description": ""
+          },
+          {
+            "group": "Parameter",
+            "type": "String",
+            "optional": false,
+            "field": "tabContent",
+            "defaultValue": ".jSortContent ul",
+            "description": ""
           }
         ]
       }
