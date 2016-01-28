@@ -2056,71 +2056,81 @@ define({ "api": [
             "group": "Parameter",
             "type": "String",
             "optional": false,
-            "field": "tabContainer:",
-            "description": "<p>'.J_sort_tab'</p>"
+            "field": "tabContainer",
+            "defaultValue": ".J_sort_tab",
+            "description": ""
           },
           {
             "group": "Parameter",
             "type": "String",
             "optional": false,
-            "field": "skuContainer:",
-            "description": "<p>'.J_sort_content'</p>"
+            "field": "skuContainer",
+            "defaultValue": ".J_sort_content",
+            "description": ""
           },
           {
             "group": "Parameter",
             "type": "String",
             "optional": false,
-            "field": "tabNode:",
-            "description": "<p>'.J_sort_tab .J_tab'</p>"
+            "field": "tabNode",
+            "defaultValue": ".J_sort_tab .J_tab",
+            "description": ""
           },
           {
             "group": "Parameter",
             "type": "String",
             "optional": false,
-            "field": "tabContent:",
-            "description": "<p>'.J_sort_content ul'</p>"
+            "field": "tabContent",
+            "defaultValue": ".J_sort_content ul",
+            "description": ""
           },
           {
             "group": "Parameter",
             "type": "Number",
             "optional": false,
             "field": "imgSize",
-            "description": "<p>: 7</p>"
+            "defaultValue": "7",
+            "description": ""
           },
           {
             "group": "Parameter",
             "type": "String",
             "optional": false,
-            "field": "waitingCls:",
-            "description": "<p>'.J_waiting'</p>"
+            "field": "waitingCls",
+            "defaultValue": ".J_waiting",
+            "description": ""
           },
           {
             "group": "Parameter",
             "type": "String",
             "optional": false,
-            "field": "buynowCls:",
-            "description": "<p>'.J_buy_now'</p>"
+            "field": "buynowCls",
+            "defaultValue": ".J_buy_now",
+            "description": ""
           },
           {
             "group": "Parameter",
             "type": "String",
             "optional": false,
-            "field": "overCls:",
-            "description": "<p>'.J_over_time'</p>"
+            "field": "overCls",
+            "defaultValue": ".J_over_time",
+            "description": ""
           },
           {
             "group": "Parameter",
             "type": "String",
             "optional": false,
-            "field": "defaultCls:",
-            "description": "<p>'J_default_item'</p>"
+            "field": "defaultCls",
+            "defaultValue": "J_default_item",
+            "description": ""
           },
           {
             "group": "Parameter",
             "type": "String",
             "optional": false,
-            "field": "diffCls:",
-            "description": "<p>'diff-item J_diff_item'</p>"
+            "field": "diffCls",
+            "defaultValue": "diff-item J_diff_item",
+            "description": ""
           },
           {
             "group": "Parameter",
@@ -2133,8 +2143,9 @@ define({ "api": [
             "group": "Parameter",
             "type": "Number",
             "optional": false,
-            "field": "tagIndex:",
-            "description": "<p>0</p>"
+            "field": "tagIndex",
+            "defaultValue": "0",
+            "description": ""
           }
         ]
       }
@@ -2807,8 +2818,9 @@ define({ "api": [
             "group": "Parameter",
             "type": "String",
             "optional": false,
-            "field": "item:",
-            "description": "<p>'.item'</p>"
+            "field": "item",
+            "defaultValue": ".item",
+            "description": ""
           },
           {
             "group": "Parameter",
@@ -2955,8 +2967,9 @@ define({ "api": [
             "group": "Parameter",
             "type": "String",
             "optional": false,
-            "field": "day:",
-            "description": "<p>'.days'</p>"
+            "field": "day",
+            "defaultValue": ".days",
+            "description": ""
           },
           {
             "group": "Parameter",
@@ -3119,8 +3132,9 @@ define({ "api": [
             "group": "Parameter",
             "type": "String",
             "optional": false,
-            "field": "day:",
-            "description": "<p>'.days'</p>"
+            "field": "day",
+            "defaultValue": ".days",
+            "description": ""
           },
           {
             "group": "Parameter",
@@ -3243,8 +3257,9 @@ define({ "api": [
             "group": "Parameter",
             "type": "String",
             "optional": false,
-            "field": "day:",
-            "description": "<p>'.days'</p>"
+            "field": "day",
+            "defaultValue": ".days",
+            "description": ""
           },
           {
             "group": "Parameter",
@@ -4896,8 +4911,8 @@ define({ "api": [
             "type": "String",
             "optional": false,
             "field": "url",
-            "defaultValue": "INTERFACE.promoTag",
-            "description": "<ul> <li>'?callback=getPromotionTag&amp;skuids=J_981821,J_1057746' 接口</li> </ul>"
+            "defaultValue": "INTERFACE.promoTag+'?callback=getPromotionTag&skuids=J_981821,J_1057746'",
+            "description": "<p>接口</p>"
           },
           {
             "group": "Parameter",
@@ -5055,8 +5070,8 @@ define({ "api": [
             "type": "Object",
             "optional": false,
             "field": "offset",
-            "defaultValue": "{top",
-            "description": "<p>: 0,left : 0}</p>"
+            "defaultValue": "{top:0,left:0}",
+            "description": ""
           }
         ]
       }
@@ -6694,7 +6709,8 @@ define({ "api": [
             "type": "String",
             "optional": false,
             "field": "addressNode",
-            "description": "<p>:'.saleAddress.imgCon'</p>"
+            "defaultValue": ".saleAddress.imgCon",
+            "description": ""
           },
           {
             "group": "Parameter",
@@ -7013,7 +7029,7 @@ define({ "api": [
     "title": "goodsSlide()",
     "name": "goodsSlide",
     "group": "sortRec",
-    "description": "<p>商品列表轮播，适用于分类排行榜页面（注意：链接demo模版中，目前只支持一个页面添加一个  每个分类下必须添加9个以上商品。如果要修改这个限制可以通过修改函数参数）</p>",
+    "description": "<p>商品列表轮播，适用于分类排行榜页面（注意：链接demo模版中，目前只支持一个页面添加一个， 每个分类下必须添加9个以上商品。如果要修改这个限制可以通过修改函数参数）</p>",
     "parameter": {
       "fields": {
         "Parameter": [
@@ -7022,6 +7038,7 @@ define({ "api": [
             "type": "String",
             "optional": false,
             "field": "scope",
+            "defaultValue": ".JS_slide_scope",
             "description": "<p>包含所有tab的外层ul节点类</p>"
           },
           {
@@ -7046,7 +7063,15 @@ define({ "api": [
             "optional": false,
             "field": "slideRound",
             "defaultValue": "3",
-            "description": "<p>轮播元素个数</p>"
+            "description": "<p>一个完整的轮播回合的轮播次数</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "Number",
+            "optional": false,
+            "field": "slideMove",
+            "defaultValue": "330",
+            "description": "<p>每一次轮播的距离</p>"
           },
           {
             "group": "Parameter",
@@ -7061,7 +7086,7 @@ define({ "api": [
             "type": "Number",
             "optional": false,
             "field": "startPos",
-            "defaultValue": "38",
+            "defaultValue": "0",
             "description": "<p>轮播元素初始top或left位置</p>"
           },
           {
@@ -7095,6 +7120,14 @@ define({ "api": [
             "field": "indexTag",
             "defaultValue": ".JS_tag",
             "description": "<p>排名元素</p>"
+          },
+          {
+            "group": "Parameter",
+            "type": "Boolean",
+            "optional": false,
+            "field": "pauseTag",
+            "defaultValue": "fasle",
+            "description": "<p>刷新页面之后是否自动轮播，fasle时自动轮播，true时不自动轮播</p>"
           }
         ]
       }
@@ -7145,8 +7178,9 @@ define({ "api": [
             "group": "Parameter",
             "type": "String",
             "optional": false,
-            "field": "commentContainer:",
-            "description": "<p>'.JS_summary_num'</p>"
+            "field": "commentContainer",
+            "defaultValue": ".JS_summary_num",
+            "description": ""
           },
           {
             "group": "Parameter",
