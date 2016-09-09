@@ -547,7 +547,7 @@ body {
 }
 .JDNavTab a {
 	color:#fff;
-	display:block;
+	display:inline-block;
 	text-decoration:none
 }
 .JDNavTab_nav {
@@ -585,11 +585,11 @@ body {
 	font-size:14px;
 	overflow:hidden;
 	text-align:center;
-	padding: 0 15px;
-	box-sizing: border-box;
+	/*padding: 0 15px;*/
+	/*box-sizing: border-box;*/
 }
 .JDNavTab_nav_bd li a {
-	width:100%;
+	/*width:100%;*/
 	height:100%
 }
 .JDNavTab_nav_bd .JDNavTab_cur a {
@@ -732,3 +732,6 @@ body {
 	font-size:0.8rem
 }
 
+.JDNavTab_nav a{
+	font-size: 16px;
+}
