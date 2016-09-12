@@ -312,7 +312,7 @@ body {
 	margin:0 0.53333rem 0.42667rem 0
 }
 .f-banner .bg {
-	padding-bottom:0.42667rem
+	/*padding-bottom:0.42667rem*/
 }
 .f-coupon {
 	bottom:0;
@@ -320,12 +320,13 @@ body {
 	width:100%
 }
 .f-coupon ul {
-	line-height:4.8rem;
-	width:92%;
+	line-height:3.8rem;
+	width:97%;
 	height:100%;
-	margin-left:-45.5%;
+	margin-left:-48%;
 	top:0;
-	left:50%
+	left:50%;
+	position: relative;
 }
 .f-coupon img {
 	vertical-align:middle
@@ -376,7 +377,7 @@ body {
 .floor-tit.ms {
 	position:relative;
 	/*margin:0.21333rem 0*/
-	background-color: #c51b1e;	
+	/*background-color: #c51b1e;	*/
 }
 .floor-tit.ms .link-more {
 	position:absolute;
@@ -734,4 +735,60 @@ body {
 
 .JDNavTab_nav a{
 	font-size: 16px;
+}
+
+.activity{
+	width: 95%;
+	margin: 0 auto;
+}
+.coupon-wrapper{
+	background: url(../img/jianbian.jpg) 0 0 no-repeat;
+	background-size: 100% 100%;
+	padding-top: 0.21333rem;
+}
+.car{
+	width: 100%;
+	height: 100%;
+	position: absolute; 
+	left: -50%;
+	bottom: -50%;
+	background-position: 0 0;
+	background-repeat: no-repeat;
+	background-size: 100% 100%;
+}
+.banner-wrapper{
+	position: relative;
+}
+
+.slideInLeftAndRight {
+  -webkit-animation-name: slideInLeftAndRight-transform-keyframes;
+  -webkit-animation-duration: 9500ms;
+  -webkit-animation-delay: 0ms;
+  -webkit-animation-fill-mode: forwards;
+  -webkit-animation-timing-function: linear;
+  -webkit-animation-iteration-count: infinite;
+  -webkit-transform-origin: 0 0;
+  animation-name: slideInLeftAndRight-transform-keyframes;
+  animation-duration: 9500ms;
+  animation-delay: 0ms;
+  animation-fill-mode: forwards;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  transform-origin: 0 0;
+}
+@-webkit-keyframes slideInLeftAndRight-transform-keyframes {
+  0% {-webkit-transform:translate(0px, 0px) scale(1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) translate(-50%, -50%);-webkit-animation-timing-function: cubic-bezier(.25,.25,.75,.75);background-image: url(../img/car4.png);}
+  46.15% {-webkit-transform:translate(200%, 0) scale(1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) translate(-50%, -50%);-webkit-animation-timing-function: cubic-bezier(.25,.25,.75,.75);background-image: url(../img/car4.png);}
+  53.85% {-webkit-transform:translate(200%, 0) scale(1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) translate(-50%, -50%);-webkit-animation-timing-function: cubic-bezier(.25,.25,.75,.75);background-image: url(../img/car3.png);}
+  100% {-webkit-transform:translate(-1px, 0px) scale(1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) translate(-50%, -50%);background-image: url(../img/car3.png);}
+}
+@keyframes slideInLeftAndRight-transform-keyframes {
+  0% {transform:translate(0px, 0px) scale(1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) translate(-50%, -50%);animation-timing-function: cubic-bezier(.25,.25,.75,.75);background-image: url(../img/car4.png);}
+  46.15% {transform:translate(200%, 0) scale(1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) translate(-50%, -50%);animation-timing-function: cubic-bezier(.25,.25,.75,.75);background-image: url(../img/car4.png);}
+  53.85% {transform:translate(200%, 0) scale(1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) translate(-50%, -50%);animation-timing-function: cubic-bezier(.25,.25,.75,.75);background-image: url(../img/car3.png);}
+  100% {transform:translate(-1px, 0px) scale(1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) translate(-50%, -50%);background-image: url(../img/car3.png);}
+}
+
+.mb20{
+	margin-bottom: 0.5rem;
 }
