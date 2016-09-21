@@ -677,15 +677,19 @@ body {
 	font-size:14px;
 	overflow:hidden;
 	text-align:center;
-	margin-top:0.42667rem;
+	margin-top: 0.42667rem;
 	height:39px
 }
 .JDNavTab_list li a {
 	background-color:#b21a1d;
 	border-radius:0.53333rem;
 	line-height:2;
-	margin:0 0.21333rem;
-	padding: 0 10px;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+	margin: 0 0.21333rem;
+	max-width: 95%;
+	min-width: 90%;
 }
 .JDNavTab_list .JDNavTab_cur a {
 	color:#ffe615
@@ -741,6 +745,7 @@ body {
 .activity{
 	width: 95%;
 	margin: 0 auto;
+	font-size: 0;
 }
 .coupon-wrapper{
 	background: url(../img/jianbian.jpg) 0 0 no-repeat;
@@ -763,14 +768,14 @@ body {
 
 .slideInLeftAndRight {
   -webkit-animation-name: slideInLeftAndRight-transform-keyframes;
-  -webkit-animation-duration: 9500ms;
+  -webkit-animation-duration: 5500ms;
   -webkit-animation-delay: 0ms;
   -webkit-animation-fill-mode: forwards;
   -webkit-animation-timing-function: linear;
   -webkit-animation-iteration-count: infinite;
   -webkit-transform-origin: 0 0;
   animation-name: slideInLeftAndRight-transform-keyframes;
-  animation-duration: 9500ms;
+  animation-duration: 5500ms;
   animation-delay: 0ms;
   animation-fill-mode: forwards;
   animation-timing-function: linear;
@@ -947,4 +952,16 @@ body {
 
 .hide{
 	display: none;
+}
+
+.goToTop{
+	display: block;
+	position: fixed;
+	width: 50px;
+	height: 50px;
+	right: 15px;
+	bottom: 60px;
+	background: url(../img/gotop.png) 0 0 no-repeat;
+	background-size: 100% 100%;
+	z-index: 9999;
 }
