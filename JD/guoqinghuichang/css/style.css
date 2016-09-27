@@ -757,7 +757,7 @@ body {
 	height: 100%;
 	position: absolute; 
 	left: -50%;
-	bottom: -50%;
+	bottom: 0;
 	background-position: 0 0;
 	background-repeat: no-repeat;
 	background-size: 100% 100%;
@@ -783,16 +783,16 @@ body {
   transform-origin: 0 0;
 }
 @-webkit-keyframes slideInLeftAndRight-transform-keyframes {
-  0% {-webkit-transform:translate(0px, 0px) rotateX(0deg) rotateY(0deg) rotateZ(0deg) translate(-50%, -50%);-webkit-animation-timing-function: cubic-bezier(.25,.25,.75,.75);background-image: url(../img/car4.png);}
-  46.15% {-webkit-transform:translate(200%, 0) rotateX(0deg) rotateY(0deg) rotateZ(0deg) translate(-50%, -50%);-webkit-animation-timing-function: cubic-bezier(.25,.25,.75,.75);background-image: url(../img/car4.png);}
-  53.85% {-webkit-transform:translate(200%, 0) rotateX(0deg) rotateY(0deg) rotateZ(0deg) translate(-50%, -50%);-webkit-animation-timing-function: cubic-bezier(.25,.25,.75,.75);background-image: url(../img/car3.png);}
-  100% {-webkit-transform:translate(-1px, 0px) rotateX(0deg) rotateY(0deg) rotateZ(0deg) translate(-50%, -50%);background-image: url(../img/car3.png);}
+  0% {-webkit-transform:translate(-50%, 0) rotateX(0deg) rotateY(0deg) rotateZ(0deg);-webkit-animation-timing-function: cubic-bezier(.25,.25,.75,.75);background-image: url(../img/car4.png);}
+  46.15% {-webkit-transform:translate(150%, 0) rotateX(0deg) rotateY(0deg) rotateZ(0deg);-webkit-animation-timing-function: cubic-bezier(.25,.25,.75,.75);background-image: url(../img/car4.png);}
+  53.85% {-webkit-transform:translate(150%, 0) rotateX(0deg) rotateY(0deg) rotateZ(0deg);-webkit-animation-timing-function: cubic-bezier(.25,.25,.75,.75);background-image: url(../img/car3.png);}
+  100% {-webkit-transform:translate(-50%, 0) rotateX(0deg) rotateY(0deg) rotateZ(0deg);background-image: url(../img/car3.png);}
 }
 @keyframes slideInLeftAndRight-transform-keyframes {
-  0% {transform:translate(0px, 0px) rotateX(0deg) rotateY(0deg) rotateZ(0deg) translate(-50%, -50%);animation-timing-function: cubic-bezier(.25,.25,.75,.75);background-image: url(../img/car4.png);}
-  46.15% {transform:translate(200%, 0) rotateX(0deg) rotateY(0deg) rotateZ(0deg) translate(-50%, -50%);animation-timing-function: cubic-bezier(.25,.25,.75,.75);background-image: url(../img/car4.png);}
-  53.85% {transform:translate(200%, 0) rotateX(0deg) rotateY(0deg) rotateZ(0deg) translate(-50%, -50%);animation-timing-function: cubic-bezier(.25,.25,.75,.75);background-image: url(../img/car3.png);}
-  100% {transform:translate(-1px, 0px) rotateX(0deg) rotateY(0deg) rotateZ(0deg) translate(-50%, -50%);background-image: url(../img/car3.png);}
+  0% {transform:translate(-50%, 0) rotateX(0deg) rotateY(0deg) rotateZ(0deg);animation-timing-function: cubic-bezier(.25,.25,.75,.75);background-image: url(../img/car4.png);}
+  46.15% {transform:translate(150%, 0) rotateX(0deg) rotateY(0deg) rotateZ(0deg);animation-timing-function: cubic-bezier(.25,.25,.75,.75);background-image: url(../img/car4.png);}
+  53.85% {transform:translate(150%, 0) rotateX(0deg) rotateY(0deg) rotateZ(0deg);animation-timing-function: cubic-bezier(.25,.25,.75,.75);background-image: url(../img/car3.png);}
+  100% {transform:translate(-50%, 0) rotateX(0deg) rotateY(0deg) rotateZ(0deg);background-image: url(../img/car3.png);}
 }
 
 .mb20{
