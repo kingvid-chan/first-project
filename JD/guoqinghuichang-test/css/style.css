@@ -109,8 +109,8 @@ a {
 .row1 {
 	height:0.768rem
 }
-.mh200 {
-	min-height:4.26667rem
+.mh200 img{
+	min-height:7.65rem
 }
 .fs26 {
 	font-size:0.55467rem
@@ -196,15 +196,8 @@ body {
 .hall .f-column-2-4 {
 	padding:0.53333rem 0.42667rem 0.42667rem 0.42667rem
 }
-.hall .f-item:first-child {
-	margin-left:-0.42667rem;
-	margin-right:0.42667rem
-}
-.hall .f-item:first-child .item-wrap {
-	margin-right:0
-}
 .bg1 {
-	background-color:#ff5811
+	background-color:#3e78ee
 }
 .bg2 {
 	background-color:#309fff
@@ -213,22 +206,22 @@ body {
 	background-color:#6a9ef4
 }
 .bg4 {
-	background-color:#fa4973
+	background-color:#78bd46
 }
 .bg5 {
-	background-color:#ed174c
+	background-color:#32bf28
 }
 .bg6 {
-	background-color:#fd9532
-}
-.bg7 {
 	background-color:#ff764a
 }
+.bg7 {
+	background-color:#f74d1a
+}
 .bg8 {
-	background-color:#79bd46
+	background-color:#ed174c
 }
 .bg9 {
-	background-color:#F4D733
+	background-color:#f5c535
 }
 .floor-nav {
 	min-height:1.792rem
@@ -532,7 +525,8 @@ body {
 	right:0;
 	background-color:#6e0d98;
 	z-index:1;
-	display:none
+	display:none;
+	z-index: 9;
 }
 .JDNavTab,.JDNavTab * {
 	margin:0;
@@ -767,34 +761,21 @@ body {
 }
 
 .slideInLeftAndRight {
-  -webkit-animation-name: slideInLeftAndRight-transform-keyframes;
-  -webkit-animation-duration: 5500ms;
-  -webkit-animation-delay: 0ms;
-  -webkit-animation-fill-mode: forwards;
-  -webkit-animation-timing-function: linear;
-  -webkit-animation-iteration-count: infinite;
-  -webkit-transform-origin: 0 0;
-  animation-name: slideInLeftAndRight-transform-keyframes;
-  animation-duration: 5500ms;
-  animation-delay: 0ms;
-  animation-fill-mode: forwards;
-  animation-timing-function: linear;
-  animation-iteration-count: infinite;
-  transform-origin: 0 0;
+  -webkit-animation: slideInLeftAndRight-transform-keyframes 5.5s linear infinite;
+  animation: slideInLeftAndRight-transform-keyframes 5.5s linear infinite;
 }
 @-webkit-keyframes slideInLeftAndRight-transform-keyframes {
-  0% {-webkit-transform:translate(-50%, 0) scale(1) rotateX(0deg) rotateY(0deg) rotateZ(0deg);-webkit-animation-timing-function: cubic-bezier(.25,.25,.75,.75);background-image: url(../img/car4.png);}
-  49.5% {-webkit-transform:translate(150%, 0) scale(1) rotateX(0deg) rotateY(0deg) rotateZ(0deg);-webkit-animation-timing-function: cubic-bezier(.25,.25,.75,.75);background-image: url(../img/car4.png);}
-  50% {-webkit-transform:translate(150%, 0) scale(1) rotateX(0deg) rotateY(0deg) rotateZ(0deg);-webkit-animation-timing-function: cubic-bezier(.25,.25,.75,.75);background-image: url(../img/car3.png);}
-  100% {-webkit-transform:translate(-50%, 0) scale(1) rotateX(0deg) rotateY(0deg) rotateZ(0deg);background-image: url(../img/car3.png);}
+  0% {-webkit-transform:translate(-50%, 0) scale(1);-webkit-animation-timing-function: cubic-bezier(.25,.25,.75,.75);background-image: url(../img/car4.png);}
+  49.5% {-webkit-transform:translate(150%, 0) scale(1);-webkit-animation-timing-function: cubic-bezier(.25,.25,.75,.75);background-image: url(../img/car4.png);}
+  50% {-webkit-transform:translate(150%, 0) scale(1);-webkit-animation-timing-function: cubic-bezier(.25,.25,.75,.75);background-image: url(../img/car3.png);}
+  100% {-webkit-transform:translate(-50%, 0) scale(1);background-image: url(../img/car3.png);}
 }
 @keyframes slideInLeftAndRight-transform-keyframes {
-  0% {transform:translate(-50%, 0) scale(1) rotateX(0deg) rotateY(0deg) rotateZ(0deg);animation-timing-function: cubic-bezier(.25,.25,.75,.75);background-image: url(../img/car4.png);}
-  49.5% {transform:translate(150%, 0) scale(1) rotateX(0deg) rotateY(0deg) rotateZ(0deg);animation-timing-function: cubic-bezier(.25,.25,.75,.75);background-image: url(../img/car4.png);}
-  50% {transform:translate(150%, 0) scale(1) rotateX(0deg) rotateY(0deg) rotateZ(0deg);animation-timing-function: cubic-bezier(.25,.25,.75,.75);background-image: url(../img/car3.png);}
-  100% {transform:translate(-50%, 0) scale(1) rotateX(0deg) rotateY(0deg) rotateZ(0deg);background-image: url(../img/car3.png);}
+  0% {transform:translate(-50%, 0) scale(1);animation-timing-function: cubic-bezier(.25,.25,.75,.75);background-image: url(../img/car4.png);}
+  49.5% {transform:translate(150%, 0) scale(1);animation-timing-function: cubic-bezier(.25,.25,.75,.75);background-image: url(../img/car4.png);}
+  50% {transform:translate(150%, 0) scale(1);animation-timing-function: cubic-bezier(.25,.25,.75,.75);background-image: url(../img/car3.png);}
+  100% {transform:translate(-50%, 0) scale(1);background-image: url(../img/car3.png);}
 }
-
 .mb20{
 	margin-bottom: 0.5rem;
 }
@@ -964,4 +945,65 @@ body {
 	background: url(../img/gotop.png) 0 0 no-repeat;
 	background-size: 100% 100%;
 	z-index: 9999;
+}
+
+.stuff-container{
+	position: relative;
+}
+.no-stuff{
+	position: absolute;
+	z-index: 1;
+	width: 100%;
+	height: 100%;
+	top: 0;
+	left: 0;
+	background-color:#ab0d10; 
+	display: none;
+}
+.no-stuff img{
+	width: 100%;
+	position: absolute;
+	top: 50%;
+	left: 0;
+	transform: translateY(-50%);
+	-webkit-transform: translateY(-50%);
+	-moz-transform: translateY(-50%);
+}
+.stuff-container.active .no-stuff{
+	display: block;
+}
+.stuff-container > h3{
+	position: relative;
+	z-index: 99;
+}
+.stuff-container{
+	min-height: 24.9rem;
+}
+
+.f-coupon img{
+	min-height: 3.15rem
+}
+.banner-wrapper img{
+	min-height: 12.15rem
+}
+.f-banner > .floor-con > img{
+	min-height: 2.1rem
+}
+.full-size.activity img{
+	min-height: 3.4rem
+}
+.f-column-2.activity img{
+	min-height: 1.7rem
+}
+.floor-tit img{
+	min-height: 1.9rem
+}
+.pic > img{
+	min-height: 5.2rem
+}
+.f-pic > img{
+	min-height: 5.55rem;
+}
+.hall .f-pic > img{
+	min-height: 4.05rem
 }
