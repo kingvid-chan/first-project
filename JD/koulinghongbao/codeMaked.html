@@ -9,7 +9,8 @@
 </head>
 
 <body>
-    <div class="loading"></div>
+    <!-- loading，添加类.hide可隐藏 -->
+    <div class="loading hide"></div>
     <div class="wrapper">
         <div class="btn-activity-rule">
             <img src="img/btn-rule.png" alt="">
@@ -68,46 +69,10 @@
     </div>
 
     <!-- 通知给好友，添加类.active时出现 -->
-    <div class="share-container"><img src="img/title1.png" alt=""></div>
+    <!-- <div class="share-container"><img src="img/title1.png" alt=""></div> -->
 
     <script type="text/javascript" src="js/zepto.js"></script>
-    <script>
-    function w() {
-        var x = window;
-        var v, u, t, tes,
-            s = x.document,
-            r = s.documentElement,
-            a = r.getBoundingClientRect().width;
-
-        if (!v && !u) {
-            var n = !!x.navigator.appVersion.match(/AppleWebKit.*Mobile.*/);
-            v = x.devicePixelRatio;
-            tes = x.devicePixelRatio;
-            v = n ? v : 1, u = 1 / v;
-        }
-        document.documentElement.setAttribute('style', 'font-size:' + a / 320 * 20 + "px");
-    }
-    window.addEventListener("resize", function() {
-        w();
-    });
-    w();
-    </script>
-    <script>
-    $('.description').on('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend',function(){
-    	if ($(this).hasClass('des_slideIn')) {
-    		$(this).removeClass('des_slideIn').addClass('active');
-    	}else{
-    		$(this).removeClass('des_slideOut active');
-    	}
-    });
-    </script>
-    <script>
-    $(function() {
-        var windowHeight = $(window).height();
-        $('body').css('min-height', windowHeight + 'px');
-
-    });
-    </script>
+    <script type="text/javascript" src="js/main.js"></script>
 </body>
 
 </html>

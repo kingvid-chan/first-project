@@ -41,7 +41,14 @@ a {
 .fr {
   float: right; }
 
-.load-img {
+.loading {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+  background-color: #fff;
+  z-index: 9999;
   background-image: url(http://img11.360buyimg.com/cms/jfs/t853/64/222820902/5860/54fc0ad5/550bc4d5N2164a1f4.gif);
   background-repeat: no-repeat;
   background-position: center center;
@@ -183,13 +190,13 @@ body {
 i.icon-cancel {
   content: "";
   display: inline-block;
-  height: 1.42933rem;
-  width: 1.42933rem;
-  background: url(../img/cancel.png) 0 0 no-repeat;
+  height: 1.28rem;
+  width: 1.28rem;
+  background: url(../img/icon-clear.png) 0 0 no-repeat;
   background-size: 100% 100%;
   position: absolute;
-  right: 1.3rem;
-  top: 0.26rem; }
+  right: 1.5rem;
+  top: 0.34133rem; }
 
 i.icon-hide {
   content: "";
@@ -560,5 +567,11 @@ i.icon-hide {
 
 .hide {
   display: none; }
+
+.btn-mask + img {
+  display: none; }
+
+.btn-mask.hide + img {
+  display: inline; }
 
 /*# sourceMappingURL=style.css.map */

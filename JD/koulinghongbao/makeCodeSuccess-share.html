@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>口令红包</title>
+    <title>生成口令成功－落地分享页</title>
     <link rel="stylesheet" type="text/css" href="css/style.css">
 </head>
 
@@ -19,18 +19,15 @@
             <img src="img/jd.png" alt="">
         </div>
         <div class="title">
-            <img src="img/title2.png" alt="">
+            <img src="img/title3.png" alt="">
         </div>
-        <div class="input-container">
-            <input type="text" placeholder="主人，请输入您获得的秒杀令">
-            <i class="icon-cancel"></i>
+        <div class="makedCode-container">
+            <h3>在活动页输入口令</h3>
+            <h3>XXXXXXX</h3>
+            <p>即可领取我为你准备的红包哦～</p>
         </div>
         <div class="btn-container">
-            <a href="#"><img src="img/btn4.png" alt=""></a>
-        </div>
-        <div class="tips">
-            <h3>TIPS</h3>
-            <p>输入你的大名或个性词语，生成秒杀口令，分享给好友； 好友凭借这个口令获得为TA准备的专属优惠券. <br>注意：每人只能生成一次口令，口令由汉字、数字、字母组成，字数限10字以内.</p>
+            <a href="#"><img src="img/btn5.png" alt=""></a>
         </div>
     </div>
     <!-- 活动规则弹窗 -->
@@ -70,47 +67,10 @@
             </div>
         </div>
     </div>
-    <!-- 输入秒杀令后回传状态 出现动画类是slideIn 退出时动画类是slideOut: 被占用  -->
-    <div class="status token-up">
-        <div class="status-inner">
-            <img src="img/cry-dog.png" alt="">
-            <div class="des">
-                <h3>秒杀令被占用</h3>
-                <p>秒杀令太热门，<br>被别人用掉啦～</p>
-            </div>
-            <a href="#"><img src="img/btn-re-input.png" alt=""></a>
-        </div>
-    </div>
-    <!-- 输入秒杀令后回传状态 出现动画类是slideIn 退出时动画类是slideOut: 无法使用  -->
-    <div class="status useless">
-        <div class="status-inner">
-            <img src="img/cry-dog.png" alt="">
-            <div class="des">
-                <h3>秒杀令无法使用</h3>
-                <p>秒杀令无效～口令只有中文，<br>English 和数字哟！</p>
-            </div>
-            <a href="#"><img src="img/btn-re-input.png" alt=""></a>
-        </div>
-    </div>
-    <!-- 输入秒杀令后回传状态 出现动画类是slideIn 退出时动画类是slideOut: 未登录  -->
-    <div class="status unlogin">
-        <div class="status-inner">
-            <img src="img/heartBreak-dog.png" alt="">
-            <div class="des">
-                <h3>未登录</h3>
-                <p>登录才能发起秒杀令哦～</p>
-            </div>
-            <a href="#"><img src="img/login.png" alt=""></a>
-        </div>
-    </div>
-    <!-- 输入秒杀令后回传状态 出现动画类是slideIn 退出时动画类是slideOut: 创建成功  -->
-    <div class="status success-make">
-    	<div class="success-make-inner">
-			<img src="img/success-make.png" alt="">
-		    <a href="#1" class="notInformNow"></a>
-		    <a href="#2" class="informMyFriend"></a>
-    	</div>
-    </div>
+
+    <!-- 通知给好友，添加类.active时出现 -->
+    <!-- <div class="share-container"><img src="img/title1.png" alt=""></div> -->
+
     <script type="text/javascript" src="js/zepto.js"></script>
     <script type="text/javascript" src="js/main.js"></script>
 </body>
