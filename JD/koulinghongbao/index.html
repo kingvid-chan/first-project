@@ -12,9 +12,9 @@
     <!-- loading，添加类.hide可隐藏 -->
     <div class="loading hide"></div>
     <div class="wrapper">
-        <div class="btn-activity-rule">
+        <!-- <div class="btn-activity-rule">
             <img src="img/btn-rule.png" alt="">
-        </div>
+        </div> -->
         <div class="jd-logo">
             <img src="img/jd.png" alt="">
         </div>
@@ -34,8 +34,9 @@
         </div>
         <div class="more-option">
             <ul class="option-list">
-                <li><a href="#">没有秒杀令？点击获取</a></li>
+                <li><a href="#" id="btn1">没有秒杀令？点击获取</a></li>
                 <li><a href="#">生成我的专属秒杀令</a></li>
+                <li><a href="#" class="option-rule">活动规则</a></li>
             </ul>
         </div>
     </div>
@@ -167,6 +168,15 @@
     <div class="status success-getCoupon">
     	<div class="success-getCoupon-inner">
 			<img src="img/success-getCoupon.png" alt="">
+            <div class="getCoupon-detail">
+                <!-- 当金额为三位数时，添加类.fs90 -->
+                <h3>30</h3>
+                <p>
+                    <span>全品类</span>
+                    <span>满100元可用</span>
+                </p>
+                
+            </div>
 		    <a href="#1" class="makeMyCode"></a>
 		    <a href="#2" class="informMyFriend"></a>
     	</div>

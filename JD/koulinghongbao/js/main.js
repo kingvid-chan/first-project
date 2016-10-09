@@ -32,9 +32,22 @@ $('.description').on('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimati
         $(this).removeClass('des_slideOut active');
     }
 });
-
-$(function() {
-    var windowHeight = $(window).height();
-    $('body').css('min-height', windowHeight + 'px');
-
-});
+$(".option-rule").click(function(){
+    $(".activity-rule-container").addClass('des_slideIn');
+})
+$(".icon-hide").click(function(){
+    $(this).parents('.description').addClass('des_slideOut');
+})
+$("#btn1").click(function(e){
+    e.preventDefault();
+    $(".getCode-container").addClass('des_slideIn');
+})
+$(".status a").click(function(e){
+    e.preventDefault();
+    $(this).parents('.status').addClass('slideOut');
+})
+var index = 0;
+$(".btn-mask").click(function(e){
+    $('.status').eq(index).addClass('slideIn');
+    index++;
+})

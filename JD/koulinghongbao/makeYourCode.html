@@ -12,9 +12,9 @@
     <!-- loading，添加类.hide可隐藏 -->
     <div class="loading hide"></div>
     <div class="wrapper">
-        <div class="btn-activity-rule">
+        <!-- <div class="btn-activity-rule">
             <img src="img/btn-rule.png" alt="">
-        </div>
+        </div> -->
         <div class="jd-logo">
             <img src="img/jd.png" alt="">
         </div>
@@ -22,15 +22,22 @@
             <img src="img/title2.png" alt="">
         </div>
         <div class="input-container">
-            <input type="text" placeholder="主人，请输入您获得的秒杀令">
+            <input type="text" placeholder="主人，请定制你的秒杀令">
             <i class="icon-cancel"></i>
         </div>
         <div class="btn-container">
-            <a href="#"><img src="img/btn4.png" alt=""></a>
+            <a href="#">
+                <!-- img.btn-mask是图片蒙层，添加类.hide可隐藏并显示btn4.png -->
+                <img src="img/btn4-mask.png" alt="" class="btn-mask">
+                <img src="img/btn4.png" alt="">
+            </a>
         </div>
         <div class="tips">
             <h3>TIPS</h3>
-            <p>输入你的大名或个性词语，生成秒杀口令，分享给好友； 好友凭借这个口令获得为TA准备的专属优惠券. <br>注意：每人只能生成一次口令，口令由汉字、数字、字母组成，字数限10字以内.</p>
+            <p>输入中文、数字、字母（10字符以内）生成专属秒杀令；将秒杀令告诉好友；好友在京东秒杀频道内输入秒杀令，可获得专属优惠券。</p>
+        </div>
+        <div class="rule-btn mt50">
+            <a href="#" class="option-rule">活动规则</a>
         </div>
     </div>
     <!-- 活动规则弹窗 -->

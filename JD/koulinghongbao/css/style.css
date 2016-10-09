@@ -138,8 +138,11 @@ a {
     overflow: hidden; }
 
 body {
-  background: url(../img/bg.jpg) 0 0 no-repeat;
-  background-size: 100% 100%; }
+  background-image: url(../img/bg.jpg);
+  background-size: cover;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-position: center center; }
 
 .wrapper img {
   width: 100%; }
@@ -168,8 +171,30 @@ body {
     background-color: #cb1057;
     border-radius: 25px;
     color: #fff;
-    font-size: 16px;
+    font-size: 0.64rem;
     line-height: 2.02667rem; }
+  .option-list li a.option-rule {
+    color: #fdf23b;
+    line-height: normal;
+    background: none;
+    border-radius: 0;
+    font-size: 0.704rem; }
+
+a.option-rule {
+  color: #fdf23b;
+  line-height: normal;
+  background: none;
+  border-radius: 0;
+  font-size: 0.704rem; }
+  a.option-rule:after {
+    content: "";
+    display: block;
+    margin: auto;
+    width: 0.81067rem;
+    height: 0.55467rem;
+    background: url(../img/tri-angle.png) 0 0 no-repeat;
+    background-size: 100% 100%;
+    margin-top: 0.21333rem; }
 
 .input-container {
   margin-top: 0.81067rem;
@@ -178,9 +203,9 @@ body {
   .input-container input {
     width: 13.16267rem;
     height: 1.87733rem;
-    padding-left: 15px;
+    padding-left: 0.64rem;
     line-height: 1.87733rem;
-    font-size: 16px;
+    font-size: 0.66133rem;
     border: solid 1px #fdf23b;
     border-radius: 5px; }
 
@@ -246,25 +271,27 @@ i.icon-hide {
     top: 0;
     padding: 0 20px 0; }
     .activity-rule .activity-rule-inner h3 {
-      font-size: 24px;
+      font-size: 0.87467rem;
       text-align: center;
       color: #fff;
-      margin-bottom: 20px;
-      margin-top: 25px; }
+      margin-bottom: 0.85333rem;
+      margin-top: 1.06667rem; }
     .activity-rule .activity-rule-inner p {
-      margin-bottom: 10px;
-      font-size: 14px;
+      margin-bottom: 0.53333rem;
+      font-size: 0.53333rem;
       color: #fff; }
       .activity-rule .activity-rule-inner p span {
         color: #fff155;
-        margin-right: 10px; }
+        margin-right: 10px;
+        font-weight: 600; }
     .activity-rule .activity-rule-inner section {
       line-height: 25px;
-      font-size: 14px;
+      font-size: 0.53333rem;
       color: #fff;
-      margin-bottom: 15px; }
+      margin-bottom: 0.64rem; }
       .activity-rule .activity-rule-inner section span {
-        color: #fff155; }
+        color: #fff155;
+        font-weight: 600; }
       .activity-rule .activity-rule-inner section ul {
         list-style: decimal;
         padding-left: 15px; }
@@ -339,10 +366,10 @@ i.icon-hide {
       .status .status-inner .des h3 {
         color: #ffee00;
         text-align: center;
-        font-size: 20px;
+        font-size: 0.85333rem;
         margin-bottom: 5px; }
       .status .status-inner .des p {
-        font-size: 16px;
+        font-size: 0.68267rem;
         text-align: center;
         color: #fff;
         min-height: 0.85333rem;
@@ -360,7 +387,7 @@ i.icon-hide {
 
 .success-getCoupon-inner {
   position: absolute;
-  width: 10.688rem;
+  width: 11.28533rem;
   height: 14.25067rem;
   top: 50%;
   left: 50%;
@@ -374,16 +401,59 @@ i.icon-hide {
     position: absolute;
     bottom: 0;
     left: 0;
-    width: 5.76rem;
+    width: 5.97333rem;
     height: 3.37067rem;
     display: block; }
   .success-getCoupon-inner a.informMyFriend {
     position: absolute;
     bottom: 0;
     right: 0;
-    width: 4.90667rem;
+    width: 5.312rem;
     height: 3.37067rem;
     display: block; }
+  .success-getCoupon-inner .getCoupon-detail {
+    position: absolute;
+    top: 7.78667rem;
+    left: 3.2rem;
+    width: 5.97333rem;
+    height: 2.56rem;
+    line-height: 2.56rem; }
+    .success-getCoupon-inner .getCoupon-detail:after {
+      content: "";
+      clear: both;
+      display: table; }
+    .success-getCoupon-inner .getCoupon-detail h3 {
+      float: left;
+      font-size: 2.34667rem;
+      color: #f11b65;
+      letter-spacing: -0.256rem;
+      text-indent: -0.21333rem; }
+      .success-getCoupon-inner .getCoupon-detail h3.fs90 {
+        font-size: 1.6rem; }
+    .success-getCoupon-inner .getCoupon-detail p {
+      float: left;
+      max-width: 3.52rem;
+      line-height: normal;
+      padding-left: 0.29867rem;
+      padding-top: 0.68267rem;
+      box-sizing: border-box; }
+      .success-getCoupon-inner .getCoupon-detail p span {
+        display: inline-block;
+        float: left; }
+        .success-getCoupon-inner .getCoupon-detail p span:first-child {
+          font-size: 0.448rem;
+          padding: 0.04267rem 0.21333rem;
+          box-sizing: border-box;
+          background-color: #f11b65;
+          color: #ffde1d;
+          border-radius: 5px; }
+        .success-getCoupon-inner .getCoupon-detail p span:last-child {
+          font-size: 0.512rem;
+          color: #f11b65;
+          white-space: nowrap;
+          overflow: hidden;
+          text-overflow: ellipsis;
+          max-width: 3.52rem; }
 
 .success-make-inner {
   position: absolute;
@@ -519,12 +589,12 @@ i.icon-hide {
   width: 13.16267rem;
   margin: 2.13333rem auto 0; }
   .tips h3 {
-    font-size: 20px;
+    font-size: 0.704rem;
     text-align: center;
     font-weight: normal; }
   .tips p {
-    font-size: 14px;
-    line-height: 25px;
+    font-size: 0.46933rem;
+    line-height: 0.85333rem;
     font-weight: lighter; }
 
 @media (max-width: 350px) {
@@ -556,13 +626,13 @@ i.icon-hide {
   border-radius: 4px;
   padding: 0.64rem 0; }
   .makedCode-container h3 {
-    font-size: 18px;
+    font-size: 0.81067rem;
     font-weight: normal;
     color: #ffee00;
     margin-bottom: 5px;
     overflow: hidden; }
   .makedCode-container p {
-    font-size: 16px;
+    font-size: 0.72533rem;
     color: #ffb477; }
 
 .hide {
@@ -573,5 +643,27 @@ i.icon-hide {
 
 .btn-mask.hide + img {
   display: inline; }
+
+.rule-btn-fixed {
+  position: fixed;
+  width: 100%;
+  bottom: 0.64rem;
+  left: 0;
+  text-align: center; }
+
+.rule-btn {
+  margin-bottom: 0.64rem;
+  text-align: center; }
+
+.mt50 {
+  margin-top: 1.06667rem; }
+
+@media screen and (min-height: 520px) {
+  .option-rule {
+    position: fixed;
+    left: 0;
+    width: 100% !important;
+    bottom: 0.64rem;
+    text-align: center; } }
 
 /*# sourceMappingURL=style.css.map */
