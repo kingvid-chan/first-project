@@ -755,9 +755,15 @@ a.share-my11 {
         font-size: 0.55467rem;
         color: #fff;
         display: inline-block;
-        border-radius: 0.42667rem; }
+        border-radius: 0.42667rem;
+        max-width: 3.94667rem;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap; }
       .user li:first-child + li .tag-list span + span {
         margin-left: 0.42667rem; }
+      .user li:first-child + li .tag-list > p {
+        font-size: 0; }
 
 p.line {
   background: url(../img/line.png) 0 0 no-repeat;
