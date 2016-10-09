@@ -1,0 +1,493 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>我的双十一</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<!-- loading，添加类.hide可隐藏 -->
+<div class="loading hide"></div>
+<div class="f-wrap">
+    <!-- section s -->
+    <section class="floor f-top">
+        <!-- 正常、A、B1、B2、B3等五种状态，给对应的div添加类.active将会显现 -->
+        <!-- 正常状态-->
+        <div class="active state">
+            <ul class="user">
+                <li><img src="img/user.jpg" alt=""></li>
+                <li>
+                    <h3>我爱买</h3>
+                    <!-- 两行：.two-row  一行：one-row -->
+                    <div class="two-row tag-list">
+                        <p>
+                            <span>水果</span>
+                            <span>羽绒服</span>
+                            <span>微波炉</span>
+                        </p>
+                        <p>
+                            <span>矿泉水</span>
+                            <span>零食</span>
+                            <span>相机相机</span>
+                        </p>
+                    </div>
+                </li>
+            </ul>
+            <p class="line"></p>
+            <div class="user-msg">
+                <h3 class="msg-tit">2016截止目前我总共：下单<span class="bold">1990</span>单；消费<span class="bold">100000</span>元</h3>
+                <div class="msg-detail">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th colspan="2">11.11 我是”<span class="color-gold bold">人形种草机</span>“</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>
+                                    <p class="color-gold">
+                                        <!-- 当金额达到7位数时，添加类.fs40 -->
+                                        <span>119589</span>元
+                                    </p>
+                                    <p>双11已败金额</p>
+                                </td>
+                                <td>
+                                    <p class="color-gold">
+                                        <span>999</span>元
+                                    </p>
+                                    <p>京东为我省下</p>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <p class="color-gold">
+                                        <span>99</span>单
+                                    </p>
+                                    <p>我的下单量</p>
+                                </td>
+                                <td>
+                                    <p class="color-gold">
+                                        <span>15</span>张
+                                    </p>
+                                    <p>优惠券使用量</p>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <a href="#" class="share-my11"><img src="img/btn-share.png" alt=""></a>
+        </div>
+        <!-- A状态 -->
+        <div class="state">
+            <h3 class="user-image">
+                <img src="img/user.jpg" alt="">
+            </h3>
+            <div class="tip-caption">
+                <h3><img src="img/dog.png" alt=""></h3>
+                <p>啊哦，本次双十一您还未有任何记录呢</p>
+                <a href="#"><img src="img/btn-go.png" alt=""></a>
+            </div>
+            <a href="#" class="btn-newUser"><img src="img/btn-newUser.png" alt=""></a>
+        </div>
+        <!-- B1状态 -->
+        <div class="state">
+            <ul class="user">
+                <li><img src="img/user.jpg" alt=""></li>
+                <li>
+                    <h3>我爱买</h3>
+                    <!-- 两行：.two-row  一行：one-row -->
+                    <div class="two-row tag-list">
+                        <p>
+                            <span>水果</span>
+                            <span>羽绒服</span>
+                            <span>微波炉</span>
+                        </p>
+                        <p>
+                            <span>矿泉水</span>
+                            <span>零食</span>
+                            <span>相机相机</span>
+                        </p>
+                    </div>
+                </li>
+            </ul>
+            <p class="line"></p>
+            <div class="user-msg">
+                <h3 class="msg-tit">2016截止目前我总共：下单<span class="bold">1990</span>单；消费<span class="bold">100000</span>元</h3>
+                <div class="tip-caption">
+                    <h3><img src="img/dog.png" alt=""></h3>
+                    <p>啊哦，本次双十一您还未有任何记录呢</p>
+                    <a href="#"><img src="img/btn-go.png" alt=""></a>
+                </div>
+            </div>
+        </div>
+        <!-- B2状态 -->
+        <div class="state">
+            <ul class="user">
+                <li><img src="img/user.jpg" alt=""></li>
+                <li>
+                    <h3>我爱买</h3>
+                    <!-- 两行：.two-row  一行：one-row -->
+                    <div class="two-row tag-list">
+                        <p>
+                            <span>水果</span>
+                            <span>羽绒服</span>
+                            <span>微波炉</span>
+                        </p>
+                        <p>
+                            <span>矿泉水</span>
+                            <span>零食</span>
+                            <span>相机相机</span>
+                        </p>
+                    </div>
+                </li>
+            </ul>
+            <p class="line"></p>
+            <div class="user-msg">
+                <h3 class="msg-tit">很抱歉，数据延迟，请稍后 . . .</h3>
+                <div class="loading-err">
+                    <h3>
+                        <img src="img/loading.png" alt="">
+                        <p>loading</p>
+                    </h3>
+                </div>
+            </div>
+        </div>
+        <!-- B3状态 -->
+        <div class="state pb80">
+            <h3 class="user-image">
+                <img src="img/user.jpg" alt="">
+            </h3>
+            <div class="tip-caption">
+                <h3><img src="img/dog.png" alt=""></h3>
+                <p>很抱歉，数据延迟，请稍后 . . .</p>
+                <a href="#"><img src="img/btn-go.png" alt=""></a>
+            </div>
+        </div>
+    </section>
+    <!-- section e -->
+    <!-- section s -->
+    <section class="floor book-outer">
+        <h3 class="floor-tit tac"><img src="img/title1.png" alt=""></h3>
+        <!-- 如果尚未有预约，给div.book添加类.hide，将显示div.no-book -->
+        <div class="book">
+            <!-- iscoming、isgoing、isover显示商品状态 -->
+            <div class="book-unit">
+                <ul class="ms-goods">
+                    <li class="iscoming">
+                        <a class="module" href="#">
+                            <div class="pic load-img">
+                                <img src="img/stuff1.jpg" alt="">
+                                <span class="tag tag-iscoming">即将开始</span>
+                                <span class="tag tag-isgoing">进行中</span>
+                                <span class="tag tag-isover">已结束</span>
+                            </div>
+                        </a>
+                    </li>
+                    <li class="isgoing">
+                        <a class="module" href="#">
+                            <div class="pic load-img">
+                                <img src="img/stuff1.jpg" alt="">
+                                <span class="tag tag-iscoming">即将开始</span>
+                                <span class="tag tag-isgoing">进行中</span>
+                                <span class="tag tag-isover">已结束</span>
+                            </div>
+                        </a>
+                    </li>
+                    <li class="isover">
+                        <a class="module" href="#">
+                            <div class="pic load-img">
+                                <img src="img/stuff1.jpg" alt="">
+                                <span class="tag tag-iscoming">即将开始</span>
+                                <span class="tag tag-isgoing">进行中</span>
+                                <span class="tag tag-isover">已结束</span>
+                            </div>
+                        </a>
+                    </li>
+                    <li class="isgoing">
+                        <a class="module" href="#">
+                            <div class="pic load-img">
+                                <img src="img/stuff1.jpg" alt="">
+                                <span class="tag tag-iscoming">即将开始</span>
+                                <span class="tag tag-isgoing">进行中</span>
+                                <span class="tag tag-isover">已结束</span>
+                            </div>
+                        </a>
+                    </li>
+                    <li class="iscoming">
+                        <a class="module" href="#">
+                            <div class="pic load-img">
+                                <img src="img/stuff1.jpg" alt="">
+                                <span class="tag tag-iscoming">即将开始</span>
+                                <span class="tag tag-isgoing">进行中</span>
+                                <span class="tag tag-isover">已结束</span>
+                            </div>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="no-book">
+            <a href="#">
+                <h3>
+                    您尚未有任何预约哦，何不去<span class="color-pink">主会场</span>逛逛？
+                    <img src="img/go.png" alt="">
+                </h3>
+            </a>
+        </div>
+    </section>
+    <!-- section e -->
+    <!-- section s -->
+    <section class="floor brand">
+        <h3 class="floor-tit tac"><img src="img/title2.png" alt=""></h3>
+        <div class="floor-con">
+            <ul class="f-column-3 pd10 colp10 pl20">
+                <li class="f-item">
+                    <div class="item-wrap">
+                        <a href="javascript:;" title="">
+                            <span class="f-pic load-img">
+                                <img src="img/stuff2.jpg" alt="">
+                            </span>
+                        </a>
+                    </div>
+                </li>
+                <li class="f-item">
+                    <div class="item-wrap">
+                        <a href="javascript:;" title="">
+                            <span class="f-pic load-img">
+                                <img src="img/stuff2.jpg" alt="">
+                            </span>
+                        </a>
+                    </div>
+                </li>
+                <li class="f-item">
+                    <div class="item-wrap">
+                        <a href="javascript:;" title="">
+                            <span class="f-pic load-img">
+                                <img src="img/stuff2.jpg" alt="">
+                            </span>
+                        </a>
+                    </div>
+                </li>
+                <li class="f-item">
+                    <div class="item-wrap">
+                        <a href="javascript:;" title="">
+                            <span class="f-pic load-img">
+                                <img src="img/stuff2.jpg" alt="">
+                            </span>
+                        </a>
+                    </div>
+                </li>
+                <li class="f-item">
+                    <div class="item-wrap">
+                        <a href="javascript:;" title="">
+                            <span class="f-pic load-img">
+                                <img src="img/stuff2.jpg" alt="">
+                            </span>
+                        </a>
+                    </div>
+                </li>
+                <li class="f-item">
+                    <div class="item-wrap">
+                        <a href="javascript:;" title="">
+                            <span class="f-pic load-img">
+                                <img src="img/stuff2.jpg" alt="">
+                            </span>
+                        </a>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </section>
+    <!-- section e -->
+    <!-- section s -->
+    <section class="floor gray-bg pb20 list">
+        <h3 class="floor-tit tac"><img src="img/title3.png" alt=""><a class="link-more" href="#">更多</a></h3>
+        <div class="item">
+            <div class="item-content">
+                <div class="title">200元以内超好用的电动剃须刀推荐</div>
+                <div class="item-img">
+                        <p class="load-img">
+                            <img src="http://m.360buyimg.com/mobilecms/g7/M03/08/0F/rBEHZVB1CEEIAAAAAACWJSnGG64AABqLwOIxgMAAJY9924.jpg!q70.jpg" style="opacity: 1;">
+                        </p>
+                        <p class="load-img">
+                            <img src="http://m.360buyimg.com/mobilecms/jfs/t730/22/1387811381/70936/5e5477d0/5539a866Nce44fa30.jpg!q70.jpg" style="opacity: 1;">
+                        </p>
+                        <p class="load-img">
+                            <img src="http://m.360buyimg.com/mobilecms/jfs/t238/281/1868039114/52145/1ce2a93/53fe90b0N83ac564b.jpg!q70.jpg" style="opacity: 1;">
+                        </p>
+                </div>
+                <div class="meta">
+                    <span class="author">
+                        <span class="icon-author"><img src="http://m.360buyimg.com/mobilecms/jfs/t2674/201/1715424969/41105/fd65c9b3/574866a2N021c3e87.jpg!q70.jpg" style="opacity: 1;"></span>
+                            <span class="author-info">淘然别居</span>
+                                <span class="good-num">推荐了20件单品</span>
+                    </span>
+                    <span class="count"><i class="icon-count"></i>8427</span>
+                </div>
+            </div>
+        </div>
+        <div class="item">
+            <div class="item-content">
+                <div class="title">200元以内超好用的电动剃须刀推荐</div>
+                <div class="item-img">
+                        <p class="load-img">
+                            <img src="http://m.360buyimg.com/mobilecms/g7/M03/08/0F/rBEHZVB1CEEIAAAAAACWJSnGG64AABqLwOIxgMAAJY9924.jpg!q70.jpg" style="opacity: 1;">
+                        </p>
+                        <p class="load-img">
+                            <img src="http://m.360buyimg.com/mobilecms/jfs/t730/22/1387811381/70936/5e5477d0/5539a866Nce44fa30.jpg!q70.jpg" style="opacity: 1;">
+                        </p>
+                        <p class="load-img">
+                            <img src="http://m.360buyimg.com/mobilecms/jfs/t238/281/1868039114/52145/1ce2a93/53fe90b0N83ac564b.jpg!q70.jpg" style="opacity: 1;">
+                        </p>
+                </div>
+                <div class="meta">
+                    <span class="author">
+                        <span class="icon-author"><img src="http://m.360buyimg.com/mobilecms/jfs/t2674/201/1715424969/41105/fd65c9b3/574866a2N021c3e87.jpg!q70.jpg" style="opacity: 1;"></span>
+                            <span class="author-info">淘然别居</span>
+                                <span class="good-num">推荐了20件单品</span>
+                    </span>
+                    <span class="count"><i class="icon-count"></i>8427</span>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- section e -->
+    <!-- section s -->
+    <section class="floor good-stuff">
+        <h3 class="floor-tit tac"><img src="img/title4.png" alt=""></h3>
+        <div class="floor-con">
+            <ul class="f-column-2 pl20 colp10">
+                <li class="f-item">
+                    <div class="item-wrap bg-white">
+                        <a href="#" title="">
+                            <span class="f-pic load-img">
+                                <img src="img/stuff3.jpg" alt="">
+                            </span>
+                            <span class="f-desc db">
+                                <p class="f-name row2 mt5 hidden">
+                                    拉芳修复洗发水柔顺轻柔拉芳修复洗发水柔顺轻柔
+                                </p>
+                                <small class="mt10">满100减100</small>
+                                <p class="f-price mt10 vam">￥222<del>¥500</del></p>
+                                <span class="f-btn-buy" title="加入购物车"></span>
+                            </span>
+                        </a>
+                    </div>
+                </li>
+                <li class="f-item">
+                    <div class="item-wrap bg-white">
+                        <a href="#" title="">
+                            <span class="f-pic load-img">
+                                <img src="img/stuff3.jpg" alt="">
+                            </span>
+                            <span class="f-desc db">
+                                <p class="f-name row2 mt5 hidden">
+                                    拉芳修复洗发水柔顺轻柔拉芳修复洗发水柔顺轻柔
+                                </p>
+                                <small class="mt10">满100减100</small>
+                                <p class="f-price mt10 vam">￥222<del>¥500</del></p>
+                                <span class="f-btn-buy" title="加入购物车"></span>
+                            </span>
+                        </a>
+                    </div>
+                </li>
+                <li class="f-item">
+                    <div class="item-wrap bg-white">
+                        <a href="#" title="">
+                            <span class="f-pic load-img">
+                                <img src="img/stuff3.jpg" alt="">
+                            </span>
+                            <span class="f-desc db">
+                                <p class="f-name row2 mt5 hidden">
+                                    拉芳修复洗发水柔顺轻柔拉芳修复洗发水柔顺轻柔
+                                </p>
+                                <small class="mt10">满100减100</small>
+                                <p class="f-price mt10 vam">￥222<del>¥500</del></p>
+                                <span class="f-btn-buy" title="加入购物车"></span>
+                            </span>
+                        </a>
+                    </div>
+                </li>
+                <li class="f-item">
+                    <div class="item-wrap bg-white">
+                        <a href="#" title="">
+                            <span class="f-pic load-img">
+                                <img src="img/stuff3.jpg" alt="">
+                            </span>
+                            <span class="f-desc db">
+                                <p class="f-name row2 mt5 hidden">
+                                    拉芳修复洗发水柔顺轻柔拉芳修复洗发水柔顺轻柔
+                                </p>
+                                <small class="mt10">满100减100</small>
+                                <p class="f-price mt10 vam">￥222<del>¥500</del></p>
+                                <span class="f-btn-buy" title="加入购物车"></span>
+                            </span>
+                        </a>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </section>
+    <!-- section e -->
+    <section class="end"><img src="img/bottom.png" alt=""></section>
+    <section class="nav-wrapper">
+        <ul class="nav">
+            <li><a href="#"></a></li>
+            <li><a href="#"></a></li>
+            <li><a href="#"></a></li>
+            <li><a href="#"></a></li>
+        </ul>
+    </section>
+    <i class="goToTop"></i>
+    <!-- 成功加入购物车toast 添加动画类.slideIn 进入动画后会自动消失 -->
+    <section class="toast">
+        <div>已成功加入购物车</div>
+    </section>
+</div>
+<script type="text/javascript" src="js/libs/zepto.js"></script>
+<script>
+function w() {
+   var x=window;
+   var v, u, t, tes, 
+          s = x.document,
+          r = s.documentElement,
+          a = r.getBoundingClientRect().width;
+      
+  if (!v && !u) {
+          var n = !!x.navigator.appVersion.match(/AppleWebKit.*Mobile.*/);
+          v = x.devicePixelRatio;
+          tes = x.devicePixelRatio;
+          v = n ? v : 1, u = 1 / v;
+  }
+ document.documentElement.setAttribute('style', 'font-size:'+a / 320 * 20 + "px");
+}
+window.addEventListener("resize", function() {
+   w();
+});
+w();
+</script>
+<script type="text/javascript">
+    // 预约会场       
+    $.fn.MsWidget = function(children){
+        var $this = $(this),
+            $li = $this.find(children),
+            w = $li.width()+1,
+            n = $li.length
+        ;
+        $this.width(w*n);
+    };
+    $('.ms-goods').MsWidget('li');
+
+
+    $('.toast').on('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend',function(){
+        var _this = $(this);
+        setTimeout(function() {
+            _this.addClass('hide');
+        }, 500);
+    });
+</script>  
+</body>
+</html>

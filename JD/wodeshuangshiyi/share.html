@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>站外落地分享页</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="share-container">
+<!-- loading，添加类.hide可隐藏 -->
+<div class="loading hide"></div>
+<div class="share-wrap">
+    <h3 class="share-tit"><img src="img/share-title.png" alt=""></h3>
+    <div class="share-msg">
+        <h3 class="user-image"><img src="img/user.jpg" alt=""></h3>
+        <h3 class="share-topic">我是”<span class="color-gold">人形种草机</span>“</h3>
+        <div class="share-mylove">
+            <p>我爱买</p>
+            <p class="mylove-detail">
+                <span>水果</span>
+                <span>家装</span>
+                <span>微波炉</span>
+                <span>矿泉水</span>
+                <span>零食</span>
+            </p>
+            <p class="share-line"></p>
+            <div class="share-msg-detail">
+                <h3 class="share-msg-detail-tit">我的双11战绩</h3>
+                <table>
+                    <tbody>
+                        <tr>
+                            <td>
+                                <p>
+                                    <!-- 当金额达到7位数时，添加类.fs40 -->
+                                    <span class="fs40">1195819</span>元
+                                </p>
+                                <p>双11已败金额</p>
+                            </td>
+                            <td>
+                                <p>
+                                    <span>999</span>元
+                                </p>
+                                <p>京东为我省下</p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <p>
+                                    <span>99</span>单
+                                </p>
+                                <p>我的下单量</p>
+                            </td>
+                            <td>
+                                <p>
+                                    <span>15</span>张
+                                </p>
+                                <p>优惠券使用量</p>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+                <h3 class="share-msg-tit">2016截止目前我总共：下单1990单；消费100000元</h3>
+            </div>
+        </div>
+    </div>
+    <div class="share-btn"><a href="#"><img src="img/share-btn.png" alt=""></a></div>
+</div>
+<script type="text/javascript" src="js/libs/zepto.js"></script>
+<script>
+function w() {
+   var x=window;
+   var v, u, t, tes, 
+          s = x.document,
+          r = s.documentElement,
+          a = r.getBoundingClientRect().width;
+      
+  if (!v && !u) {
+          var n = !!x.navigator.appVersion.match(/AppleWebKit.*Mobile.*/);
+          v = x.devicePixelRatio;
+          tes = x.devicePixelRatio;
+          v = n ? v : 1, u = 1 / v;
+  }
+ document.documentElement.setAttribute('style', 'font-size:'+a / 320 * 20 + "px");
+}
+window.addEventListener("resize", function() {
+   w();
+});
+w();
+</script>
+</body>
+</html>
