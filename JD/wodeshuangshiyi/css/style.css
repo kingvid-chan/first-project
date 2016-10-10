@@ -1051,7 +1051,8 @@ p.share-line {
       font-size: 0.46933rem;
       color: #e9beff; }
     .share-msg-detail table td p span {
-      font-size: 0.896rem; }
+      font-size: 0.896rem;
+      color: #fff; }
       .share-msg-detail table td p span.fs40 {
         font-size: 0.85333rem; }
 .share-msg-detail .share-msg-tit {
