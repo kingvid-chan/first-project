@@ -960,6 +960,11 @@ p.line {
     font-size: 0.34133rem; }
   .good-stuff .f-column-2 .f-price del, .good-stuff .f-column-2 small.mt10 {
     font-size: 0.256rem; } }
+.share-wrap {
+  display: none; }
+  .share-wrap.active {
+    display: block; }
+
 .share-tit {
   height: 5.12rem; }
   .share-tit img {
@@ -1001,7 +1006,7 @@ p.line {
   .mylove-detail span {
     display: inline-block;
     height: 0.85333rem;
-    width: 2.13333rem;
+    padding: 0 0.21333rem;
     text-align: center;
     line-height: 0.85333rem;
     background-color: #d5347a;
@@ -1009,7 +1014,8 @@ p.line {
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;
-    float: left; }
+    float: left;
+    max-width: 2.88rem; }
   .mylove-detail span + span {
     margin-left: 0.384rem; }
 
@@ -1064,9 +1070,48 @@ p.share-line {
 
 .share-container {
   background-image: url(../img/share-bg.jpg);
-  background-size: cover;
+  background-size: 100% 100%;
   background-attachment: fixed;
   background-repeat: no-repeat;
   background-position: center center; }
+
+.share-msg-detail-null {
+  width: 10.15467rem;
+  height: 4.13867rem;
+  margin: 0 auto 0.32rem;
+  background: url(../img/share-num-null.png) 0 0 no-repeat;
+  background-size: 100% 100%;
+  line-height: 4.13867rem; }
+  .share-msg-detail-null h3 {
+    font-size: 0.46933rem;
+    text-align: center; }
+
+.big-btn-go {
+  padding-top: 0.64rem;
+  padding-bottom: 2.56rem; }
+  .big-btn-go a {
+    display: block;
+    text-align: center; }
+    .big-btn-go a img {
+      width: 7.12533rem;
+      height: 1.728rem; }
+
+.status-B-tips {
+  padding-top: 1.92rem;
+  padding-bottom: 2.77333rem;
+  text-align: center; }
+  .status-B-tips img {
+    width: 1.472rem;
+    height: 1.17333rem; }
+  .status-B-tips h2 {
+    padding-top: 0.64rem;
+    font-size: 0.64rem;
+    margin-bottom: 0.21333rem; }
+  .status-B-tips p {
+    font-size: 0.512rem; }
+
+.big-btn-go.status-B-btn {
+  padding-top: 1.92rem;
+  padding-bottom: 3.41333rem; }
 
 /*# sourceMappingURL=style.css.map */

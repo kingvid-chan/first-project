@@ -977,7 +977,13 @@ and (max-device-width : 1024px)  {
 
 
 
+.share-wrap{
+	display: none;
 
+	&.active{
+		display: block;
+	}
+}
 .share-tit{
 	height: rem(240);
 
@@ -1028,7 +1034,8 @@ and (max-device-width : 1024px)  {
 	span{
 		display: inline-block;
 		height: rem(40);
-		width: rem(100);
+		// width: rem(100);
+		padding: 0 0.21333rem;
 		text-align: center;
 		line-height: rem(40);
 		background-color: #d5347a;
@@ -1037,6 +1044,7 @@ and (max-device-width : 1024px)  {
 		text-overflow: ellipsis;
 		white-space: nowrap;
 		float: left;
+		max-width: rem(135);
 	}
 	span+span{
 		margin-left: rem(18);
@@ -1117,8 +1125,61 @@ p.share-line{
 }
 .share-container{
 	background-image: url(../img/share-bg.jpg);
-    background-size: cover;
+    background-size: 100% 100%;
     background-attachment: fixed;
     background-repeat: no-repeat;
     background-position: center center;
+}
+
+.share-msg-detail-null{
+	width: rem(476);
+	height: rem(194);
+	margin: 0 auto 0.32rem;
+	background: url(../img/share-num-null.png) 0 0 no-repeat;
+	background-size: 100% 100%;
+	line-height: rem(194);
+
+	h3{
+		font-size: rem(22);
+		text-align: center;
+	}
+}
+
+.big-btn-go{
+	padding-top: rem(30);
+	padding-bottom: rem(120);
+
+	a{
+		display: block;
+		text-align: center;
+
+		img{
+			width: rem(334);
+			height: rem(81);
+		}
+	}
+}
+
+.status-B-tips{
+	padding-top: rem(90);
+	padding-bottom: rem(130);
+	text-align: center;
+
+	img{
+		width: 1.472rem;
+		height: 1.17333rem;
+	}
+
+	h2{
+		padding-top: rem(30);
+		font-size: rem(30);
+		margin-bottom: rem(10);
+	}
+	p{
+		font-size: rem(24);
+	}
+}
+.big-btn-go.status-B-btn{
+	padding-top: rem(90);
+	padding-bottom: rem(160);
 }

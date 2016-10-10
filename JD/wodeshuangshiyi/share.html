@@ -9,7 +9,9 @@
 <body class="share-container">
 <!-- loading，添加类.hide可隐藏 -->
 <div class="loading hide"></div>
-<div class="share-wrap">
+<!-- 三种状态 正常态  异常态A 异常态B -->
+<!-- 正常态 添加类.active时显示  -->
+<div class="share-wrap active">
     <h3 class="share-tit"><img src="img/share-title.png" alt=""></h3>
     <div class="share-msg">
         <h3 class="user-image"><img src="img/user.jpg" alt=""></h3>
@@ -19,8 +21,8 @@
             <p class="mylove-detail">
                 <span>水果</span>
                 <span>家装</span>
-                <span>微波炉</span>
-                <span>矿泉水</span>
+                <span>微波炉微波炉</span>
+                <span>矿泉水微波炉</span>
                 <span>零食</span>
             </p>
             <p class="share-line"></p>
@@ -64,6 +66,46 @@
         </div>
     </div>
     <div class="share-btn"><a href="#"><img src="img/share-btn.png" alt=""></a></div>
+</div>
+<!-- 异常态A 添加类.active时显示  -->
+<div class="share-wrap active">
+    <h3 class="share-tit"><img src="img/share-title.png" alt=""></h3>
+    <div class="share-msg">
+        <h3 class="user-image"><img src="img/user.jpg" alt=""></h3>
+        <h3 class="share-topic">我是”<span class="color-gold">人形种草机</span>“</h3>
+        <div class="share-mylove">
+            <p>我爱买</p>
+            <p class="mylove-detail">
+                <span>水果</span>
+                <span>家装</span>
+                <span>微波炉</span>
+                <span>矿泉水</span>
+                <span>零食</span>
+            </p>
+            <p class="share-line"></p>
+            <div class="share-msg-detail">
+                <h3 class="share-msg-detail-tit">我的双11战绩</h3>
+                <div class="share-msg-detail-null">
+                    <h3 class="color-gold">空空如也，这个双十一什么记录也没有~</h3>
+                </div>
+                <h3 class="share-msg-tit">2016截止目前我总共：下单1990单；消费100000元</h3>
+            </div>
+        </div>
+    </div>
+    <div class="big-btn-go"><a href="#"><img src="img/big-btn-go.png" alt=""></a></div>
+</div>
+<!-- 异常态B 添加类.state-B时显示 -->
+<div class="share-wrap active">
+    <h3 class="share-tit"><img src="img/share-title.png" alt=""></h3>
+    <div class="share-msg">
+        <h3 class="user-image"><img src="img/user.jpg" alt=""></h3>
+        <div class="status-B-tips">
+            <h3><img src="img/dog.png" alt=""></h3>
+            <h2 class="color-gold">空空如也，什么记录也没有~</h2>
+            <p>京东11.11百万好货等你来选</p>
+        </div>
+    </div>
+    <div class="big-btn-go status-B-btn"><a href="#"><img src="img/big-btn-go.png" alt=""></a></div>
 </div>
 <script type="text/javascript" src="js/libs/zepto.js"></script>
 <script>
