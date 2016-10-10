@@ -891,7 +891,8 @@ p.line {
       vertical-align: middle;
       margin-bottom: 0.32rem;
       -webkit-animation: rotateIn 1s linear infinite;
-      animation: rotateIn 1s linear infinite; }
+      animation: rotateIn 1s linear infinite;
+      position: relative; }
 
 .state.active {
   display: block; }
