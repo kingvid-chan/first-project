@@ -475,7 +475,7 @@ h3.floor-tit.tac + .item .item-content{
 small{
 	font-size: rem(18);
 	font-weight: lighter;
-	color: #acacac;
+	color: #aaaaaa;
 	display: inline-block;
 }
 .f-price{
@@ -486,6 +486,9 @@ small{
 	font-size: rem(18);
 	vertical-align: text-top;
 	font-weight: lighter;
+	margin-left: rem(5);
+	position: relative;
+	top: 1px;
 }
 .f-desc{
 	position: relative;
@@ -945,16 +948,16 @@ and (max-device-width : 1024px)  {
 		}
 
 		.f-name{
-			font-size: rem(16);
+			font-size: rem(15);
 		}
 
 		.row2{
-			height: rem(38);
+			height: rem(44);
 		}
 
 		.f-btn-buy{
-			width: rem(67);
-			height: rem(24);
+			width: rem(20);
+			height: rem(20);
 		}
 
 		.f-price{
@@ -1184,4 +1187,8 @@ p.share-line{
 .big-btn-go.status-B-btn{
 	padding-top: rem(90);
 	padding-bottom: rem(160);
+}
+
+::-webkit-scrollbar {
+	width:0;
 }

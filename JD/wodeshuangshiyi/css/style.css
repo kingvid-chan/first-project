@@ -599,7 +599,7 @@ h3.floor-tit.tac + .item .item-content {
 small {
   font-size: 0.384rem;
   font-weight: lighter;
-  color: #acacac;
+  color: #aaaaaa;
   display: inline-block; }
 
 .f-price {
@@ -609,7 +609,10 @@ small {
   color: #acacac;
   font-size: 0.384rem;
   vertical-align: text-top;
-  font-weight: lighter; }
+  font-weight: lighter;
+  margin-left: 0.10667rem;
+  position: relative;
+  top: 1px; }
 
 .f-desc {
   position: relative;
@@ -951,12 +954,12 @@ p.line {
           transform: translate3d(0, 5%, 0);
           -webkit-transform: translate3d(0, 5%, 0); }
   .good-stuff .f-column-2 .f-name {
-    font-size: 0.34133rem; }
+    font-size: 0.32rem; }
   .good-stuff .f-column-2 .row2 {
-    height: 0.81067rem; }
+    height: 0.93867rem; }
   .good-stuff .f-column-2 .f-btn-buy {
-    width: 1.42933rem;
-    height: 0.512rem; }
+    width: 0.42667rem;
+    height: 0.42667rem; }
   .good-stuff .f-column-2 .f-price {
     font-size: 0.34133rem; }
   .good-stuff .f-column-2 .f-price del, .good-stuff .f-column-2 small.mt10 {
@@ -1115,5 +1118,8 @@ p.share-line {
 .big-btn-go.status-B-btn {
   padding-top: 1.92rem;
   padding-bottom: 3.41333rem; }
+
+::-webkit-scrollbar {
+  width: 0; }
 
 /*# sourceMappingURL=style.css.map */
