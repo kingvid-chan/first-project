@@ -1,0 +1,51 @@
+@charset "utf-8";
+@import "_css3lib";
+/**============================
+通用
+==============================*/
+
+// 光圈旋转
+@include keyframes(shine-rotate, webkit moz ms spec) {
+    0% { @include transform(rotateZ(360deg));}
+    100% { @include transform(rotateZ(0deg));}
+}
+
+// 元素飘落
+@include keyframes(jm-dropElement, webkit moz ms spec) {
+    0% { @include transform(translate3d(0, -25px,0)); }
+    20% { @include transform(translate3d(70%, 60px,0)) }
+    40% { @include transform(translate3d(-30%, 120px,0)) }
+    60% { @include transform(translate3d(-15%, 180px,0)) }
+    80% { @include transform(translate3d(40%, 240px,0)) }
+    100% { @include transform(translate3d(16%, 400px,0)); opacity: 0; }
+}
+
+//jm-bounceIn
+@include keyframes(jm-bounceIn, webkit moz ms spec) {
+    0% { opacity: 0; @include transform(scale3d(0, 0, 0)); }
+    100% { opacity: 1; @include transform(scale3d(1, 1, 1)); }
+}
+
+//jm-bounceOut
+@include keyframes(fadeIn, webkit moz ms spec) {
+    0% { opacity: 0; }
+    100% { opacity: 1;}
+}
+
+//从页面底部淡入
+@include keyframes(jm-fadeInDownBig, webkit moz ms spec) {
+    0% { opacity: 0; @include transform(translate3d(0, 2000px, 0)) }
+    100% { opacity: 1; @include transform(none) }
+}
+
+//从上方淡入
+@include keyframes(jm-fadeInUp, webkit moz ms spec) {
+    0% { opacity: 0; @include transform(translate3d(0, -20px, 0)) }
+    100% { opacity: 1; @include transform(none) }
+}
+
+//缩放进入
+@include keyframes(jm-zoomIn, webkit moz ms spec) {
+    0% { @include transform(scale3d(.3, .3, .3));opacity: 0; }
+    50% { opacity: 1; }
+}
