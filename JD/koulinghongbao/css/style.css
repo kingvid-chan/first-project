@@ -203,8 +203,8 @@ a.option-rule {
   .input-container input {
     width: 13.16267rem;
     height: 1.87733rem;
-    padding-left: 0.64rem;
-    line-height: 1.87733rem;
+    padding: 0.42667rem 0.64rem;
+    line-height: 1.024rem;
     font-size: 0.66133rem;
     border: solid 1px #fdf23b;
     border-radius: 5px; }
@@ -397,20 +397,6 @@ i.icon-hide {
     width: 100%;
     height: 100%;
     display: block; }
-  .success-getCoupon-inner a.makeMyCode {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 5.97333rem;
-    height: 3.37067rem;
-    display: block; }
-  .success-getCoupon-inner a.informMyFriend {
-    position: absolute;
-    bottom: 0;
-    right: 0;
-    width: 5.312rem;
-    height: 3.37067rem;
-    display: block; }
   .success-getCoupon-inner .getCoupon-detail {
     position: absolute;
     top: 7.78667rem;
@@ -457,7 +443,7 @@ i.icon-hide {
 
 .success-make-inner {
   position: absolute;
-  width: 10.688rem;
+  width: 11.30667rem;
   height: 14.25067rem;
   top: 50%;
   left: 50%;
@@ -466,20 +452,6 @@ i.icon-hide {
   .success-make-inner img {
     width: 100%;
     height: 100%;
-    display: block; }
-  .success-make-inner a.notInformNow {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 5.76rem;
-    height: 3.37067rem;
-    display: block; }
-  .success-make-inner a.informMyFriend {
-    position: absolute;
-    bottom: 0;
-    right: 0;
-    width: 4.90667rem;
-    height: 3.37067rem;
     display: block; }
 
 @-webkit-keyframes slideInUp {
@@ -594,8 +566,7 @@ i.icon-hide {
     font-weight: normal; }
   .tips p {
     font-size: 0.46933rem;
-    line-height: 0.85333rem;
-    font-weight: lighter; }
+    line-height: 0.85333rem; }
 
 @media (max-width: 350px) {
   .tips p {
@@ -665,5 +636,46 @@ i.icon-hide {
     width: 100% !important;
     bottom: 0.64rem;
     text-align: center; } }
+.btn-wrapper {
+  position: absolute;
+  bottom: 1.49333rem;
+  left: 0;
+  width: 100%;
+  height: 1.792rem;
+  padding: 0 0.42667rem;
+  box-sizing: border-box;
+  text-align: center; }
+  .btn-wrapper a {
+    display: inline-block; }
+    .btn-wrapper a img {
+      height: 1.792rem;
+      width: auto; }
+  .btn-wrapper .makeMyCode, .btn-wrapper .notInformNow {
+    float: left; }
+  .btn-wrapper .informMyFriend {
+    float: right; }
+  .btn-wrapper.wechat .makeMyCode, .btn-wrapper.wechat .notInformNow {
+    float: none; }
+  .btn-wrapper.wechat .informMyFriend {
+    display: none; }
+
+.toast {
+  position: fixed;
+  background-color: #000;
+  top: 50%;
+  left: 50%;
+  border-radius: 5px;
+  width: 7.25333rem;
+  text-align: center;
+  padding: 15px;
+  opacity: .9;
+  color: #fff;
+  z-index: 999;
+  display: none;
+  transform: translate3d(-50%, -50%, 0);
+  -webkit-transform: translate3d(-50%, -50%, 0); }
+
+.toast div {
+  font-size: 0.8rem; }
 
 /*# sourceMappingURL=style.css.map */
