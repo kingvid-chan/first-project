@@ -201,13 +201,14 @@ a.option-rule {
   text-align: center;
   position: relative; }
   .input-container input {
-    width: 13.16267rem;
+    width: 14.44267rem;
     height: 1.87733rem;
     padding: 0.42667rem 0.64rem;
     line-height: 1.024rem;
     font-size: 0.66133rem;
     border: solid 1px #fdf23b;
-    border-radius: 5px; }
+    border-radius: 5px;
+    box-sizing: border-box; }
 
 .btn-container {
   margin-top: 0.59733rem; }
