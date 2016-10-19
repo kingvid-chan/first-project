@@ -201,9 +201,9 @@ a.option-rule {
   text-align: center;
   position: relative; }
   .input-container input {
-    width: 14.44267rem;
+    width: 13.80267rem;
     height: 1.87733rem;
-    padding: 0.42667rem 0.64rem;
+    padding: 0.42667rem 1.70667rem 0.42667rem 0.64rem;
     line-height: 1.024rem;
     font-size: 0.66133rem;
     border: solid 1px #fdf23b;
@@ -222,7 +222,7 @@ i.icon-cancel {
   background-size: 100% 100%;
   position: absolute;
   right: 1.5rem;
-  top: 0.34133rem; }
+  top: 0.29867rem; }
 
 i.icon-hide {
   content: "";
