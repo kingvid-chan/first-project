@@ -491,23 +491,7 @@ h3.floor-tit.tac + .item .item-content {
   display: inline-block;
   width: 65%;
   position: relative;
-  padding-left: 0.768rem;
   overflow: hidden; }
-
-.meta .author .icon-author {
-  width: 0.55467rem;
-  height: 0.55467rem;
-  border-radius: 50%;
-  -webkit-border-radius: 50%;
-  -moz-border-radius: 50%;
-  box-sizing: content-box;
-  position: absolute;
-  left: 0;
-  top: 50%;
-  -webkit-transform: translateY(-50%);
-  transform: translateY(-50%);
-  background: url(http://m.360buyimg.com/babel/jfs/t3082/88/2993822619/2673/70219250/57eb4b66Nd215ff88.png) no-repeat;
-  background-size: 100% 100%; }
 
 .icon-author > img {
   width: 100%;
@@ -530,7 +514,8 @@ h3.floor-tit.tac + .item .item-content {
   float: left; }
 
 .meta .author .author-info {
-  max-width: 40%; }
+  max-width: 40%;
+  margin-right: 5px; }
 
 .meta .count {
   float: right;
@@ -576,10 +561,19 @@ small {
   padding: 0 0.32rem 0.32rem; }
 
 .end {
-  margin-bottom: 2.13333rem; }
+  margin-bottom: 2.13333rem;
+  height: 3.41333rem;
+  line-height: 3.41333rem; }
   .end img {
     width: 100%;
     min-height: 4.43733rem; }
+  .end h1 {
+    text-align: center;
+    margin: 0;
+    padding: 0;
+    font-weight: normal;
+    color: #ccc;
+    font-size: 0.64rem; }
 
 .goToTop {
   display: block;
