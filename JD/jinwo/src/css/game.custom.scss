@@ -1,0 +1,13 @@
+$fontSize: 20;
+@function rem($px) {
+    @return $px / $fontSize * 1rem;
+}
+
+#game {
+    position: relative;
+    background-color: rgba(0,0,0,0.5);
+}
+.ready{
+	background: url('//img13.360buyimg.com/cms/jfs/t7057/117/1428840388/69949/eefc001c/5981ada8Ne43ddb1b.jpg') center center no-repeat;
+	background-size: rem(750) auto;
+}

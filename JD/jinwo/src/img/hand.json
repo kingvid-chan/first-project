@@ -1,0 +1,19 @@
+{"frames": [
+
+{
+	"filename": "myHand-left",
+	"frame": {"x":0,"y":0,"w":351,"h":703},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":351,"h":703},
+	"sourceSize": {"w":351,"h":703}
+},
+{
+	"filename": "myHand-right",
+	"frame": {"x":351,"y":0,"w":365,"h":703},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":365,"h":703},
+	"sourceSize": {"w":365,"h":703}
+}]
+}

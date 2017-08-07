@@ -1,0 +1,99 @@
+{"frames": [
+
+{
+	"filename": "boss-bm-shake1",
+	"frame": {"x":1207,"y":1258,"w":750,"h":735},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":750,"h":735},
+	"sourceSize": {"w":750,"h":735}
+},
+{
+	"filename": "boss-bm-shake2",
+	"frame": {"x":457,"y":1258,"w":750,"h":735},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":750,"h":735},
+	"sourceSize": {"w":750,"h":735}
+},
+{
+	"filename": "boss-bm1",
+	"frame": {"x":1268,"y":622,"w":457,"h":636},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":457,"h":636},
+	"sourceSize": {"w":457,"h":636}
+},
+{
+	"filename": "boss-bm2",
+	"frame": {"x":0,"y":1258,"w":457,"h":636},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":457,"h":636},
+	"sourceSize": {"w":457,"h":636}
+},
+{
+	"filename": "boss-pre-superGoods",
+	"frame": {"x":1297,"y":0,"w":410,"h":261},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":410,"h":261},
+	"sourceSize": {"w":410,"h":261}
+},
+{
+	"filename": "myHand-shake1",
+	"frame": {"x":547,"y":0,"w":750,"h":255},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":750,"h":255},
+	"sourceSize": {"w":750,"h":255}
+},
+{
+	"filename": "myHand-shake2",
+	"frame": {"x":0,"y":261,"w":750,"h":266},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":750,"h":266},
+	"sourceSize": {"w":750,"h":266}
+},
+{
+	"filename": "myHand",
+	"frame": {"x":524,"y":622,"w":744,"h":625},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":744,"h":625},
+	"sourceSize": {"w":744,"h":625}
+},
+{
+	"filename": "pre-bg",
+	"frame": {"x":0,"y":622,"w":524,"h":504},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":524,"h":504},
+	"sourceSize": {"w":524,"h":504}
+},
+{
+	"filename": "pre-bm",
+	"frame": {"x":750,"y":261,"w":466,"h":308},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":466,"h":308},
+	"sourceSize": {"w":466,"h":308}
+},
+{
+	"filename": "pre-fire",
+	"frame": {"x":0,"y":0,"w":547,"h":237},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":547,"h":237},
+	"sourceSize": {"w":547,"h":237}
+},
+{
+	"filename": "pre-me",
+	"frame": {"x":1216,"y":261,"w":556,"h":361},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":556,"h":361},
+	"sourceSize": {"w":556,"h":361}
+}]
+}
