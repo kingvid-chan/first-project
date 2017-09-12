@@ -1,0 +1,608 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=0" name="viewport">
+    <meta content="telephone=no" name="format-detection" />
+    <title>集碎片</title>
+    <script type="text/javascript">
+    function w() {
+        var x = window;
+        var v, u, t, tes,
+            s = x.document,
+            r = s.documentElement,
+            a = r.getBoundingClientRect().width;
+
+        if (!v && !u) {
+            var n = !!x.navigator.appVersion.match(/AppleWebKit.*Mobile.*/);
+            v = x.devicePixelRatio;
+            tes = x.devicePixelRatio;
+            v = n ? v : 1, u = 1 / v;
+        }
+        document.documentElement.setAttribute('style', 'font-size:' + a / 750 * 20 + "px");
+    }
+    window.addEventListener("resize", function() {
+        w();
+    });
+    w();
+    </script>
+    <link href="./css/style.css" rel="stylesheet">
+</head>
+<!-- 如果活动处于瓜分阶段 给body添加类guafen 如果活动处于结束状态  给body添加类end  如果是非京东app访问 给body添加类weixin -->
+
+<body class="">
+    <!-- 如果用户有碎片  分别给main添加上对应的类名  飞机（plane）、钻石（diamond）、金钱（money）、太阳镜（sun-glasses）、金链子（golden-chain）  -->
+    <div class="main plane diamond money golden-chain">
+        <div class="head">
+            <span class="plane"></span>
+            <span class="dog"></span>
+            <span class="diamond"></span>
+            <span class="money"></span>
+            <span class="golden-chain"></span>
+            <span class="sun-glasses"></span>
+        </div>
+        <div class="draw">
+            <p class="btn-circle"></p>
+            <a href="javascript:;" class="draw-btn"><span>剩1次</span></a>
+        </div>
+        <div class="pieces">
+            <p class="tit">
+                <span class="left">1.5 万人已瓜分京豆</span>
+                <a href="" class="right">好友互赠记录 ></a>
+            </p>
+            <ul class="pieces-list">
+                <!-- 如果要展示碎片数量 给li添加类showNum -->
+                <li class="item diamond showNum">
+                    <div class="own">
+                        <img src="./img/-diamond.png">
+                        <span class="action"></span>
+                    </div>
+                    <div class="none">
+                        <div class="mask"></div>
+                        <img src="./img/-diamond.png">
+                        <span class="action"></span>
+                    </div>
+                    <span class="num">2</span>
+                    <span class="name">信誉</span>
+                </li>
+                <li class="item golden-chain">
+                    <div class="own">
+                        <img src="./img/golden-chain.png">
+                        <span class="action"></span>
+                    </div>
+                    <div class="none">
+                        <div class="mask"></div>
+                        <img src="./img/golden-chain.png">
+                        <span class="action"></span>
+                    </div>
+                    <span class="num"></span>
+                    <span class="name">消费</span>
+                </li>
+                <li class="item sun-glasses">
+                    <div class="own">
+                        <img src="./img/glasses.png">
+                        <span class="action"></span>
+                    </div>
+                    <div class="none">
+                        <div class="mask"></div>
+                        <img src="./img/glasses.png">
+                        <span class="action"></span>
+                    </div>
+                    <span class="num"></span>
+                    <span class="name">活跃</span>
+                </li>
+                <li class="item plane">
+                    <div class="own">
+                        <img src="./img/small-plane.png">
+                        <span class="action"></span>
+                    </div>
+                    <div class="none">
+                        <div class="mask"></div>
+                        <img src="./img/small-plane.png">
+                        <span class="action"></span>
+                    </div>
+                    <span class="num"></span>
+                    <span class="name">小白信用</span>
+                </li>
+                <li class="item money">
+                    <div class="own">
+                        <img src="./img/money.png">
+                        <span class="action"></span>
+                    </div>
+                    <div class="none">
+                        <div class="mask"></div>
+                        <img src="./img/money.png">
+                        <span class="action"></span>
+                    </div>
+                    <span class="num"></span>
+                    <span class="name">账户</span>
+                </li>
+            </ul>
+        </div>
+        <p class="head-tips">Tips: 集齐碎片后只能分一次京豆，多余碎片可以送好友哦! </p>
+    </div>
+    <div class="countDown">
+        <p class="countDown-caption caption1">距开启瓜分京豆还有</p>
+        <p class="countDown-caption caption2">瓜分京豆结束倒计时</p>
+        <p class="countDown-caption caption3">瓜分京豆已结束，期待下次哦</p>
+        <div class="countDown-con">
+            <div class="days"></div><span class="text day">天</span>
+            <div class="hours"></div><span class='text'>小时</span>
+            <div class="minutes"></div><span class='text'>分</span>
+            <div class="seconds"></div><span class='text second'>秒</span>
+        </div>
+    </div>
+    <div class="tips">
+        <div class="app">
+            <p>1.每日小Joy会送你3次抽碎片的机会哦~</p>
+            <p>2.每天首次分享，可获得3次抽碎片的机会，其余分享均不获得抽碎片机会。</p>
+        </div>
+        <div class="weixin">
+            <p>每日小Joy会送你3次抽碎片的机会哦~</p>
+        </div>
+        <div class="more">
+            <a href="">什么是京享值</a>
+            <span>|</span>
+            <a href="./rules.html">活动规则</a>
+        </div>
+    </div>
+    <div class="jump">
+        <a href=""></a>
+        <a href=""></a>
+    </div>
+    <!-- 以下弹窗中 添加类hide可隐藏 -->
+    <!-- 抽碎片阶段 未登陆 点击收集碎片时弹出 -->
+    <div class="padt_p padt_p_type_login hide">
+        <p class="padt_p_overlay"></p>
+        <div class="padt_p_content">
+            <span class="padt_p_close"></span>
+            <p class="padt_p_title">您还没有登陆</p>
+            <p class="padt_p_subtitle">登陆后才可以收集碎片噢！</p>
+            <p class="padt_p_btns">
+                <a class="padt_p_btn padt_p_btn_login"></a>
+            </p>
+        </div>
+    </div>
+    <!-- 抽京豆阶段 未登陆 点击抽奖按钮时弹出 -->
+    <div class="padt_p padt_p_type_login hide">
+        <p class="padt_p_overlay"></p>
+        <div class="padt_p_content">
+            <span class="padt_p_close"></span>
+            <p class="padt_p_title">您还没有登陆</p>
+            <p class="padt_p_subtitle">登陆后才有机会抽奖噢！</p>
+            <p class="padt_p_btns">
+                <a class="padt_p_btn padt_p_btn_login"></a>
+            </p>
+        </div>
+    </div>
+    <!-- 抽京豆阶段 未登陆 点击互赠记录时弹出 -->
+    <div class="padt_p padt_p_type_login hide">
+        <p class="padt_p_overlay"></p>
+        <div class="padt_p_content">
+            <span class="padt_p_close"></span>
+            <p class="padt_p_title">您还没有登陆</p>
+            <p class="padt_p_subtitle">登陆后查看更多内容</p>
+            <p class="padt_p_btns">
+                <a class="padt_p_btn padt_p_btn_login"></a>
+            </p>
+        </div>
+    </div>
+    <!-- 抽碎片阶段 抽奖机会已用完  提示去分享给好友 -->
+    <div class="padt_p padt_p_type_share hide">
+        <p class="padt_p_overlay"></p>
+        <div class="padt_p_content">
+            <span class="padt_p_close"></span>
+            <p class="padt_p_title">还想抽？</p>
+            <p class="padt_p_subtitle">分享给好友可获得3次抽碎片机会噢！</p>
+            <p class="padt_p_btns">
+                <a class="padt_p_btn padt_p_btn_share"></a>
+            </p>
+        </div>
+    </div>
+    <!-- 抽碎片阶段 全部抽奖机会已用完 -->
+    <div class="padt_p padt_p_type_noChances hide">
+        <p class="padt_p_overlay"></p>
+        <div class="padt_p_content">
+            <span class="padt_p_close"></span>
+            <p class="padt_p_title">今天抽完了</p>
+            <p class="padt_p_subtitle">您今天抽碎片的机会已用尽，请明天再来哦！</p>
+            <p class="padt_p_btns"></p>
+        </div>
+    </div>
+    <!-- 抽碎片阶段 没抽中 -->
+    <div class="padt_p padt_p_type_fail hide">
+        <p class="padt_p_overlay"></p>
+        <div class="padt_p_content">
+            <span class="padt_p_close"></span>
+            <p class="padt_p_title">抱歉</p>
+            <p class="padt_p_subtitle">什么都没抽到呢！</p>
+            <p class="padt_p_btns">
+                <a class="padt_p_btn padt_p_btn_drawAgain"></a>
+            </p>
+        </div>
+    </div>
+    <!-- 抽京豆阶段 没抽中 -->
+    <div class="padt_p padt_p_type_fail hide">
+        <p class="padt_p_overlay"></p>
+        <div class="padt_p_content">
+            <span class="padt_p_close"></span>
+            <p class="padt_p_title">没中奖</p>
+            <p class="padt_p_subtitle">真遗憾，下次有机会再试试吧</p>
+            <p class="padt_p_btns">
+            </p>
+        </div>
+    </div>
+    <!-- 抽京豆阶段 用户未集齐碎片时点击瓜分京豆 -->
+    <div class="padt_p padt_p_type_fail hide">
+        <p class="padt_p_overlay"></p>
+        <div class="padt_p_content">
+            <span class="padt_p_close"></span>
+            <p class="padt_p_title">您尚未集齐碎片</p>
+            <p class="padt_p_subtitle">集齐碎片才可参与瓜分京豆</p>
+            <p class="padt_p_btns"></p>
+        </div>
+    </div>
+    <!-- 抽京豆阶段 用户未中奖且抽奖机会已用尽 -->
+    <div class="padt_p padt_p_type_fail hide">
+        <p class="padt_p_overlay"></p>
+        <div class="padt_p_content">
+            <span class="padt_p_close"></span>
+            <p class="padt_p_title">瓜分京豆机会已用尽</p>
+            <p class="padt_p_subtitle">集齐碎片只有一次分京豆的机会哦</p>
+            <p class="padt_p_btns"></p>
+        </div>
+    </div>
+    <!-- 抽京豆阶段 中奖 -->
+    <div class="padt_p padt_p_type_suc hide">
+        <p class="padt_p_overlay"></p>
+        <div class="padt_p_content">
+            <span class="padt_p_close"></span>
+            <p class="padt_p_title">3000京豆到手！</p>
+            <p class="padt_p_subtitle">京豆珍贵，用途多多！
+                <br>快去APP“我的-京豆”里查看！
+                <br><span>关注京享值，福利不止一点点！</span></p>
+            <p class="padt_p_btns">
+            </p>
+        </div>
+    </div>
+    <!-- 互赠记录 -->
+    <div class="padt_p padt_p_type_rec hide">
+        <p class="padt_p_overlay"></p>
+        <div class="padt_p_content">
+            <span class="padt_p_close"></span>
+            <div class="padt_p_rec_con">
+                <ul class="padt_p_list">
+                    <li class="padt_p_item">
+                        <p class="padt_p_item_l"><img src="./img/glasses.png"></p>
+                        <div class="padt_p_item_r">
+                            <p>11月11日</p>
+                            <p>你送昆妮都孜一枚小白信用碎片</p>
+                        </div>
+                    </li>
+                    <li class="padt_p_item">
+                        <p class="padt_p_item_l"><img src="./img/glasses.png"></p>
+                        <div class="padt_p_item_r">
+                            <p>11月11日</p>
+                            <p>你送昆妮都孜一枚小白信用碎片</p>
+                        </div>
+                    </li>
+                    <li class="padt_p_item">
+                        <p class="padt_p_item_l"><img src="./img/glasses.png"></p>
+                        <div class="padt_p_item_r">
+                            <p>11月11日</p>
+                            <p>你送昆妮都孜一枚小白信用碎片</p>
+                        </div>
+                    </li>
+                    <li class="padt_p_item">
+                        <p class="padt_p_item_l"><img src="./img/glasses.png"></p>
+                        <div class="padt_p_item_r">
+                            <p>11月11日</p>
+                            <p>你送昆妮都孜一枚小白信用碎片</p>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+            <p class="padt_p_btns"></p>
+        </div>
+    </div>
+    <!-- 查看碎片信息 -->
+    <!-- 根据用户点击的碎片类型 分别添加上对应的类名  飞机（plane）、钻石（diamond）、金钱（money）、太阳镜（sun-glasses）、金链子（golden-chain）  -->
+    <!-- 如果用户拥有该碎片  添加类own -->
+    <div class="padt_p padt_p_type_pieces plane own hide">
+        <p class="padt_p_overlay"></p>
+        <div class="padt_p_content">
+            <span class="padt_p_close"></span>
+            <p class="padt_p_title">
+                <span class="diamond">信誉碎片</span>
+                <span class="plane">小白信用碎片</span>
+                <span class="money">账户碎片</span>
+                <span class="sun-glasses">活跃碎片</span>
+                <span class="golden-chain">消费碎片</span>
+            </p>
+            <p class="padt_p_pieces-img"></p>
+            <p class="padt_p_subtitle">您在京东商城、京东金融的消费是否符合规则规定，以及国家的法律法规。遵守京东规则规定及国家法律法规，越有助于提升您的京享值</p>
+            <p class="padt_p_btns">
+                <a class="padt_p_btn padt_p_btn_draw"></a>
+                <a class="padt_p_btn padt_p_btn_ask"></a>
+                <a class="padt_p_btn padt_p_btn_send"></a>
+            </p>
+        </div>
+    </div>
+    <!-- 抽中碎片 -->
+    <!-- 根据用户抽中的碎片类型 分别添加上对应的类名  飞机（plane）、钻石（diamond）、金钱（money）、太阳镜（sun-glasses）、金链子（golden-chain）  -->
+    <div class="padt_p padt_p_type_draw golden-chain hide">
+        <p class="padt_p_overlay"></p>
+        <div class="padt_p_content">
+            <span class="padt_p_close"></span>
+            <p class="padt_p_title">
+                <span class="diamond">Get 信誉碎片！</span>
+                <span class="plane">Get 小白信用碎片！</span>
+                <span class="money">Get 账户碎片！</span>
+                <span class="sun-glasses">Get 活跃碎片！</span>
+                <span class="golden-chain">Get 消费碎片！</span>
+            </p>
+            <p class="padt_p_pieces-img"></p>
+            <p class="padt_p_subtitle">
+                <span class="diamond">信誉，您在京东商城、京东金融的消费是否符合规则规定，以及国家的法律法规。遵守京东规则规定及国家法律法规，越有助于提升您的京享值。</span>
+                <span class="plane">小白信用，您在京东购买金融理财、保险、众筹等产品以及使用京东白条、金条等京东支付方式线上支付的行为。金融价值越高，越有助于提升您的京享值。</span>
+                <span class="money">账户，您的个人信息、实名认证及手机、社交账号的绑定等。账户资料越完整，越有助于提升你的京享值。</span>
+                <span class="sun-glasses">活跃，你在京东商城的登录、购物后的评价、晒单，转发分享及参与拼便宜等行为。互动越活跃，越有助于提升您的京享值。</span>
+                <span class="golden-chain">消费，您在京东商城的消费行为，包括购物金额&利润、频次（天数）、购物年限及品类情况等。消费越多，越有助于提升您的京享值。</span>
+            </p>
+            <p class="padt_p_btns">
+                <a class="padt_p_btn padt_p_btn_send"></a>
+                <a class="padt_p_btn padt_p_btn_drawAgain"></a>
+            </p>
+        </div>
+    </div>
+    <!-- 抽中优惠券 -->
+    <div class="padt_p padt_p_type_coupon hide">
+        <p class="padt_p_overlay"></p>
+        <div class="padt_p_content">
+            <span class="padt_p_close"></span>
+            <p class="padt_p_val">10</p>
+            <p class="padt_p_cond">满 199 元可用</p>
+            <p class="padt_p_cate">仅限家具品类</p>
+            <p class="padt_p_time">2017.10.18-2017.11.18</p>
+            <p class="padt_p_btns">
+            </p>
+        </div>
+    </div>
+    <!-- 领取好友赠送碎片时 未登陆 点击立即领取时弹出 -->
+    <div class="padt_p padt_p_type_login hide">
+        <p class="padt_p_overlay"></p>
+        <div class="padt_p_content">
+            <span class="padt_p_close"></span>
+            <p class="padt_p_title">您还没有登陆</p>
+            <p class="padt_p_subtitle">登录后才有机会参与活动哦！</p>
+            <p class="padt_p_btns">
+                <a class="padt_p_btn padt_p_btn_login"></a>
+            </p>
+        </div>
+    </div>
+    <!-- 领取好友赠送碎片时 碎片已被别人领取 点击立即领取时弹出 -->
+    <div class="padt_p padt_p_type_beenRec hide">
+        <p class="padt_p_overlay"></p>
+        <div class="padt_p_content">
+            <span class="padt_p_close"></span>
+            <p class="padt_p_title">碎片已被他人领取</p>
+            <p class="padt_p_subtitle">去活动主页，有机会抽到碎片哦！</p>
+            <p class="padt_p_btns">
+                <a class="padt_p_btn padt_p_btn_try"></a>
+            </p>
+        </div>
+    </div>
+    <!-- 领取好友赠送碎片时 碎片领取失败 点击立即领取时弹出 -->
+    <div class="padt_p padt_p_type_beenRec hide">
+        <p class="padt_p_overlay"></p>
+        <div class="padt_p_content">
+            <span class="padt_p_close"></span>
+            <p class="padt_p_title">抱歉，领取失败</p>
+            <p class="padt_p_subtitle">去活动主页，有机会抽到碎片哦！</p>
+            <p class="padt_p_btns">
+                <a class="padt_p_btn padt_p_btn_try"></a>
+            </p>
+        </div>
+    </div>
+    <!-- 领取好友赠送碎片时 碎片领取阶段已结束 点击立即领取时弹出 -->
+    <div class="padt_p padt_p_type_beenRec hide">
+        <p class="padt_p_overlay"></p>
+        <div class="padt_p_content">
+            <span class="padt_p_close"></span>
+            <p class="padt_p_title">碎片不可领取</p>
+            <p class="padt_p_subtitle">收集碎片阶段已结束</p>
+            <p class="padt_p_btns">
+                <a class="padt_p_btn padt_p_btn_try"></a>
+            </p>
+        </div>
+    </div>
+    <!-- 领取好友赠送碎片时 成功领取 点击立即领取时弹出 -->
+    <div class="padt_p padt_p_type_awesome hide">
+        <p class="padt_p_overlay"></p>
+        <div class="padt_p_content">
+            <span class="padt_p_close"></span>
+            <p class="padt_p_title">您已成功领取信誉碎片！</p>
+            <p class="padt_p_subtitle">集齐 5 类碎片可
+                <br>参与瓜分一亿京豆哦！</p>
+            <p class="padt_p_btns">
+                <a class="padt_p_btn padt_p_btn_continue"></a>
+            </p>
+        </div>
+    </div>
+    <!-- 好友赠送碎片 -->
+    <!-- 根据碎片类型 分别添加上对应的类名  飞机（plane）、钻石（diamond）、金钱（money）、太阳镜（sun-glasses）、金链子（golden-chain）  -->
+    <div class="padt_p padt_p_type_wow plane hide">
+        <p class="padt_p_overlay"></p>
+        <div class="padt_p_content">
+            <span class="padt_p_close"></span>
+            <p class="padt_p_title">送你一枚<span class="diamond">信誉</span><span class="sun-glasses">活跃</span><span class="money">账户</span><span class="plane">小白信用</span><span class="golden-chain">消费</span>碎片</p>
+            <p class="padt_p_subtitle">集齐 5 类碎片
+                <br>可参与瓜分一亿京豆哦！</p>
+            <div class="padt_p_pieces">
+                <span class="diamond"></span>
+                <span class="sun-glasses"></span>
+                <span class="plane"></span>
+                <span class="golden-chain"></span>
+                <span class="money"></span>
+            </div>
+            <p class="padt_p_btns">
+                <a class="padt_p_btn padt_p_btn_get"></a>
+            </p>
+        </div>
+    </div>
+    <!-- 好友索要碎片 -->
+    <!-- 根据碎片类型 分别添加上对应的类名  飞机（plane）、钻石（diamond）、金钱（money）、太阳镜（sun-glasses）、金链子（golden-chain）  -->
+    <div class="padt_p padt_p_type_please plane hide">
+        <p class="padt_p_overlay"></p>
+        <div class="padt_p_content">
+            <span class="padt_p_close"></span>
+            <p class="padt_p_title">送我一枚<span class="diamond">信誉</span><span class="sun-glasses">活跃</span><span class="money">账户</span><span class="plane">小白信用</span><span class="golden-chain">消费</span>碎片吧</p>
+            <p class="padt_p_subtitle">集齐 5 类碎片
+                <br>可参与瓜分一亿京豆哦！</p>
+            <div class="padt_p_pieces">
+                <span class="diamond"></span>
+                <span class="sun-glasses"></span>
+                <span class="plane"></span>
+                <span class="golden-chain"></span>
+                <span class="money"></span>
+            </div>
+            <p class="padt_p_btns">
+                <a class="padt_p_btn padt_p_btn_send2"></a>
+            </p>
+        </div>
+    </div>
+    <!-- 好友索要碎片时 碎片领取阶段已结束 点击送给TA时弹出 -->
+    <div class="padt_p padt_p_type_beenRec hide">
+        <p class="padt_p_overlay"></p>
+        <div class="padt_p_content">
+            <span class="padt_p_close"></span>
+            <p class="padt_p_title">碎片无法赠送</p>
+            <p class="padt_p_subtitle">收集碎片阶段已结束</p>
+            <p class="padt_p_btns">
+                <a class="padt_p_btn padt_p_btn_know"></a>
+            </p>
+        </div>
+    </div>
+    <!-- 好友索要碎片时 用户没有该碎片 点击送给TA时弹出 -->
+    <div class="padt_p padt_p_type_beenRec hide">
+        <p class="padt_p_overlay"></p>
+        <div class="padt_p_content">
+            <span class="padt_p_close"></span>
+            <p class="padt_p_title">赠送失败</p>
+            <p class="padt_p_subtitle">你也没有这个碎片哦！</p>
+            <p class="padt_p_btns">
+                <a class="padt_p_btn padt_p_btn_continue"></a>
+            </p>
+        </div>
+    </div>
+    <!-- 好友索要碎片时 用户向自己索要 点击送给TA时弹出 -->
+    <div class="padt_p padt_p_type_beenRec hide">
+        <p class="padt_p_overlay"></p>
+        <div class="padt_p_content">
+            <span class="padt_p_close"></span>
+            <p class="padt_p_title">赠送失败</p>
+            <p class="padt_p_subtitle">无法赠送卡片给自己</p>
+            <p class="padt_p_btns">
+                <a class="padt_p_btn padt_p_btn_know"></a>
+            </p>
+        </div>
+    </div>
+    <!-- 好友索要碎片时 赠送失败 点击送给TA时弹出 -->
+    <div class="padt_p padt_p_type_beenRec hide">
+        <p class="padt_p_overlay"></p>
+        <div class="padt_p_content">
+            <span class="padt_p_close"></span>
+            <p class="padt_p_title">赠送失败</p>
+            <p class="padt_p_subtitle">碎片没有送出去呢！</p>
+            <p class="padt_p_btns">
+                <a class="padt_p_btn padt_p_btn_tryAgain"></a>
+            </p>
+        </div>
+    </div>
+    <!-- 领取好友赠送碎片时 成功领取 点击立即领取时弹出 -->
+    <div class="padt_p padt_p_type_awesome hide">
+        <p class="padt_p_overlay"></p>
+        <div class="padt_p_content">
+            <span class="padt_p_close"></span>
+            <p class="padt_p_title">赠送成功</p>
+            <p class="padt_p_subtitle">多跟老铁互换碎片，更
+                <br>容易集齐哦！</p>
+            <p class="padt_p_btns">
+                <a class="padt_p_btn padt_p_btn_ok"></a>
+            </p>
+        </div>
+    </div>
+    <script type="text/javascript" src="https://cdn.bootcss.com/zepto/1.0rc1/zepto.min.js"></script>
+    <script type="text/javascript" src="./js/countdown.js"></script>
+    <script type="text/javascript">
+    $(function() {
+        var d = new Date();
+        var myDate = d.getFullYear() + '/' + (d.getMonth() + 1) + '/' + (d.getDate() + 2) + ' 00:00:00';
+
+        $('.countDown-con').flipTimer({
+            date: myDate,
+            showDay: false 
+        });
+    });
+    </script>
+    <div class="test">
+        <a href="javascript:;" class="test-left">切换状态</a>
+        <a href="javascript:;" class="test-right">切换弹窗</a>
+    </div>
+    <style type="text/css">
+        .test{
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            height: 50px;
+            line-height: 50px;
+            background-color: rgba(0,0,0,0.6);
+            z-index: 99999;
+        }
+        .test a{
+            display: inline-block;
+            width: 100px;
+            text-align: center;
+            height: 50px;
+            line-height: 50px;
+            float: left;
+            margin-left: 20px;
+            margin-right: 15px;
+            font-size: 20px;
+            color: #fff;
+            text-decoration: none;
+        }
+        .test a + a{
+            float: right;
+        }
+    </style>
+    <script type="text/javascript">
+        var stateArr = [
+            '',
+            'guafen',
+            'end',
+            'weixin'    
+        ],
+            index = 0,
+            rightIndex = 0;
+        $('.test-left').click(function(){
+            var class_ = stateArr[(index+1)%4];
+            $("body").removeClass().addClass(class_);
+            if (class_='guafen') {
+                $('.main').addClass('sun-glasses');
+            }
+            index++;
+        });
+
+        $('.test-right').click(function(){
+            $(".padt_p").addClass('hide');
+            $(".padt_p").eq((rightIndex%26)).removeClass('hide');
+            rightIndex++;
+        })
+    </script>
+</body>
+
+</html>
